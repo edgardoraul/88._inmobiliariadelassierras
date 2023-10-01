@@ -7,7 +7,7 @@
 		<meta charset="<?php bloginfo('charset');?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<link rel="pingback" href="https://domainname.com/xmlrpc.php" />
+		<link rel="pingback" href="<?php bloginfo("pingback_url");?>" />
 		<title><?php bloginfo("title");?></title>
 
 		<!-- style and script resources -->
