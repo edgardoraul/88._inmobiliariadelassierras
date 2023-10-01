@@ -20,12 +20,30 @@ require_once "includes/url-relativas.php";
 // Soporte a títulos
 function init_template()
 {
-	add_theme_support('title-tag');
+	add_theme_support(
+		'title-tag',
+		'menus',
+		'html5',
+		'featured-content',
+		'editor-styles',
+		'post-thumbnails',
+		'custom-background',
+		'widgets',
+		'widgets-block-editor'
+	);
+
+	add_theme_support( 'custom-logo', array(
+		'height'				=> 93,
+		'width'					=> 295,
+		'header-text'			=> array( 'site-title', 'site-description' ),
+		'unlink-homepage-logo'	=> true,
+	) );
 }
 add_action('after_setup_theme', 'init_template');
 
-// Registro de estilos y scripts
+// Soporte al logo
 
+// Registro de estilos y scripts
 function assets()
 {
 	$css_bootstrap_url = get_stylesheet_directory_uri() . '/css/bootstrap.min.css';
