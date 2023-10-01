@@ -11,7 +11,7 @@
 		<title><?php bloginfo("title");?></title>
 
 		<!-- style and script resources -->
-		<link href="<?php echo get_stylesheet_directory_uri() ;?>/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" 7>
+		<!-- <link href="<?php // echo get_stylesheet_directory_uri() ;?>/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" 7> -->
 
 		<!--meta properties -->
 		<meta name="description" content=" Your site description." />

@@ -41,13 +41,6 @@ function contactform_dequeue_scripts() {
 add_action( 'wp_enqueue_scripts', 'contactform_dequeue_scripts', 99 );
 
 
-// Soporte de menus
-register_nav_menus ( array(
-	'header_nav'	=> __( 'Menú Principal', 'inmobiliariadelassierras' ),
-	'category_nav'	=> __( 'Menú Secundario', 'inmobiliariadelassierras' )
-	)
-);
-
 // Para hacer posible que esta plantilla pueda cambiar de idioma
 load_theme_textdomain( 'inmobiliariadelassierras', TEMPLATEPATH . '/language' );
 $locale = get_locale();
@@ -102,4 +95,13 @@ function titulolargo( $title )
 }
 add_action( 'publish_post', 'titulolargo' );
 
+
+//REMOVE GUTENBERG BLOCK LIBRARY CSS FROM LOADING ON FRONTEND
+function remove_wp_block_library_css() {
+	wp_dequeue_style( 'wp-block-library' );
+	wp_dequeue_style( 'wp-block-library-theme' );
+	wp_dequeue_style( 'wc-block-style' ); // REMOVE WOOCOMMERCE BLOCK CSS
+	wp_dequeue_style( 'global-styles' ); // REMOVE THEME.JSON
+}
+add_action( 'wp_enqueue_scripts', 'remove_wp_block_library_css', 100 );
 ?>

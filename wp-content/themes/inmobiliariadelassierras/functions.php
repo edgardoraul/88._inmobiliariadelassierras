@@ -5,20 +5,37 @@ require_once "includes/desactivador.php";
 // Regenerar los thumbnails
 require_once "includes/regenerate-thumbnails.php";
 
-// Modifica el pie de página del panel de administarción
-function remove_footer_admin()
-{
-	echo __('Desarrollado por', 'inmobiliariadelassierras') . ' <a title="'.__('WebModerna | Estudio Contable y Agencia Web', 'inmobiliariadelassierras') . '" href="https://webmoderna.com.ar" target="_blank"> <img title="'.__('WebModerna | Estudio Contable y Agencia Web', 'inmobiliariadelassierras') .'" src="' . get_stylesheet_directory_uri() . '/img/webmoderna.png" width="140" style="display:inline-block;vertical-align:middle;" alt="'.__('WebModerna | Estudio Contable y Agencia Web', 'inmobiliariadelassierras') .'" /></a>';
-};
-add_filter('admin_footer_text', 'remove_footer_admin');
+// Pie de página, favicon en el backoffice
+require_once "includes/soporte-backoffice.php";
 
-// Agregando un favicon al área de administración
-function admin_favicon()
+// Soporte a menús
+require_once "includes/menu.php";
+
+// Minificación
+// require_once "includes/minificacion.php";
+
+// Urls relativas
+require_once "includes/url-relativas.php";
+
+// Soporte a títulos
+function init_template()
 {
-	echo '<link rel="shortcut icon" type="image/x-icon" href="' . get_stylesheet_directory_uri() . '/img/favicon.ico" />';
+	add_theme_support('title-tag');
 }
-add_action('admin_head', 'admin_favicon', 1);
+add_action('after_setup_theme', 'init_template');
 
+// Registro de estilos y scripts
 
+function assets()
+{
+	$css_bootstrap_url = get_stylesheet_directory_uri() . '/css/bootstrap.min.css';
+	$js_bootstrap_url = get_stylesheet_directory_uri() . '/js/bootstrap.bundle.min.js';
 
+	wp_register_style('boostrap', $css_bootstrap_url, '', '2.0', 'all' );
+	wp_enqueue_style('estilos', get_stylesheet_uri(), array('boostrap'), '2.0', 'all');
+
+	wp_enqueue_script('boostraps', $js_bootstrap_url, array('jquery'), '5.3.2', true);
+	wp_enqueue_script('custom', get_template_directory_uri().'/js/custom.js', '', '2.0', true);
+}
+add_action('wp_enqueue_scripts', 'assets');
 ?>
