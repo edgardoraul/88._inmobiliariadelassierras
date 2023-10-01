@@ -1,0 +1,16 @@
+/*
+Theme Name: Inmobiliaria de las Sierras
+Theme URI: https://webmoderna.com.ar
+Description: Plantilla Wordpress para la inmobiliaria de las Sierras en su segunda versión.
+Author: WebModerna | Estudio Contable y Agencia Web
+Author URI: https://webmoderna.com.ar
+Version: 2.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+*/
+
+body
+{
+	background: url(img/background.jpg) top left no-repeat;
+	background-size: cover;
+}
