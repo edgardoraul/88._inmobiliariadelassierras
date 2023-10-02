@@ -21,27 +21,48 @@ require_once "includes/url-relativas.php";
 function init_template()
 {
 	add_theme_support(
-		'title-tag',
-		'menus',
-		'html5',
-		'featured-content',
+		'align-wide',
+		'caption',
+		'editor-color-palette',
+		'editor-font-sizes',
 		'editor-styles',
+		'featured-content',
+		'gallery',
+		'html5',
+		'menus',
 		'post-thumbnails',
-		'custom-background',
+		'search-form',
+		'title-tag',
 		'widgets',
-		'widgets-block-editor'
+		'widgets-block-editor',
 	);
 
+	// Soporte al logo
 	add_theme_support( 'custom-logo', array(
-		'height'				=> 93,
 		'width'					=> 295,
+		'height'				=> 93,
 		'header-text'			=> array( 'site-title', 'site-description' ),
 		'unlink-homepage-logo'	=> true,
 	) );
+
+	// Background personalizado
+	$defaults = array(
+		'default-image'          => '',
+		'default-preset'         => 'default', // 'default', 'fill', 'fit', 'repeat', 'custom'
+		'default-position-x'     => 'left',    // 'left', 'center', 'right'
+		'default-position-y'     => 'top',     // 'top', 'center', 'bottom'
+		'default-size'           => 'cover',    // 'auto', 'contain', 'cover'
+		'default-repeat'         => 'repeat',  // 'repeat-x', 'repeat-y', 'repeat', 'no-repeat'
+		'default-attachment'     => 'scroll',  // 'scroll', 'fixed'
+		'default-color'          => '',
+		'wp-head-callback'       => '_custom_background_cb',
+		'admin-head-callback'    => '',
+		'admin-preview-callback' => '',
+	);
+	add_theme_support( 'custom-background', $defaults );
 }
 add_action('after_setup_theme', 'init_template');
 
-// Soporte al logo
 
 // Registro de estilos y scripts
 function assets()
@@ -56,4 +77,3 @@ function assets()
 	wp_enqueue_script('custom', get_template_directory_uri().'/js/custom.js', '', '2.0', true);
 }
 add_action('wp_enqueue_scripts', 'assets');
-?>

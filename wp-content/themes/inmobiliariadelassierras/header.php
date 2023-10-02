@@ -62,18 +62,40 @@
 
 		<?php wp_head();?>
 	</head>
-	<body>
+	<body <?php body_class(); ?>>
 		<!--[if lt IE 7]>
 			<p class="browsehappy">Estás usando un navegador <strong>más viejo que la mierda</strong>. Haceme el favor de <a href="https://www.mozilla.org/es-AR/firefox/download/thanks/">bajarte uno nuevo</a> y ponete las pilas, boludo.</p>
 		<![endif]-->
 
-<div class="container">
 	<header>
-		<nav>
-			<div class="row justify-content-start">
-				<div class="col-12">
-hola
+		<div class="container">
+			<div class="row">
+				<div class="col-3">
+
 				</div>
 			</div>
-		</nav>
+			<div class="row">
+				<nav>
+					<div class="col-12 align-items-center">
+						<?php /* wp_nav_menu(
+							array(
+								'theme-location'	=> 'category_nav'
+								)
+						); */?>
+					</div>
+				</nav>
+			</div>
+
+			<div class="row">
+				<nav>
+					<div class="col-12">
+						<?php wp_nav_menu(
+
+						);?>
+					</div>
+				</nav>
+			</div>
+		</div>
 	</header>
+
+	<div class="container">

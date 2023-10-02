@@ -96,7 +96,7 @@ function titulolargo( $title )
 add_action( 'publish_post', 'titulolargo' );
 
 
-//REMOVE GUTENBERG BLOCK LIBRARY CSS FROM LOADING ON FRONTEND
+// REMOVE GUTENBERG BLOCK LIBRARY CSS FROM LOADING ON FRONTEND
 function remove_wp_block_library_css() {
 	wp_dequeue_style( 'wp-block-library' );
 	wp_dequeue_style( 'wp-block-library-theme' );
@@ -104,4 +104,13 @@ function remove_wp_block_library_css() {
 	wp_dequeue_style( 'global-styles' ); // REMOVE THEME.JSON
 }
 add_action( 'wp_enqueue_scripts', 'remove_wp_block_library_css', 100 );
+
+
+// Remover clases e ids automáticos de los menúes
+add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1);
+add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1);
+add_filter('page_css_class', 'my_css_attributes_filter', 100, 1);
+function my_css_attributes_filter($var) {
+	return is_array($var) ? array_intersect($var, array('current-menu-item', 'current_page_item')) : '';
+};
 ?>
