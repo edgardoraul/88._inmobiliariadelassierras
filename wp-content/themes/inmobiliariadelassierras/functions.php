@@ -70,10 +70,10 @@ function assets()
 	$css_bootstrap_url = get_stylesheet_directory_uri() . '/css/bootstrap.min.css';
 	$js_bootstrap_url = get_stylesheet_directory_uri() . '/js/bootstrap.bundle.min.js';
 
-	wp_register_style('boostrap', $css_bootstrap_url, '', '2.0', 'all' );
-	wp_enqueue_style('estilos', get_stylesheet_uri(), array('boostrap'), '2.0', 'all');
+	wp_register_style('boostrap', $css_bootstrap_url, array('jquery'), '5.3.2', 'all' );
+	wp_enqueue_style('estilos', get_stylesheet_uri(), array('jquery', 'boostrap'), '2.0', 'all');
 
 	wp_enqueue_script('boostraps', $js_bootstrap_url, array('jquery'), '5.3.2', true);
-	wp_enqueue_script('custom', get_template_directory_uri().'/js/custom.js', '', '2.0', true);
+	wp_enqueue_script('inmobiliariadelassierras', get_template_directory_uri() . '/js/inmobiliariadelassierras.js', '', '2.0', true);
 }
 add_action('wp_enqueue_scripts', 'assets');
