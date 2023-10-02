@@ -1,13 +1,13 @@
 <?php
 // Soporte de menus
-register_nav_menus ( array(
-	'header_nav'	=> __( 'Menú Principal', 'inmobiliariadelassierras' )
-	)
-);
+function menu_principal() {
+	register_nav_menu ( 'primary_menu', __( 'Menú Principal', 'inmobiliariadelassierras' ) );
+}
+add_action( 'init', 'menu_principal' );
 
-register_nav_menus ( array(
-	'categoria_nav'	=> __( 'Menú Secundario', 'inmobiliariadelassierras' )
-	)
-);
 
+function menu_secundario() {
+	register_nav_menu ( 'second_menu', __( 'Menú Secundario', 'inmobiliariadelassierras' ) );
+}
+add_action( 'init', 'menu_secundario' );
 ?>

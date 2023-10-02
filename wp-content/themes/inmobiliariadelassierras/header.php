@@ -10,9 +10,6 @@
 		<link rel="pingback" href="<?php bloginfo("pingback_url");?>" />
 		<title><?php bloginfo("title");?></title>
 
-		<!-- style and script resources -->
-		<!-- <link href="<?php // echo get_stylesheet_directory_uri() ;?>/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" 7> -->
-
 		<!--meta properties -->
 		<meta name="description" content=" Your site description." />
 
@@ -63,6 +60,7 @@
 		<?php wp_head();?>
 	</head>
 	<body <?php body_class(); ?>>
+		<?php wp_body_open(); ?>
 		<!--[if lt IE 7]>
 			<p class="browsehappy">Estás usando un navegador <strong>más viejo que la mierda</strong>. Haceme el favor de <a href="https://www.mozilla.org/es-AR/firefox/download/thanks/">bajarte uno nuevo</a> y ponete las pilas, boludo.</p>
 		<![endif]-->
@@ -77,11 +75,13 @@
 			<div class="row">
 				<nav>
 					<div class="col-12 align-items-center">
-						<?php /* wp_nav_menu(
+						<h2>Paginas Menu</h2>
+						<?php wp_nav_menu(
 							array(
-								'theme-location'	=> 'category_nav'
-								)
-						); */?>
+								'theme-location'	=> 'pimary_menu',
+								'item_spacing'		=> 'preserve'
+							)
+						);?>
 					</div>
 				</nav>
 			</div>
@@ -89,8 +89,13 @@
 			<div class="row">
 				<nav>
 					<div class="col-12">
+						<h2>Categorias Menu</h2>
 						<?php wp_nav_menu(
-
+							array(
+								'theme-location'	=> 'second_menu',
+								'menu_id'			=> 'categorias',
+								'item_spacing'		=> 'preserve'
+							)
 						);?>
 					</div>
 				</nav>
