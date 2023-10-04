@@ -2,6 +2,9 @@
 // Desactiva cosas innecesarias
 require_once "includes/desactivador.php";
 
+// Las miniaturas
+require_once "includes/thumbnails.php";
+
 // Regenerar los thumbnails
 require_once "includes/regenerate-thumbnails.php";
 
@@ -16,6 +19,9 @@ require_once "includes/menu.php";
 
 // Urls relativas
 require_once "includes/url-relativas.php";
+
+// Paginación
+require_once "includes/paginacion.php";
 
 // Soporte a títulos
 function soporte_plantilla()

@@ -13,7 +13,7 @@
 							<?php the_post_thumbnail('medium');;?>
 						</a>
 						<figcaption class="btn btn-secondary disabled">
-							$ 98798730
+							<?php echo get_post_meta($post->ID, 'price', true);?>
 						</figcaption>
 					</figure>
 					<h4 class="card-title text-center">
@@ -36,5 +36,16 @@
 			<?php }
 		};?>
 	</div>
-</div>
+	<div class="row my-3 row justify-content-center">
+		<div class="col-12">
+			<?php
+			if ( function_exists( "pagination" ) )
+			{
+				if ( pagination() )
+				{
+					pagination();
+				}
+			};?>
+		</div>
+	</div>
 <?php get_footer();?>
