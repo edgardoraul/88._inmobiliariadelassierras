@@ -61,4 +61,5 @@ function pagination( $pages = '', $range = 3 )
 		echo "</ul></nav>";
 	};
 };
+add_action( 'after_setup_theme', 'pagination' );
 ?>
