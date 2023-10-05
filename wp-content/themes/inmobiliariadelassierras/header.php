@@ -33,12 +33,7 @@
 				<nav>
 					<div class="col-12 align-items-center">
 						<h2>Paginas Menu</h2>
-						<?php wp_nav_menu(
-							array(
-								'theme-location'	=> 'primary_menu',
-								'item_spacing'		=> 'preserve'
-							)
-						);?>
+						
 					</div>
 				</nav>
 			</div>
@@ -47,13 +42,7 @@
 				<nav>
 					<div class="col-12">
 						<h2>Categorias Menu</h2>
-						<?php wp_nav_menu(
-							array(
-								'theme-location'	=> 'second_menu',
-								'menu_id'			=> 'categorias',
-								'item_spacing'		=> 'preserve'
-							)
-						);?>
+						
 					</div>
 				</nav>
 			</div>
