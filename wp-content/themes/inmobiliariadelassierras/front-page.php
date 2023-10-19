@@ -1,6 +1,8 @@
 <?php get_header();?>
+<?php get_template_part( 'template-part/content', 'slider' );?>
 
-<div class="container-lg">
+
+<div class="container-lg mt-3">
 	<div class="row">
 		<?php if(have_posts()) {
 			while(have_posts()) {
