@@ -20,7 +20,7 @@ $contador = 0
 	<?php while( $slider->have_posts() ) {
 			$slider->the_post();
 				if( has_post_thumbnail() ) {
-				echo $slider->current_post;
+
 					if( $contador == 0 ) { ?>
 
 						<button type="button" data-bs-target="#slider_home" data-bs-slide-to="<?php echo $contador;?>" class="active" aria-current="true" aria-label="<?php the_title();?>"></button>

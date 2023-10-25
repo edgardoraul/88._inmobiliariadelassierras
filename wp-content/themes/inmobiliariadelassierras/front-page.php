@@ -2,11 +2,14 @@
 <?php get_template_part( 'template-part/content', 'slider' );?>
 
 
-<div class="container-lg mt-3">
+<div class="container mt-3">
 	<div class="row">
-		<?php if(have_posts()) {
-			while(have_posts()) {
-				the_post();?>
+		<div class="col-12 col-lg-8 bg-white"></div>
+		<div class="containter">
+			<div class="row">
+				<?php if(have_posts()) {
+					while(have_posts()) {
+						the_post();?>
 
 			<div class="col-sm-6 col-lg-4 mb-3 mx-0">
 				<div class="card card-body">
@@ -36,7 +39,11 @@
 			</div>
 
 			<?php }
-		};?>
+		};
+		get_sidebar();
+		?>
+		</div>
+		</div>
 	</div>
 	<div class="row my-3 row justify-content-center">
 		<div class="col-12">
@@ -50,4 +57,5 @@
 			};?>
 		</div>
 	</div>
+</div>
 <?php get_footer();?>

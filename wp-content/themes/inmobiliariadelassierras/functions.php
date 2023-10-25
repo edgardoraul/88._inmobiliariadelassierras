@@ -23,6 +23,12 @@ require_once "includes/url-relativas.php";
 // Paginación
 require_once "includes/paginacion.php";
 
+// Limitar el exerpt
+function limitar_exerpt() {
+	return 20;
+}
+add_filter('excerpt_length', 'limitar_exerpt');
+
 // Soporte a títulos
 function soporte_plantilla()
 {
@@ -84,3 +90,32 @@ function assets()
 	wp_enqueue_script('inmobiliariadelassierras', get_template_directory_uri() . '/js/inmobiliariadelassierras.js', '', '2.0', true);
 }
 add_action('wp_enqueue_scripts', 'assets');
+
+
+// Probando los metaboxes
+require_once 'includes/meta-box/meta-box.php';
+require_once 'includes/demo.php';
+
+// Cargar Panel de Opciones
+if ( !function_exists( 'optionsframework_init' ) ) {
+	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/includes/' );
+	require_once dirname( __FILE__ ) . '/includes/options-framework.php';
+}
+add_action( 'optionsframework_custom_scripts', 'optionsframework_custom_scripts' );
+
+function optionsframework_custom_scripts() { ?>
+
+<script type="text/javascript">
+jQuery(document).ready(function()
+{
+	jQuery('#example_showhidden').click(function()
+	{
+		jQuery('#section-example_text_hidden').fadeToggle(400);
+	});
+	if (jQuery('#example_showhidden:checked').val() !== undefined)
+	{
+		jQuery('#section-example_text_hidden').show();
+	}
+});
+</script>
+<?php };
