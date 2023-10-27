@@ -31,9 +31,25 @@
 			</div>
 
 			<div class="row">
-				<nav>
-					<div class="col-12 align-items-center">
-						<h2>Paginas Menu</h2>
+				<nav class="navbar navbar-expand-lg">
+					<div class="container-fluid">
+						<div class="collapse navbar-collapse" id="navbarSupportedContent" style="background-color: #76B143">
+							<?php $argumentos = array(
+								'menu'			=> 'Menú Principal',
+								'depth'			=>	3,
+								'post_type'		=>	'page',
+								'item_spacing'	=>	'discard',
+								'sort_column'	=>	'menu_order',
+								'menu_id'		=>	'navbarSupportedContent',
+								'menu_class'	=>	'navbar-nav',
+								// 'container_class'	=>	'ms-auto',
+								'add_li_class'	=>	'nav-item'
+							);
+							wp_nav_menu($argumentos);?>					
+						</div>
+						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
 					</div>
 				</nav>
 			</div>

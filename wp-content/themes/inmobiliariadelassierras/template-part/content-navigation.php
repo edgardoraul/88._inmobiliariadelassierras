@@ -1,1 +1,4 @@
-Hoola qué tal
+<?php
+
+
+?>

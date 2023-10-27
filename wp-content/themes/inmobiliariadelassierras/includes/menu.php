@@ -12,8 +12,20 @@ function menu_secundario() {
 add_action( 'after_setup_theme', 'menu_secundario' );
 
 
+function add_additional_class_on_li($classes, $item, $args) {
+	if(isset($args->add_li_class)) {
+		$classes[] = $args->add_li_class;
+	}
+	return $classes;
+}
+add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
 
-
-
+// Agrendando clase a los enlaces de los menúes
+add_filter( 'nav_menu_link_attributes', 'wpse156165_menu_add_class', 10, 3 );
+function wpse156165_menu_add_class( $atts, $item, $args ) {
+    $class = 'nav-link'; // or something based on $item
+    $atts['class'] = $class;
+    return $atts;
+}
 
 ?>

@@ -49,7 +49,5 @@ $enlace_boton_3			=	of_get_option('enlace_boton_3', '');
 				</div>
 			</div>
 		</div>
-
-
 	</div>
 </aside>
