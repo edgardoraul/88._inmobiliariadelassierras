@@ -81,12 +81,16 @@ add_action('after_setup_theme', 'soporte_plantilla');
 function assets()
 {
 	$css_bootstrap_url = get_stylesheet_directory_uri() . '/css/bootstrap.min.css';
+	$css_bootstrap_icons_url = get_stylesheet_directory_uri() . '/css/bootstrap-icons.css';
 	$js_bootstrap_url = get_stylesheet_directory_uri() . '/js/bootstrap.bundle.min.js';
 
-	wp_register_style('boostrap', $css_bootstrap_url, '', '5.3.2', 'all' );
-	wp_enqueue_style('estilos', get_stylesheet_uri(), array('boostrap'), '2.0', 'all');
+	wp_register_style('bootstrap', $css_bootstrap_url, '', '5.3.2', 'all' );
+	wp_enqueue_style('estilos', get_stylesheet_uri(), array('bootstrap'), '2.0', 'all');
 
-	wp_enqueue_script('boostraps', $js_bootstrap_url, array('jquery'), '5.3.2', true);
+	wp_register_style('bootstrap-iconos', $css_bootstrap_icons_url, '', '1.11.1', 'all' );
+	wp_enqueue_style('iconos', get_stylesheet_uri(), array('bootstrap-iconos'), '2.0', 'all');
+
+	wp_enqueue_script('bootstrap', $js_bootstrap_url, array('jquery'), '5.3.2', true);
 	wp_enqueue_script('inmobiliariadelassierras', get_template_directory_uri() . '/js/inmobiliariadelassierras.js', '', '2.0', true);
 }
 add_action('wp_enqueue_scripts', 'assets');

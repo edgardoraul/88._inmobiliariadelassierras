@@ -6,38 +6,38 @@ $argumentos = array(
 	'orderby'			=>	'rand'
 );
 $slider = new WP_Query($argumentos);
-
 $cantidad_paginas = $slider->post_count;
-$contador = 0
+$contador = 0;
+
 ?>
 
 <div class="container-lg">
 	<div class="row">
 		<div id="slider_home" class="carousel slide" data-bs-ride="false">
 
-<?php if( $slider->have_posts() ) { ?>
-	<div class="carousel-indicators">
-	<?php while( $slider->have_posts() ) {
+		<?php if( $slider->have_posts() ) {
+
+			/* Los indidacores del carrusel */
+			?>
+			<div class="carousel-indicators">
+			<?php while( $slider->have_posts() ) {
 			$slider->the_post();
-				if( has_post_thumbnail() ) {
+			if( has_post_thumbnail() ) {
+				if( $contador == 0 ) { ?>
+					<button type="button" data-bs-target="#slider_home" data-bs-slide-to="<?php echo $contador;?>" class="active" aria-current="true" aria-label="<?php the_title();?>"></button>
 
-					if( $contador == 0 ) { ?>
-
-						<button type="button" data-bs-target="#slider_home" data-bs-slide-to="<?php echo $contador;?>" class="active" aria-current="true" aria-label="<?php the_title();?>"></button>
-
-					<?php } else { ?>
-						<button type="button" data-bs-target="#slider_home" data-bs-slide-to="<?php echo $contador;?>" aria-label="<?php the_title();?>"></button>
-					<?php
-					}
-					$contador = $contador + 1;
+				<?php } else { ?>
+					<button type="button" data-bs-target="#slider_home" data-bs-slide-to="<?php echo $contador;?>" aria-label="<?php the_title();?>"></button>
+				<?php }
+				$contador = $contador + 1;
 				}
 			}?>
-	</div>
-<?php }
-// Reseteamos la consulta, por las dudas.
-wp_reset_postdata();
-$contador = 0;
-?>
+			</div>
+	<?php }
+	// Reseteamos la consulta, por las dudas.
+	wp_reset_postdata();
+	$contador = 0;
+	?>
 			<div class="carousel-inner">
 
 <?php if( $slider->have_posts() ) {

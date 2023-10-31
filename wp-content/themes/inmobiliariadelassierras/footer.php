@@ -15,21 +15,25 @@ $ciudad_web				=	of_get_option( 'ciudad_web', '' );
 $provincia_web			=	of_get_option( 'provincia_web', '');
 ?>
 
+<?php get_sidebar();?>
+
 <!-- Parte del contenido del footer -->
 <footer class="bg-dark py-5">
 	<div class="container-xxl">
 		<div class="row text-secondary">
 			<!-- Redes sociales -->
 			<div class="col-md-4 p-3">
-				<p><?php _e('Celular: ', 'inmobiliariadelassierras');?><a class="link-success text-decoration-none" href="//wa.me/<?php echo $celular_contact;?>" title="WhatsApp"><?php echo "+" . $celular_contact;?></a></p>
-				<p><?php _e('Teléfono: ', 'inmobiliariadelassierras'); echo $telefono_fijo;?></p>
-				<p><?php _e('E-Mail: ', 'inmobiliariadelassierras');?><a class="link-success text-decoration-none" href="mailto:<?php echo $email_web;?>" title="<?php echo $email_web;?>"><?php echo $email_web;?></a></p>
-				<p><?php _e('Instagram: ', 'inmobiliariadelassierras');?><a class="link-success text-decoration-none" href="//<?php echo $instagram_contact;?>" title="Instagram" target="_blank"><?php echo $instagram_contact;?></a></p>
-				<p><?php _e('LinkedIn: ', 'inmobiliariadelassierras');?><a class="link-success text-decoration-none" href="//<?php echo $linkedin_contact;?>" title="LinkedIn" target="_blank"><?php echo $linkedin_contact;?></a></p>
+				<h3 class="h3 text-uppercase mb-4">Contacto</h3>
+				<p><i class="bi bi-phone-fill"></i> <a class="link-success text-decoration-none" href="//wa.me/<?php echo $celular_contact;?>" title="WhatsApp"><?php echo "+" . $celular_contact;?></a></p>
+				<p><i class="bi bi-telephone-fill"></i> <?php echo $telefono_fijo;?></p>
+				<p><i class="bi bi-envelope-fill"></i> <a class="link-success text-decoration-none" href="mailto:<?php echo $email_web;?>" title="<?php echo $email_web;?>"><?php echo $email_web;?></a></p>
+				<p><i class="bi bi-instagram"></i> <a class="link-success text-decoration-none" href="//<?php echo $instagram_contact;?>" title="Instagram" target="_blank"><?php echo $instagram_contact;?></a></p>
+				<p><i class="bi bi-linkedin"></i> <a class="link-success text-decoration-none" href="//<?php echo $linkedin_contact;?>" title="LinkedIn" target="_blank"><?php echo $linkedin_contact;?></a></p>
 			</div>
 
 			<!-- Dirección -->
 			<div class="col-md-4 p-3">
+				<h3 class="h3 text-uppercase mb-4">Ubicación</h3>
 				<p><?php _e('Calle y número: ', 'inmobiliariadelassierras'); echo $direccion_web;?></p>
 				<p><?php _e('Ciudad: ', 'inmobiliariadelassierras'); echo $ciudad_web;?></p>
 				<p><?php _e('Código Postal: ', 'inmobiliariadelassierras'); echo $cp_web;?></p>
@@ -38,6 +42,7 @@ $provincia_web			=	of_get_option( 'provincia_web', '');
 
 			<!-- Copyright -->
 			<div class="col-md-4 p-3">
+				<h3 class="h3 text-uppercase mb-4">Nosotros</h3>
 				<p>© Copyright <?php the_date("Y"); echo " - " ;?> <a class="link-success text-decoration-none" href="<?php bloginfo("url");?>" target="_self" title="<?php bloginfo("name");?>"><?php bloginfo("name");?></a></p>
 				<p><?php _e('Matrícula Profesional: ', 'inmobiliariadelassierras'); echo $matricula_contact;?></p>
 				<p><?php _e('Horario de atención: ', 'inmobiliariadelassierras'); echo $horario_web;?></p>
@@ -48,10 +53,10 @@ $provincia_web			=	of_get_option( 'provincia_web', '');
 		<div class="row position-fixed bottom-0 end-0">
 			<div class="col">
 				<div class="btn-group me-2 mb-3" role="group">
-					<a type="button" class="btn btn-success  opacity-75" href="//wa.me/<?php echo $celular_contact;?>" target="_blank" title="WhastApp">WhastApp</a>
+					<a type="button" class="btn btn-success  opacity-75" href="//wa.me/<?php echo $celular_contact;?>" target="_blank" title="WhastApp"><i class="bi bi-whatsapp"></i></a>
 				</div>
 				<div class="btn-group me-2 mb-3" role="group">
-					<a type="button" class="btn btn-secondary  opacity-75" href="#" title="<?php _e('Arriba', 'inmobiliariadelassierras');?>">&uparrow;</a>
+					<a type="button" class="btn btn-secondary  opacity-75" href="#" title="<?php _e('Arriba', 'inmobiliariadelassierras');?>"><i class="bi bi-arrow-up"></i></a>
 				</div>
 			</div>
 		</div>
