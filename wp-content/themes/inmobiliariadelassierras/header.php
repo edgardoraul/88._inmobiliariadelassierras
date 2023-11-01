@@ -26,7 +26,11 @@
 
 			<!-- logo -->
 			<div class="col-12 col-lg-3 offset-lg-0">
-				<h1 class="text-center"><?php the_custom_logo();?></h1>
+				<h1 class="text-center">
+					<a href="<?php bloginfo('url');?>">
+						<?php the_custom_logo();?>
+					</a>
+				</h1>
 			</div><!-- /logo -->
 
 		</div>

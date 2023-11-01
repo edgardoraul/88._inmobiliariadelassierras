@@ -2,9 +2,9 @@
 
 <main><!-- main -->
 
-<div class="container-xxl mt-3"><!-- sección del contenido y sidebar -->
+<div class="container-xxl"><!-- sección del contenido y sidebar -->
 	<div class="row bg-white">
-		<div class="col-12 col-lg-9"><!-- contenido de la pagina -->
+		<div class="col-12 col-lg-9 mb-5"><!-- contenido de la pagina -->
 
 			<div class="containter-fluid">
 				<div class="row">
@@ -17,7 +17,11 @@
 					<section>
 						<figure class="figure">
 							<?php if(has_post_thumbnail()) {
-								the_post_thumbnail('custom-thumb-1200-500', array('class' => 'figure-img img-thumbnail rounded'));
+								if(wp_is_mobile()) {
+									the_post_thumbnail('custom-thumb-600-x', array('class' => 'figure-img img-thumbnail rounded'));
+								} else {
+									the_post_thumbnail('custom-thumb-1200-500', array('class' => 'figure-img img-thumbnail rounded'));
+								}
 							} else {
 								echo '<img src="' . get_stylesheet_directory_uri() . '/img/img.png" alt="img" class="figure-img img-thumbnail rounded" />';
 							};?>

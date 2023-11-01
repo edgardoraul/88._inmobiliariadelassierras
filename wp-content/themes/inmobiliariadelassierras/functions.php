@@ -23,6 +23,9 @@ require_once "includes/url-relativas.php";
 // Paginación
 require_once "includes/paginacion.php";
 
+// Soporte al slider
+require_once "includes/slider.php";
+
 // Limitar el exerpt
 function limitar_exerpt() {
 	return 20;

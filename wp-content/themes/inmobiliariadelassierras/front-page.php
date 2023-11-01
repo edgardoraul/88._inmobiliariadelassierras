@@ -15,11 +15,15 @@
 					<!-- Cada Producto Publicado -->
 					<div class="col-sm-6 col-lg-4 mb-3">
 						<div class="card card-body">
-							<figure class="card-img-top text-center">
+							<figure class="card-img-top text-center position-relative">
 								<a href="<?php the_permalink();?>">
-									<?php the_post_thumbnail('custom-thumb-600-400', array('class' => 'img-thumbnail'));?>
+									<?php if( has_post_thumbnail() ) {
+										the_post_thumbnail('custom-thumb-600-400', array('class' => 'img-thumbnail w-100'));
+									} else {
+										echo '<img src="' . get_stylesheet_directory_uri() . '/img/no-img.png" alt="img" class="figure-img img-thumbnail rounded w-100" />';
+									};?>
 								</a>
-								<figcaption class="btn btn-secondary disabled">
+								<figcaption class="btn btn-secondary disabled mt-3">
 									<?php echo get_post_meta($post->ID, 'price', true);?>
 								</figcaption>
 							</figure>

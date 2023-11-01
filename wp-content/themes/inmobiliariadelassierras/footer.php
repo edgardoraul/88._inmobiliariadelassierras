@@ -20,20 +20,20 @@ $provincia_web			=	of_get_option( 'provincia_web', '');
 <!-- Parte del contenido del footer -->
 <footer class="bg-dark py-5">
 	<div class="container-xxl">
-		<div class="row text-secondary">
+		<div class="row text-secondary text-wrap">
 			<!-- Redes sociales -->
 			<div class="col-md-4 p-3">
-				<h3 class="h3 text-uppercase mb-4">Contacto</h3>
-				<p><i class="bi bi-phone-fill"></i> <a class="link-success text-decoration-none" href="//wa.me/<?php echo $celular_contact;?>" title="WhatsApp"><?php echo "+" . $celular_contact;?></a></p>
+				<h3 class="h3 text-uppercase mb-4"><?php _e('Contacto', 'inmobiliariadelasierras');?></h3>
+				<p><i class="bi bi-phone-fill"></i> <a class="link-success text-decoration-none text-wrap" href="//wa.me/<?php echo $celular_contact;?>" title="WhatsApp"><?php echo "+" . $celular_contact;?></a></p>
 				<p><i class="bi bi-telephone-fill"></i> <?php echo $telefono_fijo;?></p>
-				<p><i class="bi bi-envelope-fill"></i> <a class="link-success text-decoration-none" href="mailto:<?php echo $email_web;?>" title="<?php echo $email_web;?>"><?php echo $email_web;?></a></p>
-				<p><i class="bi bi-instagram"></i> <a class="link-success text-decoration-none" href="//<?php echo $instagram_contact;?>" title="Instagram" target="_blank"><?php echo $instagram_contact;?></a></p>
-				<p><i class="bi bi-linkedin"></i> <a class="link-success text-decoration-none" href="//<?php echo $linkedin_contact;?>" title="LinkedIn" target="_blank"><?php echo $linkedin_contact;?></a></p>
+				<p><i class="bi bi-envelope-fill"></i> <a class="link-success text-decoration-none text-wrap" href="mailto:<?php echo $email_web;?>" title="<?php echo $email_web;?>"><?php echo $email_web;?></a></p>
+				<p><i class="bi bi-instagram"></i> <a class="link-success text-decoration-none text-wrap" href="//<?php echo $instagram_contact;?>" title="Instagram" target="_blank"><?php echo $instagram_contact;?></a></p>
+				<p><i class="bi bi-linkedin"></i> <a class="link-success text-decoration-none text-wrap" href="//<?php echo $linkedin_contact;?>" title="LinkedIn" target="_blank"><?php echo $linkedin_contact;?></a></p>
 			</div>
 
 			<!-- Dirección -->
 			<div class="col-md-4 p-3">
-				<h3 class="h3 text-uppercase mb-4">Ubicación</h3>
+				<h3 class="h3 text-uppercase mb-4"><?php _e('Ubicación', 'inmobiliariadelasierras');?></h3>
 				<p><?php _e('Calle y número: ', 'inmobiliariadelassierras'); echo $direccion_web;?></p>
 				<p><?php _e('Ciudad: ', 'inmobiliariadelassierras'); echo $ciudad_web;?></p>
 				<p><?php _e('Código Postal: ', 'inmobiliariadelassierras'); echo $cp_web;?></p>
@@ -42,7 +42,7 @@ $provincia_web			=	of_get_option( 'provincia_web', '');
 
 			<!-- Copyright -->
 			<div class="col-md-4 p-3">
-				<h3 class="h3 text-uppercase mb-4">Nosotros</h3>
+				<h3 class="h3 text-uppercase mb-4"><?php _e('Nosotros', 'inmobiliariadelasierras');?></h3>
 				<p>© Copyright <?php the_date("Y"); echo " - " ;?> <a class="link-success text-decoration-none" href="<?php bloginfo("url");?>" target="_self" title="<?php bloginfo("name");?>"><?php bloginfo("name");?></a></p>
 				<p><?php _e('Matrícula Profesional: ', 'inmobiliariadelassierras'); echo $matricula_contact;?></p>
 				<p><?php _e('Horario de atención: ', 'inmobiliariadelassierras'); echo $horario_web;?></p>

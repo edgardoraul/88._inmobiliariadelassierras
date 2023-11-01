@@ -1,9 +1,9 @@
 <?php
 // El slider
 $argumentos = array(
-	'post_type'			=>	'page',
-	'post_per_page'		=>	10,
-	'orderby'			=>	'rand'
+	'post_type'			=>	'pt_carrusel',
+	'post_per_page'		=>	-1,
+	'orderby'			=>	'date'
 );
 $slider = new WP_Query($argumentos);
 $cantidad_paginas = $slider->post_count;
@@ -11,7 +11,7 @@ $contador = 0;
 
 ?>
 
-<div class="container-lg">
+<div class="container-xxl">
 	<div class="row">
 		<div id="slider_home" class="carousel slide" data-bs-ride="false">
 
@@ -49,19 +49,29 @@ $contador = 0;
 			} else {
 				echo '<div class="carousel-item">';
 			}
-
-			the_post_thumbnail(
-				"custom-thumb-1200-500",
-				array(
-					"class" => "d-block"
-					)
-				);
-				?>
+			if ( has_post_thumbnail() ) {
+				if(wp_is_mobile()) {
+					the_post_thumbnail(
+						"custom-thumb-900-600",
+						array( "class" => "d-block img-thumbnail" )
+					);
+				} else {
+					the_post_thumbnail(
+						"custom-thumb-2400-1000",
+						array( "class" => "d-block img-thumbnail" )
+					);
+				}
+			} else {
+				// Nada, carajo!
+				echo '<img src="' . get_stylesheet_directory_uri() . '/img/img.png" alt="img1" class="figure-img img-thumbnail rounded" />';
+				echo '<img src="' . get_stylesheet_directory_uri() . '/img/img.png" alt="img2" class="figure-img img-thumbnail rounded" />';
+			}
+			?>
 				<div class="carousel-caption d-none d-md-block">
 					<div class="bg-light p-3 text-dark bg-opacity-75">
 						<h4 class="text-success h4"><?php the_title();?></h4>
-						<hr class="hr" />
-						<p><?php the_excerpt()?></p>
+						<!-- <hr class="hr" />
+						<div><?php // nthe_excerpt()?></div> -->
 					</div>
 				</div>
 			</div>
