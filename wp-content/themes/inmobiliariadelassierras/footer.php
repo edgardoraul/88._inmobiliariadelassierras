@@ -25,7 +25,7 @@ $provincia_web			=	of_get_option( 'provincia_web', '');
 			<div class="col-md-4 p-3">
 				<h3 class="h3 text-uppercase mb-4"><?php _e('Contacto', 'inmobiliariadelasierras');?></h3>
 				<p><i class="bi bi-phone-fill"></i> <a class="link-success text-decoration-none text-wrap" href="//wa.me/<?php echo $celular_contact;?>" title="WhatsApp"><?php echo "+" . $celular_contact;?></a></p>
-				<p><i class="bi bi-telephone-fill"></i> <?php echo $telefono_fijo;?></p>
+				<p><i class="bi bi-telephone-fill"></i> <a class="link-success text-decoration-none" href="tel:<?php echo $telefono_fijo;?>"><?php echo $telefono_fijo;?></a></p>
 				<p><i class="bi bi-envelope-fill"></i> <a class="link-success text-decoration-none text-wrap" href="mailto:<?php echo $email_web;?>" title="<?php echo $email_web;?>"><?php echo $email_web;?></a></p>
 				<p><i class="bi bi-instagram"></i> <a class="link-success text-decoration-none text-wrap" href="//<?php echo $instagram_contact;?>" title="Instagram" target="_blank"><?php echo $instagram_contact;?></a></p>
 				<p><i class="bi bi-linkedin"></i> <a class="link-success text-decoration-none text-wrap" href="//<?php echo $linkedin_contact;?>" title="LinkedIn" target="_blank"><?php echo $linkedin_contact;?></a></p>

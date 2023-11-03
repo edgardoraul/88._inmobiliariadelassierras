@@ -22,10 +22,10 @@
 
 <header class="bg-white">
 	<div class="container-xxl">
-		<div class="row">
+		<div class="row d-flex justify-content-between">
 
 			<!-- logo -->
-			<div class="col-12 col-lg-3 offset-lg-0">
+			<div class="col-12 col-md-6 col-lg-2">
 				<h1 class="text-center">
 					<a href="<?php bloginfo('url');?>">
 						<?php the_custom_logo();?>
@@ -33,19 +33,33 @@
 				</h1>
 			</div><!-- /logo -->
 
+			<!-- Aviso -->
+			<div class="col-6 d-none d-md-block">
+				<?php $header_logo = of_get_option('header_logo', '');
+					echo '<img class="float-end" alt="Inmobiliaria de las Sierras" src="' . $header_logo . '" />';
+					?>
+			</div><!-- /Aviso -->
+
 		</div>
 
 		<div class="row">
 			<!-- navbar-ejemplo -->
-			<nav class="navbar navbar-expand-lg">
+			<nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom border-body mb-2" data-bs-theme="dark">
 				<div class="container-xxl">
-					<a class="navbar-brand" href="#">Navbar</a>
+					<!-- Search -->
+					<form class="d-flex" role="search">
+						<input class="form-control me-2" type="search" placeholder="<?php _e('Buscar...', 'inmobiliariadelassierras');?>" aria-label="Search">
+						<button class="btn btn-outline-success" type="submit">
+							<i class="bi bi-search"></i>
+						</button>
+					</form><!-- /search -->
+
 					<!-- boton del menú -->
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 					</button>
 
-					<div class="collapse navbar-collapse text-uppercase" id="navbarTogglerDemo02">
+					<div class="collapse navbar-collapse text-uppercase justify-content-end" id="navbarTogglerDemo02">
 					<?php $argumentos = array(
 							'menu'			=> 'Menú Principal',
 							'depth'			=>	3,
@@ -70,7 +84,7 @@
 		<div class="row">
 			<nav>
 				<div class="col-12">
-					<h2>Categorias Menu de ejemplo</h2>
+
 				</div>
 			</nav>
 		</div>

@@ -66,6 +66,14 @@ function optionsframework_options()
 		'type'			=>	'textarea'
 	);
 
+	// Imagen del mensaje 1
+	$options[] = array(
+		'name'			=>	__('Cartel, imagen u otro logo', 'options_check'),
+		'desc'			=>	__('Selecciona una imagen de 600px por 300px.', 'options_check'),
+		'id'			=>	'header_logo',
+		'type'			=>	'upload',
+	);
+
 	// Meta: keywords
 	$options[]	=	array(
 		'name'			=>	__('Meta: Palabras claves', 'options_framework_theme'),

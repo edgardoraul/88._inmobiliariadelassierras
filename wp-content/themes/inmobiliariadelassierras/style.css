@@ -9,3 +9,9 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 Text Domain: inmobiliariadelassierras
 */
+:root
+{
+	--bs-success: #76B143 !important;
+	--bs-success-rgb: 118, 177, 67 !important;
+	--bs-green: #76B143 !important;
+}
