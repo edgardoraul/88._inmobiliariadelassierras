@@ -7,6 +7,7 @@
 		<div class="col-12 col-lg-9 mb-5"><!-- contenido de la pagina -->
 
 			<div class="containter-fluid">
+				<?php migas_de_pan();?>
 				<div class="row">
 				<?php if(have_posts()) {
 					while(have_posts()) {
@@ -45,14 +46,9 @@
 							</div>
 						</div><!-- /contenido -->
 
-						<div class="row list-group list-group-horizontal mx-1"><!-- navegacion -->
-							<div class="col-6 list-group-item">
-								<?php previous_post_link();?>
-							</div>
-							<div class="col-6 list-group-item">
-								<?php next_post_link();?>
-							</div>
-						</div><!-- /navegacion -->
+						<!-- Navegacion -->
+						<?php get_template_part('template-part/content', 'navigation');?>
+
 					</section>
 				<?php }
 				}?>

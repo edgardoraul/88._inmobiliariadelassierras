@@ -18,9 +18,9 @@ $provincia_web			=	of_get_option( 'provincia_web', '');
 <?php get_sidebar();?>
 
 <!-- Parte del contenido del footer -->
-<footer class="bg-dark py-5">
+<footer class="bg-white opacity-75 py-5">
 	<div class="container-xxl">
-		<div class="row text-secondary text-wrap">
+		<div class="row text-wrap">
 			<!-- Redes sociales -->
 			<div class="col-md-4 p-3">
 				<h3 class="h3 text-uppercase mb-4"><?php _e('Contacto', 'inmobiliariadelasierras');?></h3>

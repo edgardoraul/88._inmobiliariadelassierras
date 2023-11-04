@@ -62,4 +62,13 @@ function pagination( $pages = '', $range = 3 )
 	};
 };
 add_action( 'after_setup_theme', 'pagination' );
+
+// Navegabilidad en siguiente y atrás
+function navigation_class( $html ) {
+	$html = str_replace( '<a ', '<a class="link-success link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" ', $html );
+	return $html;
+}
+add_filter( 'next_post_link', 'navigation_class' );
+add_filter( 'previous_post_link', 'navigation_class' );
+
 ?>

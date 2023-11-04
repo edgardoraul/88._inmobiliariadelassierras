@@ -1,7 +1,7 @@
 <?php get_header();?>
 <?php get_template_part( 'template-part/content', 'slider' );?>
 
-<main class="bg-light"><!-- main -->
+<main class="bg-white"><!-- main -->
 
 <div class="container-xxl mt-3"><!-- sección del contenido y sidebar -->
 	<div class="row">
@@ -48,9 +48,7 @@
 				</div><!-- /row de productos -->
 
 				<!-- paginacion -->
-				<div class="row my-3 row justify-content-center">
-					<div class="col-12"><?php pagination();?></div>
-				</div>
+				<?php get_template_part( 'template-part/content', 'pagination' );?>
 
 			</div><!-- /container-fluid de los productos -->
 

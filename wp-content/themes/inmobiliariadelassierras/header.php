@@ -25,7 +25,7 @@
 		<div class="row d-flex justify-content-between">
 
 			<!-- logo -->
-			<div class="col-12 col-md-6 col-lg-2">
+			<div class="col-12 col-md-4 col-lg-3">
 				<h1 class="text-center">
 					<a href="<?php bloginfo('url');?>">
 						<?php the_custom_logo();?>
@@ -33,22 +33,35 @@
 				</h1>
 			</div><!-- /logo -->
 
-			<!-- Aviso -->
-			<div class="col-6 d-none d-md-block">
+			<!-- Titular Secundario -->
+			<?php
+			/*  $portfolio_home = of_get_option('portfolio_home', '');
+			if ($portfolio_home) {
+				echo '
+				<div class="col-4 d-none d-lg-block col-lg-6">
+					<h2 class="text-center">
+						' . $portfolio_home . '
+					</h2>
+				</div>';
+			}; */
+			?>
+
+			<!-- Logotipo 2 -->
+			<div class="col-4 d-none d-md-block col-lg-3">
 				<?php $header_logo = of_get_option('header_logo', '');
 					echo '<img class="float-end" alt="Inmobiliaria de las Sierras" src="' . $header_logo . '" />';
 					?>
-			</div><!-- /Aviso -->
+			</div><!-- /Logotipo 2 -->
 
 		</div>
 
-		<div class="row">
+		<div class="row my-3">
 			<!-- navbar-ejemplo -->
 			<nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom border-body mb-2" data-bs-theme="dark">
 				<div class="container-xxl">
 					<!-- Search -->
-					<form class="d-flex" role="search">
-						<input class="form-control me-2" type="search" placeholder="<?php _e('Buscar...', 'inmobiliariadelassierras');?>" aria-label="Search">
+					<form class="d-flex" role="search"  method="get" id="searchform" action="<?php bloginfo('url');?>">
+						<input class="form-control me-2" type="search" placeholder="<?php _e('Buscar...', 'inmobiliariadelassierras');?>" aria-label="Search" value="<?php the_search_query();?>" name="s" id="s">
 						<button class="btn btn-outline-success" type="submit">
 							<i class="bi bi-search"></i>
 						</button>

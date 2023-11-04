@@ -48,15 +48,15 @@ function optionsframework_options()
 
 	// Titular del Portfolio de la home
 	$options[]	=	array(
-		'name'			=>	__('Titular del Portfolio de la home', 'options_framework_theme'),
-		'desc'			=>	__('Introduca un titular para el portfolio de la home.', 'options_framework_theme'),
+		'name'			=>	__('Titular secundario en el encabezado', 'options_framework_theme'),
+		'desc'			=>	__('Introduca un titular.', 'options_framework_theme'),
 		'id'			=>	'portfolio_home',
 		'placeholder'	=>	'Titular de ejemplo...',
 		'class'			=>	'',
 		'type'			=>	'text',
 	);
 
-	// Contenido o mensaje para el porfolio de la home
+	/* // Contenido o mensaje para el porfolio de la home
 	$options[]	=	array(
 		'name'			=>	__('Mensaje para el porfolio de la home', 'options_framework_theme'),
 		'desc'			=>	__('Introduzca un contenido o mensaje para el porfolio de la home.', 'options_framework_theme'),
@@ -64,7 +64,7 @@ function optionsframework_options()
 		'placeholder'	=>	'Contenido de ejemplo...',
 		'class'			=>	'',
 		'type'			=>	'textarea'
-	);
+	); */
 
 	// Imagen del mensaje 1
 	$options[] = array(
@@ -320,6 +320,10 @@ $options[] = array(
 	'options' => $options_pages
 	);
 
+$options[] = array(
+	'name'		=> '====================================================',
+	'type'		=> 'info'
+);
 	/* // Campo de texto
 	$wp_editor_settings = array(
 		'wpautop' => true, // Default
@@ -378,6 +382,12 @@ $options[] = array(
 	'class' => 'small', //mini
 	'options' => $options_pages
 	);
+
+$options[] = array(
+		'name'		=> '====================================================',
+		'type'		=> 'info'
+	);
+
 
 	// =================================== MENSAJE 3
 	// Imagen del Mensaje 3

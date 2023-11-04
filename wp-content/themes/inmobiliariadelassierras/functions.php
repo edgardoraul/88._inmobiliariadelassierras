@@ -17,6 +17,9 @@ require_once "includes/menu.php";
 // Minificación
 // require_once "includes/minificacion.php";
 
+// Breadcrumb
+require_once "includes/breadcrumb.php";
+
 // Urls relativas
 require_once "includes/url-relativas.php";
 
@@ -126,3 +129,4 @@ jQuery(document).ready(function()
 });
 </script>
 <?php };
+
