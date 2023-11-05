@@ -1,7 +1,7 @@
 <?php
 /*
-* Template Name: Formulario
-*/
+ * Template Name: Formulario
+ */
 
 get_header();?>
 
