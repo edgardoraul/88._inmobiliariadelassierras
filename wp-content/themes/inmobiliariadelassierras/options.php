@@ -152,6 +152,16 @@ function optionsframework_options()
 		'type' => 'text'
 	);
 
+	// Youtube
+	$options[] = array(
+		'name' => __('Youtube', 'options_framework_theme'),
+		'desc' => __('Introduzca su enlace al canal de Youtube.', 'options_framework_theme'),
+		'id' => 'youtube_contact',
+		'placeholder' => 'https://www.youtube.com/canal',
+		'class' => '',
+		'type' => 'text'
+	);
+
 
 	// Add This. Solo el enlace al script
 	/*$options[] = array(

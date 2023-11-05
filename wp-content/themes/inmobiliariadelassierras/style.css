@@ -20,7 +20,7 @@ Text Domain: inmobiliariadelassierras
 }
 .figure::before {
 	background: url("img/single-mainimage-overlay.png") top left no-repeat;
-	background-size: 100% 100%;
+	background-size: cover;
 	content: "";
 	height: 100%;
 	left: 0;

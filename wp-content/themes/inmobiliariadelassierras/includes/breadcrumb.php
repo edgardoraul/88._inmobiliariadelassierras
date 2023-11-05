@@ -1,8 +1,9 @@
 <?php
 //* NO incluyas la etiqueta de apertura
 
-add_filter('the_category', 'add_class_to_category', 10, 3 );
-function add_class_to_category( $thelist, $separator, $parents) {
+add_filter('the_category', 'category_add_class', 10, 3 );
+
+function category_add_class( $thelist, $separator, $parents) {
 	$class_to_add = "link-success link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover";
 	return str_replace('<a href="', '<a class="' . $class_to_add . '" href="', $thelist);
 }

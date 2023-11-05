@@ -8,6 +8,7 @@ $direccion_web			=	of_get_option( 'direccion_web', '');
 $email_web				=	of_get_option( 'email_web', '');
 $instagram_contact		=	of_get_option( 'instagram_contact', '');
 $linkedin_contact		=	of_get_option( 'linkedin_contact', '');
+$youtube_contact		=	of_get_option( 'youtube_contact', '');
 $matricula_contact		=	of_get_option( 'matricula_contact', '');
 $horario_web			=	of_get_option( 'horario_web', '');
 $cp_web					=	of_get_option( 'cp_web', '');
@@ -20,32 +21,40 @@ $provincia_web			=	of_get_option( 'provincia_web', '');
 <!-- Parte del contenido del footer -->
 <footer class="bg-white opacity-75 py-5">
 	<div class="container-xxl">
-		<div class="row text-wrap">
+		<div class="row">
 			<!-- Redes sociales -->
 			<div class="col-md-4 p-3">
 				<h3 class="h3 text-uppercase mb-4"><?php _e('Contacto', 'inmobiliariadelasierras');?></h3>
 				<p><i class="bi bi-phone-fill"></i> <a class="link-success text-decoration-none text-wrap" href="//wa.me/<?php echo $celular_contact;?>" title="WhatsApp"><?php echo "+" . $celular_contact;?></a></p>
 				<p><i class="bi bi-telephone-fill"></i> <a class="link-success text-decoration-none" href="tel:<?php echo $telefono_fijo;?>"><?php echo $telefono_fijo;?></a></p>
-				<p><i class="bi bi-envelope-fill"></i> <a class="link-success text-decoration-none text-wrap" href="mailto:<?php echo $email_web;?>" title="<?php echo $email_web;?>"><?php echo $email_web;?></a></p>
+				<p><i class="bi bi-envelope-fill"></i> <a class="link-warning text-decoration-none text-wrap" href="mailto:<?php echo $email_web;?>" title="<?php echo $email_web;?>"><?php echo $email_web;?></a></p>
 				<p><i class="bi bi-instagram"></i> <a class="link-success text-decoration-none text-wrap" href="//<?php echo $instagram_contact;?>" title="Instagram" target="_blank"><?php echo $instagram_contact;?></a></p>
-				<p><i class="bi bi-linkedin"></i> <a class="link-success text-decoration-none text-wrap" href="//<?php echo $linkedin_contact;?>" title="LinkedIn" target="_blank"><?php echo $linkedin_contact;?></a></p>
+				<p><i class="bi bi-linkedin"></i> <a class="link-primary text-primary-emphasis text-decoration-none text-wrap" href="//<?php echo $linkedin_contact;?>" title="LinkedIn" target="_blank"><?php echo $linkedin_contact;?></a></p>
+				<p><i class="bi bi-youtube fs-1"></i> <a class="link-danger text-decoration-none text-wrap" href="//<?php echo $youtube_contact;?>" title="Youtube" target="_blank"><?php echo $youtube_contact;?></a></p>
 			</div>
 
 			<!-- Dirección -->
 			<div class="col-md-4 p-3">
-				<h3 class="h3 text-uppercase mb-4"><?php _e('Ubicación', 'inmobiliariadelasierras');?></h3>
-				<p><?php _e('Calle y número: ', 'inmobiliariadelassierras'); echo $direccion_web;?></p>
-				<p><?php _e('Ciudad: ', 'inmobiliariadelassierras'); echo $ciudad_web;?></p>
-				<p><?php _e('Código Postal: ', 'inmobiliariadelassierras'); echo $cp_web;?></p>
-				<p><?php _e('Provincia: ', 'inmobiliariadelassierras'); echo $provincia_web;?></p>
+				<address>
+					<h3 class="h3 text-uppercase mb-4"><?php _e('Ubicación', 'inmobiliariadelasierras');?></h3>
+					<p><?php _e('Calle y número: ', 'inmobiliariadelassierras'); echo $direccion_web;?></p>
+					<p><?php _e('Ciudad: ', 'inmobiliariadelassierras'); echo $ciudad_web;?></p>
+					<p><?php _e('Código Postal: ', 'inmobiliariadelassierras'); echo $cp_web;?></p>
+					<p><?php _e('Provincia: ', 'inmobiliariadelassierras'); echo $provincia_web;?></p>
+				</address>
 			</div>
 
 			<!-- Copyright -->
 			<div class="col-md-4 p-3">
 				<h3 class="h3 text-uppercase mb-4"><?php _e('Nosotros', 'inmobiliariadelasierras');?></h3>
-				<p>© Copyright <?php the_date("Y"); echo " - " ;?> <a class="link-success text-decoration-none" href="<?php bloginfo("url");?>" target="_self" title="<?php bloginfo("name");?>"><?php bloginfo("name");?></a></p>
+				<p>© <?php _e('Derechos de copia', 'inmobiliariadelasierras');?> <?php the_date("Y"); echo " - " ;?> <a class="link-success text-decoration-none" href="<?php bloginfo("url");?>" target="_self" title="<?php bloginfo("name");?>"><?php bloginfo("name");?></a></p>
 				<p><?php _e('Matrícula Profesional: ', 'inmobiliariadelassierras'); echo $matricula_contact;?></p>
 				<p><?php _e('Horario de atención: ', 'inmobiliariadelassierras'); echo $horario_web;?></p>
+				<p>
+					<?php _e('Desarrollado por', 'inmobiliariadelassierras');?> <a href="//webmoderna.com.ar" target="_blank" class="link-danger link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">
+						www.webmoderna.com.ar
+					</a>
+				</p>
 			</div>
 		</div>
 

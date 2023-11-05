@@ -1,4 +1,7 @@
-<?php get_header();?>
+<?php
+/* SOLO SIRVE PARA MOSTRAR LOS POST QUE CORRESPONDEN A NOVEDADES, NADA MÁS. */
+
+get_header();?>
 
 <main><!-- main -->
 
@@ -11,7 +14,9 @@
 				<div class="row">
 				<?php if(have_posts()) {
 					while(have_posts()) {
-						the_post();?>
+						$taxonomy = get_the_terms(get_the_ID(), 'novedades');
+						the_post($taxonomy);
+				?>
 					<section class="container">
 						<div class="row flex-sm-row-reverse">
 							<div class="col-12 col-sm-6 my-3">
@@ -40,35 +45,11 @@
 								</figure>
 							</div>
 						</div>
-
-						<div class="row"><!-- Formulario -->
-							<div class="col-12 col-9-lg">
-								<div class="alert alert-secondary bg-secondary" role="alert">
-									<div class="accordion accordion-flush" id="accordionFlushExample">
-										<div class="accordion-item">
-											<h2 class="accordion-header">
-												<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-												<?php _e('Consúltenos por esta Propiedad', 'inmobiliariadelassierras');?>
-												</button>
-											</h2>
-											<div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-												<div class="accordion-body">
-													<?php echo do_shortcode('[contact-form-7 id="aa2ed63" title="Consúltenos por esta Propiedad"]');?>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-							</div>
-						</div><!-- /Formulario -->
-
 						<div class="row"><!-- contenido -->
 							<div class="col-12">
 								<?php the_content();?>
 							</div>
 						</div><!-- /contenido -->
-
 
 						<!-- Navegacion -->
 						<?php get_template_part('template-part/content', 'navigation');?>

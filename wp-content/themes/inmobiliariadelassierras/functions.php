@@ -29,6 +29,9 @@ require_once "includes/paginacion.php";
 // Soporte al slider
 require_once "includes/slider.php";
 
+// Taxonomía
+require_once "includes/taxonomia.php";
+
 // Limitar el exerpt
 function limitar_exerpt() {
 	return 20;
