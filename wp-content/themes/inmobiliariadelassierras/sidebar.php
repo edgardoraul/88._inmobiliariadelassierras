@@ -24,7 +24,7 @@ $enlace_boton_3			=	of_get_option('enlace_boton_3', '');
 						<h5 class="card-header text-center">
 							<?php echo $mensaje_1__titulo;?>
 						</h5>
-						<a href="<?php echo $enlace_boton_1;?>" target="_blank" title="<?php echo $mensaje_1__titulo;?>">
+						<a href="<?php echo get_permalink($enlace_boton_1, false);?>" target="_blank" title="<?php echo $mensaje_1__titulo;?>">
 							<img src="<?php echo $mensaje_1__imagen;?>" class="card-img-bottom w-100" alt="<?php echo $mensaje_1__titulo;?>" />
 						</a>
 					</div>
@@ -35,7 +35,7 @@ $enlace_boton_3			=	of_get_option('enlace_boton_3', '');
 						<h5 class="card-header text-center">
 							<?php echo $mensaje_2__titulo;?>
 						</h5>
-						<a href="<?php echo $enlace_boton_2;?>" target="_blank" title="<?php echo $mensaje_2__titulo;?>">
+						<a href="<?php echo get_permalink($enlace_boton_2, false);?>" target="_blank" title="<?php echo $mensaje_2__titulo;?>">
 							<img src="<?php echo $mensaje_2__imagen;?>" class="card-img-bottom w-100" alt="<?php echo $mensaje_2__titulo;?>" />
 						</a>
 					</div>

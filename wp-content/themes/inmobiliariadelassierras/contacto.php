@@ -20,7 +20,7 @@ get_header();?>
 					<header>
 						<h2 class="h2"><?php the_title();?></h2>
 					</header>
-					<section>
+					<section class="text-uppercase">
 						<?php the_content();?>
 					</section>
 				<?php }

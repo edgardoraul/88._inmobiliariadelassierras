@@ -30,17 +30,7 @@ function optionsframework_option_name()
 
 function optionsframework_options()
 {
-	// Almacenamos las páginas de wordpress
-	$options_pages = array();
-	$options_pages_obj = get_pages('sort_column=post_parent,menu_order');
-	$options_pages[''] = __('Seleccione una página de destino', 'options_framework_theme');
-	foreach ($options_pages_obj as $page)
-	{
-		$options_pages[$page->ID] = $page->post_title;
-	}
-
-
-	//Pestaña Configuración general
+	// Pestaña Configuración general
 	$options[]	=	array(
 	'name'	=>	__('Configuración General', 'options_framework_theme'),
 	'type'	=>	'heading');
@@ -293,6 +283,15 @@ function optionsframework_options()
 );
 
 // =================================== MENSAJE 1
+// Almacenamos las páginas de wordpress
+$options_pages = array();
+// $options_pages_obj = get_pages('sort_column=post_parent,menu_order');
+$options_pages_obj = get_pages('sort_column=post_parent,menu_order');
+$options_pages[''] = __('Seleccione una página de destino', 'options_framework_theme');
+foreach ($options_pages_obj as $page)
+{
+	$options_pages[$page->ID] = $page->post_title;
+}
 
 // Imagen del mensaje 1
 $options[] = array(
@@ -505,5 +504,6 @@ $options[] = array(
 		'options' => $options_pages
 		);
  */
+
 	return $options;
 }
