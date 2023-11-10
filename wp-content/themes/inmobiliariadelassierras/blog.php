@@ -19,7 +19,7 @@ get_header();?>
 							<h2 class="h2"><?php _e('Novedades', 'inmobiliariadelassierras');?></h2>
 						</div>
 					</div>
-				<?php $blog = new WP_Query( array( 'category_name' => 'blog' ) );
+				<?php $blog = new WP_Query( array( 'category_name' => 'blog', 'post_type' => 'noveades' ) );
 				if( $blog->have_posts() ) {
 					while($blog->have_posts()) {
 						$blog->the_post();?>

@@ -30,7 +30,7 @@ require_once "includes/paginacion.php";
 require_once "includes/slider.php";
 
 // Taxonomía
-require_once "includes/taxonomia.php";
+require_once "includes/novedades.php";
 
 // Limitar el exerpt
 function limitar_exerpt() {
@@ -106,8 +106,11 @@ add_action('wp_enqueue_scripts', 'assets');
 
 
 // Probando los metaboxes
-require_once 'includes/meta-box/meta-box.php';
-require_once 'includes/demo.php';
+require_once "includes/meta-box/meta-box.php";
+require_once "includes/demo.php";
+
+// Metaboxes viejos
+// require_once "includes/additional_functions.php";
 
 // Cargar Panel de Opciones
 if ( !function_exists( 'optionsframework_init' ) ) {

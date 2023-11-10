@@ -29,6 +29,7 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 	*/
 	// Better has an underscore as last sign
 	$prefix = 'inmobiliariadelassierras_';
+	// $prefix = 'et_elegantestate_options';
 	// 1st meta box
 	$meta_boxes[] = array(
 		// Meta box id, UNIQUE per meta box. Optional since 4.1.5
@@ -47,6 +48,57 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 		// List of meta fields
 		'fields'     => array(
 
+			// Tipo de Propiedad/Producto
+			array(
+				// Field name - Will be used as label
+				'name'  => __( 'Tipo de propiedad o producto.', 'inmobiliariadelassierras' ),
+				// Field ID, i.e. the meta key
+				'id'    => "propiedad_tipo",
+				// Field description (optional)
+				'desc'  => __( 'Casa, departamento, terreno, local, etc...', 'inmobiliariadelassierras' ),
+				'type'  => 'text',
+				// Default value (optional)
+				'std'   => __( '', 'inmobiliariadelassierras' ),
+				// CLONES: Add to make the field cloneable (i.e. have multiple value)
+				'clone' => false,
+			),
+
+
+			// Ambientes
+			array(
+				'name' => __( 'Cantidad de ambientes', 'inmobiliariadelassierras' ),
+				'id'   => "ambiente",
+				'type' => 'number',
+				'min'  => 0,
+				'step' => 1,
+			),
+
+			// Baños
+			array(
+				'name' => __( 'Baños', 'inmobiliariadelassierras' ),
+				'id'   => "toilette",
+				'type' => 'number',
+				'min'  => 0,
+				'step' => 1,
+			),
+
+			// Cocheras
+			array(
+				'name' => __( 'Cocheras', 'inmobiliariadelassierras' ),
+				'id'   => "cochera",
+				'type' => 'number',
+				'min'  => 0,
+				'step' => 1,
+			),
+
+			// Superficie
+			array(
+				'name' => __( 'Superficie en metros cuadrados', 'inmobiliariadelassierras' ),
+				'id'   => "superficie",
+				'type' => 'number',
+				'min'  => 0,
+				'step' => 1,
+			),
 			/*
 			// TEXT: Código de la propiedad
 			array(
@@ -74,7 +126,27 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 			),
 			*/
 
-			// TEXT
+
+			// Precio u$s
+			array(
+				'name' => __( 'Precio en u$s', 'inmobiliariadelassierras' ),
+				'desc' => __('Usar sólo uno de los dos, no ambos.','inmobiliariadelassierras'),
+				'id'   => "precio_us",
+				'type' => 'number',
+				'min'  => 0,
+				'step' => 1,
+			),
+
+			// Precio $
+			array(
+				'name' => __( 'Precio en $', 'inmobiliariadelassierras' ),
+				'id'   => "precio_ar",
+				'type' => 'number',
+				'min'  => 0,
+				'step' => 1,
+			),
+
+			// Meta Keywords
 			array(
 				// Field name - Will be used as label
 				'name'  => __( 'Meta: Palabras claves.', 'inmobiliariadelassierras' ),
@@ -87,6 +159,19 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 				'std'   => __( 'Palabrota1, palabrota2, ...', 'inmobiliariadelassierras' ),
 				// CLONES: Add to make the field cloneable (i.e. have multiple value)
 				'clone' => false,
+			),
+
+			// Descripción, resumen
+			array(
+				// Field name - Will be used as label
+				'name'  => __( 'Descripción o resumen.', 'inmobiliariadelassierras' ),
+				// Field ID, i.e. the meta key
+				'id'    => "inmobiliariadelassierras_descripcion",
+				// Field description (optional)
+				'desc'  => __( 'Resumen. Son útiles para posicionamiento web. Máximo 60 palabras.', 'inmobiliariadelassierras' ),
+				'type' => 'textarea',
+				'cols' => 10,
+				'rows' => 3,
 			),
 			// RADIO BUTTONS
 			/*array(
@@ -152,8 +237,8 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 				'desc' => __( 'Insertar el código embebido de proviene de Google Maps.', 'inmobiliariadelassierras' ),
 				'id'   => "inmobiliariadelassierras_googlemaps",
 				'type' => 'textarea',
-				'cols' => 20,
-				'rows' => 10,
+				'cols' => 10,
+				'rows' => 3,
 			),
 /*
 		),
@@ -194,14 +279,6 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 				),
 			),
 
-			// Precio
-			array(
-				'name' => __( 'Precio en $', 'inmobiliariadelassierras' ),
-				'id'   => "inmobiliariadelassierras_precio",
-				'type' => 'number',
-				'min'  => 0,
-				'step' => 1,
-			),
 			// Precio u$s
 			array(
 				'name' => __( 'Precio en U$s', 'inmobiliariadelassierras' ),
@@ -363,6 +440,7 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 				// 'std'         => 'value2', // Default value, optional
 				'placeholder' => __( 'Select an Item', 'inmobiliariadelassierras' ),
 			),
+
 			// TAXONOMY
 			array(
 				'name'    => __( 'Taxonomy', 'inmobiliariadelassierras' ),
@@ -377,6 +455,7 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 					'args'     => array()
 				),
 			),
+
 			// POST
 			array(
 				'name'        => __( 'Posts (Pages)', 'inmobiliariadelassierras' ),
@@ -430,29 +509,29 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 				'id'   => 'inmobiliariadelassierras_1', // Not used, but needed
 			),
 
-			/*
+			*/
 			// HEADING
 			array(
 				'type' => 'heading',
 				'name' => __( 'Imágenes y Fotos', 'inmobiliariadelassierras' ),
-				'id'   => 'fake_id', // Not used but needed for plugin
+				'id'   => 'galeria_descripcion', // Not used but needed for plugin
 				'desc' => __( 'Las fotos deben ser mínimo de 2000px de ancho. Pesan aproximadamente 1 a 2 Megabytes', 'inmobiliariadelassierras' ),
 			),
 
 			// PLUPLOAD IMAGE UPLOAD (WP 3.3+)
 			array(
 				'name'             => __( 'Subir varias fotos desde aquí.', 'inmobiliariadelassierras' ),
-				'id'               => 'inmobiliariadelassierras_imagenes',
+				'id'               => 'galeria',
 				'type'             => 'image_advanced',
 				'max_file_uploads' => false,
 			),
-
 			// DIVIDER
 			array(
 				'type' => 'divider',
-				'id'   => 'inmobiliariadelassierras_2', // Not used, but needed
+				'id'   => 'inmobiliariadelassierras_separador', // Not used, but needed
 			),
 
+			/*
 
 			// Ubicación en el Mapa
 			array(
@@ -493,20 +572,22 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 				'name' => __( 'Image Upload', 'inmobiliariadelassierras' ),
 				'id'   => "inmobiliariadelassierras_image",
 				'type' => 'image',
-			),
-			// THICKBOX IMAGE UPLOAD (WP 3.3+)
+				// THICKBOX IMAGE UPLOAD (WP 3.3+)
+				array(
+					'name' => __( 'Thickbox Image Upload', 'inmobiliariadelassierras' ),
+					'id'   => "inmobiliariadelassierras_thickbox",
+					'type' => 'thickbox_image',
+				),
+			),*/
+
+			// IMAGE ADVANCED (WP 3.5+) - Video
 			array(
-				'name' => __( 'Thickbox Image Upload', 'inmobiliariadelassierras' ),
-				'id'   => "inmobiliariadelassierras_thickbox",
-				'type' => 'thickbox_image',
-			),
-			// IMAGE ADVANCED (WP 3.5+)
-			array(
-				'name'             => __( 'Image Advanced Upload', 'inmobiliariadelassierras' ),
-				'id'               => "inmobiliariadelassierras_imgadv",
+				'name'             => __( 'Subir Video', 'inmobiliariadelassierras' ),
+				'id'               => "video",
 				'type'             => 'image_advanced',
-				'max_file_uploads' => 4,
+				'max_file_uploads' => 1,
 			),
+			/*
 			// PLUPLOAD IMAGE UPLOAD (WP 3.3+)
 			array(
 				'name'             => __( 'Subir varias fotos desde aquí.', 'inmobiliariadelassierras' ),
@@ -514,7 +595,6 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 				'type'             => 'plupload_image',
 				'max_file_uploads' => false,
 			),
-
 			// BUTTON
 			array(
 				'id'   => "inmobiliariadelassierras_button",

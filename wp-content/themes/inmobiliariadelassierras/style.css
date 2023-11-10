@@ -15,16 +15,3 @@ Text Domain: inmobiliariadelassierras
 	--bs-success-rgb: 118, 177, 67 !important;
 	--bs-green: #76B143 !important;
 }
-.figure {
-	position: relative;
-}
-.figure::before {
-	background: url("img/single-mainimage-overlay.png") top left no-repeat;
-	background-size: cover;
-	content: "";
-	height: 100%;
-	left: 0;
-	position: absolute;
-	top: 0;
-	width: 100%;
-}

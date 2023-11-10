@@ -10,19 +10,11 @@
 							<h2 class="h2"><?php _('Novedades', 'inmobiliariadelassierras');?></h2>
 						</div>
 					</div>
-				<?php $argumentos = array(
-					'post_type'		=> 'post',
-					'showpost'		=> 10,
-					'tax_query'		=> array(
-						'taxonomy'	=> 'category',
-						'field'		=> 'slug',
-						'terms'		=>	'blog'
-					)
-				);
-				$novedades = new WP_Query($argumentos);
-				if($novedades->have_posts()) {
-					while($novedades->have_posts()) {
-						$novedades->the_post();?>
+				<?php $argumentos = array( 'post_type'	=> 'noveades');
+				$noveades = new WP_Query($argumentos);
+				if($noveades->have_posts()) {
+					while($noveades->have_posts()) {
+						$noveades->the_post();?>
 
 					<!-- Listado de las búsquedas -->
 					<div class="row mb-5">

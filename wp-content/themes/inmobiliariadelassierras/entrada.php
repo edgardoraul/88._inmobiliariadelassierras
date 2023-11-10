@@ -1,7 +1,4 @@
-<?php
-/* SOLO SIRVE PARA MOSTRAR LOS POST QUE CORRESPONDEN A NOVEDADES, NADA MÁS. */
-
-get_header();?>
+<?php get_header();?>
 
 <main><!-- main -->
 
@@ -14,9 +11,7 @@ get_header();?>
 				<div class="row">
 				<?php if(have_posts()) {
 					while(have_posts()) {
-						$taxonomy = get_the_terms(get_the_ID(), 'novedades');
-						the_post($taxonomy);
-				?>
+						the_post();?>
 					<section class="container">
 						<div class="row flex-sm-row-reverse">
 							<div class="col-12 col-sm-6 my-3">
@@ -45,11 +40,15 @@ get_header();?>
 								</figure>
 							</div>
 						</div>
+
+
+
 						<div class="row"><!-- contenido -->
 							<div class="col-12">
 								<?php the_content();?>
 							</div>
 						</div><!-- /contenido -->
+
 
 						<!-- Navegacion -->
 						<?php get_template_part('template-part/content', 'navigation');?>
