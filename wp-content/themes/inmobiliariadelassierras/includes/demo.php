@@ -129,22 +129,29 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 
 			// Precio u$s
 			array(
-				'name' => __( 'Precio en u$s', 'inmobiliariadelassierras' ),
-				'desc' => __('Usar sólo uno de los dos, no ambos.','inmobiliariadelassierras'),
-				'id'   => "precio_us",
-				'type' => 'number',
-				'min'  => 0,
-				'step' => 1,
+				'name' => __( 'Precio', 'inmobiliariadelassierras' ),
+				'desc' => __('En $, u$s, con separador de miles, comas o la leyenda "Vendido" o lo que desees.','inmobiliariadelassierras'),
+				'id'   => "precio",
+				'type' => 'text',
+				// 'min'  => 0,
+				// 'step' => 1,
+				'clone'	=> false
 			),
 
-			// Precio $
+			// DIVIDER
+			array(
+				'type' => 'divider',
+				'id'   => 'inmobiliariadelassierras_3', // Not used, but needed
+			),
+
+			/* // Precio $
 			array(
 				'name' => __( 'Precio en $', 'inmobiliariadelassierras' ),
 				'id'   => "precio_ar",
 				'type' => 'number',
 				'min'  => 0,
 				'step' => 1,
-			),
+			), */
 
 			// Meta Keywords
 			array(

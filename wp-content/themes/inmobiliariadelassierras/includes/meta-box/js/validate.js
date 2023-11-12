@@ -32,20 +32,22 @@ jQuery( function ( $ )
 
 	// Execute
 	$form.validate( rules );
-});
 
 
-$(document).ready(function()
-{
 	// Limitar la entrada de caracteres a 160 en los campos de Meta Keywords y Meta Description del dashboard de las entradas.
 	var caracteres = 160;
-	$( "#villabrochero_meta_descripcion, #villabrochero_meta_keywords" ).keyup( function()
+	$( "#inmobiliariadelassierras_descripcion, #inmobiliariadelassierras_meta_keywords" ).keyup( function()
 	{
 		if( $( this ).val().length > caracteres )
 		{
 			$( this ).val( $( this ).val().substr( 0, caracteres ) );
 		}
 	});
+});
+
+/*
+$(document).ready(function()
+{
 
 	// Agregar clases a unos checkboxes
 	if ( $( "#villabrochero_reservado" ).is(":checked") )
@@ -83,3 +85,4 @@ $(document).ready(function()
 		}
 	});
 });
+*/
