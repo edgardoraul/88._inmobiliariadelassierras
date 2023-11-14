@@ -38,6 +38,18 @@ function limitar_exerpt() {
 }
 add_filter('excerpt_length', 'limitar_exerpt');
 
+// Sin imagen en modo función
+function sin_imagen() {
+	echo '<img src="' . get_stylesheet_directory_uri() . '/img/no-img.png" alt="img" class="figure-img img-thumbnail rounded w-100" />';
+}
+function sin_imagen2() {
+	echo '<img src="' . get_stylesheet_directory_uri() . '/img/img.png" alt="img2" class="figure-img img-thumbnail rounded" />';
+}
+
+function texto_capilla() {
+	_e('Texto capilla de ejemplo.', 'inmobiliariadelassierras');
+}
+
 // Soporte a títulos
 function soporte_plantilla()
 {

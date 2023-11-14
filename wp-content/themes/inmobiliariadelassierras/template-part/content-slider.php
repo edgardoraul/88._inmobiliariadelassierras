@@ -63,8 +63,8 @@ $contador = 0;
 				}
 			} else {
 				// Nada, carajo!
-				echo '<img src="' . get_stylesheet_directory_uri() . '/img/img.png" alt="img1" class="figure-img img-thumbnail rounded" />';
-				echo '<img src="' . get_stylesheet_directory_uri() . '/img/img.png" alt="img2" class="figure-img img-thumbnail rounded" />';
+				sin_imagen2();
+				sin_imagen2();
 			}
 			?>
 				<div class="carousel-caption d-none d-md-block">

@@ -1,10 +1,14 @@
 <?php
-$galeria = rwmb_meta('galeria', '');
-$video = rwmb_meta('video', 'size=custom-thumb-400-300');
+$galeria = rwmb_meta('galeria', 'size=custom-thumb-400-300');
+$galeria_cant = count($galeria);
+echo $galeria_cant;
+$contador = 0;
+
+$video = rwmb_meta('video', '');
 
 $precio = rwmb_meta('precio', '');
 // $precio_ar = rwmb_meta('precio_ar', '');
-echo var_dump($galeria);
+// echo var_dump($galeria);
 ?>
 <div class="col-12 col-sm-6 my-3">
 	<div class="">
@@ -20,22 +24,18 @@ echo var_dump($galeria);
 					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
 					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
 				</div>
+				
 				<div class="carousel-inner">
-					<div class="carousel-item active">
-					<?php
-					foreach ( $galeria as $image )
-					{
-						echo "<img class='d-block w-100' src='{$image['url']}' alt='{$image['alt']}' />";
-					}
-					?>
-					<img src="..." class="d-block w-100" alt="...">
-					</div>
-					<div class="carousel-item">
-					<img src="..." class="d-block w-100" alt="...">
-					</div>
-					<div class="carousel-item">
-					<img src="..." class="d-block w-100" alt="...">
-					</div>
+					<?php foreach ( $galeria as $image ) {
+						if($contador == 0) {
+							echo "<div class='carousel-item active figure-img img-thumbnail rounded'><img class='d-block w-100' src='{$image['url']}' alt='" . get_the_title() . "' /></div>";
+						} else {
+							echo "<div class='carousel-item figure-img img-thumbnail rounded'><img class='d-block w-100' src='{$image['url']}' alt='" . get_the_title() . "' /></div>";
+						}
+						$contador = $contador + 1;
+					}?>
+
+
 				</div>
 				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>

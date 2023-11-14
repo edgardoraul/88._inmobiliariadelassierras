@@ -24,7 +24,7 @@
 									the_post_thumbnail('custom-thumb-1200-500', array('class' => 'figure-img img-thumbnail rounded'));
 								}
 							} else {
-								echo '<img src="' . get_stylesheet_directory_uri() . '/img/img.png" alt="img" class="figure-img img-thumbnail rounded" />';
+								sin_imagen();
 							};?>
 						</figure>
 						<?php the_content();?>

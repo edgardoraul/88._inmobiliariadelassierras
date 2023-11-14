@@ -20,7 +20,7 @@
 									<?php if( has_post_thumbnail() ) {
 										the_post_thumbnail('custom-thumb-600-400', array('class' => 'img-thumbnail w-100'));
 									} else {
-										echo '<img src="' . get_stylesheet_directory_uri() . '/img/no-img.png" alt="img" class="figure-img img-thumbnail rounded w-100" />';
+										sin_imagen();
 									};?>
 								</a>
 								<figcaption class="btn btn-secondary disabled bg-gradient opacity-100" style="position: relative; bottom:28px;">
