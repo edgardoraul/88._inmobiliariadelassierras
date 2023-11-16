@@ -8,8 +8,9 @@
 
 			<div class="containter-fluid">
 				<?php migas_de_pan();?>
+
 				<div class="row">
-				<?php if(have_posts()) {
+					<?php if(have_posts()) {
 					while(have_posts()) {
 						the_post();?>
 					<section class="container">
@@ -43,8 +44,8 @@
 						<?php get_template_part('template-part/content', 'navigation');?>
 
 					</section>
-				<?php }
-				}?>
+					<?php }
+					}?>
 				</div><!-- /row -->
 			</div><!-- /container-fluid -->
 		</div><!-- /contenido de la pagina -->

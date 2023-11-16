@@ -27,24 +27,9 @@
 			<!-- logo -->
 			<div class="col-12 col-md-4 col-lg-3">
 				<h1 class="text-center">
-					<a href="<?php bloginfo('url');?>">
-						<?php the_custom_logo();?>
-					</a>
+					<?php the_custom_logo();?>
 				</h1>
 			</div><!-- /logo -->
-
-			<!-- Titular Secundario -->
-			<?php
-			/*  $portfolio_home = of_get_option('portfolio_home', '');
-			if ($portfolio_home) {
-				echo '
-				<div class="col-4 d-none d-lg-block col-lg-6">
-					<h2 class="text-center">
-						' . $portfolio_home . '
-					</h2>
-				</div>';
-			}; */
-			?>
 
 			<!-- Logotipo 2 -->
 			<div class="col-4 d-none d-md-block col-lg-3">

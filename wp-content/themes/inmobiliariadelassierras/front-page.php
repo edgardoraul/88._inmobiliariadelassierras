@@ -37,7 +37,7 @@
 								<?php the_excerpt(10);?>
 							</div>
 							<div class="text-center mt-4">
-								<a class="btn btn-outline-secondary text-uppercase" href="<?php the_permalink()?>">
+								<a class="btn btn-outline-secondary text-uppercase" href="<?php the_permalink();?>">
 									<?php _e('Ver más', 'inmobiliariadelassierras');?>
 								</a>
 							</div>

@@ -241,7 +241,7 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 			// TEXTAREA
 			array(
 				'name' => __( 'Código de Google Maps', 'inmobiliariadelassierras' ),
-				'desc' => __( 'Insertar el código embebido de proviene de Google Maps.', 'inmobiliariadelassierras' ),
+				'desc' => __( 'Insertar el código embebido de proviene de ', 'inmobiliariadelassierras' ) . '<a href="//www.google.com/maps" target="_blank" title="Google Maps">Google Maps</a>',
 				'id'   => "inmobiliariadelassierras_googlemaps",
 				'type' => 'textarea',
 				'cols' => 10,

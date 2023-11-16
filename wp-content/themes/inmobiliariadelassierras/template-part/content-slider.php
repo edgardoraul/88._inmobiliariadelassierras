@@ -71,7 +71,7 @@ $contador = 0;
 					<div class="bg-light p-3 text-dark bg-opacity-75">
 						<h4 class="text-success h4"><?php the_title();?></h4>
 						<!-- <hr class="hr" />
-						<div><?php // nthe_excerpt()?></div> -->
+						<div><?php // the_excerpt()?></div> -->
 					</div>
 				</div>
 			</div>
