@@ -7,6 +7,7 @@ $cats = get_the_category();
 // Se elige la primera
 $propiedad_tipo = $cats[0]->name;
 
+$et_square_footage = of_get_option('et_square_footage', '');
 
 $ambiente = rwmb_meta('ambiente', '');
 $toilette = rwmb_meta('toilette', '');
@@ -32,7 +33,7 @@ $inmobiliariadelassierras_googlemaps = rwmb_meta('inmobiliariadelassierras_googl
 		<li class="list-group-item">
 			<i class="bi bi-house-gear"></i>
 			<?php echo '<span class="badge bg-success">' . __('  Ambientes', 'inmobiliariadelassierras') . '</span>';
-			echo '<strong class="float-end">'. $ambiente . '</strong>';?>
+			echo '<strong class="float-end">'. $ambiente . '</strong>'; echo $et_square_footage;?>
 		</li>
 	<?php }?>
 
