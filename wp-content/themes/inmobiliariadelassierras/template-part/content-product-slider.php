@@ -59,8 +59,8 @@ $precio = rwmb_meta('precio', '');
 
 			<!-- Botón del Precio -->
 			<!-- <div class="position-absolute top-100 start-50 translate-middle"> -->
-			<div>
-				<button class="btn btn-warning btn-lg" id="modal-product">
+			<div class="text-center">
+				<button class="btn btn-dark btn-lg" disabled id="modal-product">
 					<?php if($precio) {
 						echo '<span class="text-uppercase">' . $precio . '</span>';
 					} else {
