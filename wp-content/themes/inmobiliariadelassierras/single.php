@@ -24,8 +24,11 @@
 								<?php get_template_part('template-part/content', 'product-type');?>
 							</div>
 
-							<!-- Slider/Modal/Galería -->
+							<!-- Slider/Galería -->
 							<?php get_template_part('template-part/content', 'product-slider');?>
+
+							<!-- Slider/Modal/ -->
+							<?php get_template_part('template-part/content', 'product-modal');?>
 						</div>
 
 

@@ -12,9 +12,7 @@ $precio = rwmb_meta('precio', '');
 	<div class="container">
 		<div class="figure position-relative mb-5">
 			<!-- El slider de las fotos -->
-			<?php if( $galeria ) {
-				// the_post_thumbnail('custom-thumb-600-x', array('class' => 'figure-img img-thumbnail rounded'));
-				?>
+			<?php if( $galeria ) { ?>
 
 			<div id="carouselExampleIndicators" class="carousel slide">
 				<div class="carousel-indicators">
@@ -33,10 +31,13 @@ $precio = rwmb_meta('precio', '');
 
 				<div class="carousel-inner">
 					<?php foreach ( $galeria as $image ) {
+						$img_srcset = wp_get_attachment_image_srcset($image['ID'], 'full');
+						$img_sizes = wp_get_attachment_image_sizes($image['ID'], 'full');
+
 						if( $contador == 0 ) {
-							echo "<div class='carousel-item active figure-img img-thumbnail rounded'><img class='d-block w-100' src='{$image['url']}' alt='" . get_the_title() . "' /></div>";
+							echo "<div class='carousel-item active figure-img img-thumbnail rounded'><a class='link_modal_img_full' href='#modal_img_full'><img class='d-block w-100' src='{$image['url']}' srcset='{$img_srcset}' sizes='{$img_sizes}' alt='" . get_the_title() . "' /></a></div>";
 						} else {
-							echo "<div class='carousel-item figure-img img-thumbnail rounded'><img class='d-block w-100' src='{$image['url']}' alt='" . get_the_title() . "' /></div>";
+							echo "<div class='carousel-item figure-img img-thumbnail rounded'><a class='link_modal_img_full' href='#modal_img_full'><img class='d-block w-100' src='{$image['url']}' srcset='{$img_srcset}' sizes='{$img_sizes}' alt='" . get_the_title() . "' /></a></div>";
 						}
 						echo $contador = $contador + 1;
 					}?>
