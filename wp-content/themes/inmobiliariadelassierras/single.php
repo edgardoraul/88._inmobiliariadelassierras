@@ -2,6 +2,9 @@
 
 <main><!-- main -->
 
+<!-- Slider/Modal/ -->
+<?php get_template_part('template-part/content', 'product-modal');?>
+
 <div class="container-xxl"><!-- sección del contenido y sidebar -->
 	<div class="row bg-white">
 		<div class="col-12 col-lg-9 mb-5"><!-- contenido de la pagina -->
@@ -27,8 +30,7 @@
 							<!-- Slider/Galería -->
 							<?php get_template_part('template-part/content', 'product-slider');?>
 
-							<!-- Slider/Modal/ -->
-							<?php get_template_part('template-part/content', 'product-modal');?>
+
 						</div>
 
 

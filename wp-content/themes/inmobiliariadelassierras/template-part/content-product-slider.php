@@ -1,5 +1,9 @@
 <?php
-$galeria = rwmb_meta('galeria', 'size=custom-thumb-900-600');
+if( wp_is_mobile() ) {
+	$galeria = rwmb_meta('galeria', 'size=custom-thumb-1200-x');
+} else {
+	$galeria = rwmb_meta('galeria', 'size=custom-thumb-900-600');
+}
 $contador = 0;
 $contador2 = 0;
 
@@ -35,9 +39,9 @@ $precio = rwmb_meta('precio', '');
 						$img_sizes = wp_get_attachment_image_sizes($image['ID'], 'full');
 
 						if( $contador == 0 ) {
-							echo "<div class='carousel-item active figure-img img-thumbnail rounded'><a class='link_modal_img_full' href='#modal_img_full'><img class='d-block w-100' src='{$image['url']}' srcset='{$img_srcset}' sizes='{$img_sizes}' alt='" . get_the_title() . "' /></a></div>";
+							echo "<div class='carousel-item active figure-img img-thumbnail rounded'><a data-bs-toggle='modal' data-bs-target='#modal_img_full' href=''><img class='d-block w-100' src='{$image['url']}' srcset='{$img_srcset}' sizes='{$img_sizes}' alt='" . get_the_title() . "' /></a></div>";
 						} else {
-							echo "<div class='carousel-item figure-img img-thumbnail rounded'><a class='link_modal_img_full' href='#modal_img_full'><img class='d-block w-100' src='{$image['url']}' srcset='{$img_srcset}' sizes='{$img_sizes}' alt='" . get_the_title() . "' /></a></div>";
+							echo "<div class='carousel-item figure-img img-thumbnail rounded'><a data-bs-toggle='modal' data-bs-target='#modal_img_full' href=''><img class='d-block w-100' src='{$image['url']}' srcset='{$img_srcset}' sizes='{$img_sizes}' alt='" . get_the_title() . "' /></a></div>";
 						}
 						echo $contador = $contador + 1;
 					}?>
