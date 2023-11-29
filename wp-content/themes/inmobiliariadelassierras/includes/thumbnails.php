@@ -210,7 +210,7 @@ function simone_reset_thumb_data_transient( $post_id )
 $post_id = ""; // Lo agregué yo porque me daba un error. Hay que probar....
 
 // Reemplazando las funciones básicas del post_thumbnail para que funcione con <picture>. Para eso se crea una función
-function simone_the_responsive_thumbnail( $post_id )
+function simone_the_responsive_thumbnail( $post_id, $custom_classs )
 {
 	// Chequea si hay una imagen transient. Esto es como para aprovechar la caché y no andar haciendo como 20 consultas al servidor al vicio.
 	if ( false === ( $thumb_data = get_transient( 'featured_image_' . $post_id ) ) )
@@ -220,7 +220,7 @@ function simone_the_responsive_thumbnail( $post_id )
 	}
 
 	// Mostrando un picture con los tamaños de imágenes
-	echo '<picture>';
+	echo '<picture class="' . $custom_classs . '">';
 
 	// Fallback for IE9
 	echo '<!--[if IE 9]><video style="display: none;"><![endif]-->';

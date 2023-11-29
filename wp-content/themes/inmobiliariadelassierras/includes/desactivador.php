@@ -22,11 +22,18 @@ function desactiva_emojis() {
 
 // Optimización Contact Form 7
 function contactform_dequeue_scripts() {
+
 	$load_scripts = false;
-	if (is_singular()) {
+	if (is_single() || is_page()) {
 		$post = get_post();
 
-		if (has_shortcode($post->post_content, 'contact-form-7')) {
+		/*
+			Se utiliza la varibale global "$existe_formulario" para colocarla dónde a uno más le
+			plazca sin necesidad de depender de las funcionalidades de WordPress ni del plugin.
+			Es necesario introducir la variable con valor "true" justo antes del shortcode del
+			formulario.
+		*/
+		if (has_shortcode($post->post_content, 'contact-form-7') ) {
 			$load_scripts = true;
 		}
 	}

@@ -30,7 +30,7 @@ require_once "includes/paginacion.php";
 require_once "includes/slider.php";
 
 // Taxonomía
-require_once "includes/novedades.php";
+// require_once "includes/novedades.php";
 
 // Limitar el exerpt
 function limitar_exerpt() {

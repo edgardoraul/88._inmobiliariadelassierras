@@ -10,7 +10,13 @@
 					</h2>
 					<div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
 						<div class="accordion-body">
-							<?php echo do_shortcode('[contact-form-7 id="aa2ed63" title="Consúltenos por esta Propiedad"]');?>
+							<?php
+							/*
+								Se coloca esta variable "$existe_formulario" en "true" para que renderize el formulario.
+								De lo contrario jamás lo hará.
+							*/
+							$existe_formulario = true;
+							echo do_shortcode('[contact-form-7 id="aa2ed63" title="Consúltenos por esta Propiedad"]');?>
 						</div>
 					</div>
 				</div>

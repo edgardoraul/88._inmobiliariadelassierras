@@ -7,8 +7,6 @@ if( wp_is_mobile() ) {
 $contador = 0;
 $contador2 = 0;
 
-$video = rwmb_meta('video', '');
-
 $precio = rwmb_meta('precio', '');
 
 ?>
@@ -40,6 +38,7 @@ $precio = rwmb_meta('precio', '');
 
 						if( $contador == 0 ) {
 							echo "<div class='carousel-item active figure-img img-thumbnail rounded'><a data-bs-toggle='modal' data-bs-target='#modal_img_full' href=''><img class='d-block w-100' src='{$image['url']}' srcset='{$img_srcset}' sizes='{$img_sizes}' alt='" . get_the_title() . "' /></a></div>";
+
 						} else {
 							echo "<div class='carousel-item figure-img img-thumbnail rounded'><a data-bs-toggle='modal' data-bs-target='#modal_img_full' href=''><img class='d-block w-100' src='{$image['url']}' srcset='{$img_srcset}' sizes='{$img_sizes}' alt='" . get_the_title() . "' /></a></div>";
 						}
