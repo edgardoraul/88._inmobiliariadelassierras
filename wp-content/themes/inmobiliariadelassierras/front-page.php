@@ -10,10 +10,21 @@
 				<div class="row">
 					<?php if(have_posts()) {
 						while(have_posts()) {
-							the_post();?>
+							the_post();
+							// Variables necesarias
+							$precio = rwmb_meta('precio', '');
+							$propiedad_tipo = rwmb_meta('propiedad_tipo', '');
+							$ambiente = rwmb_meta('ambiente', '');
+							$toilette = rwmb_meta('toilette', '');
+							$cochera = rwmb_meta('cochera', '');
+							$superficie = rwmb_meta('superficie', '');
+
+
+
+							?>
 
 					<!-- Cada Producto Publicado -->
-					<div class="col-sm-6 col-lg-4 mb-3">
+					<div class="col-sm-6 col-lg-4 mb-2">
 						<div class="card card-body">
 							<figure class="card-img-top text-center mb-0">
 								<a href="<?php the_permalink();?>">
@@ -24,17 +35,18 @@
 									};?>
 								</a>
 								<figcaption class="btn btn-secondary disabled bg-gradient opacity-100" style="position: relative; bottom:28px;">
-									<?php echo get_post_meta($post->ID, 'price', true);?>
+									<?php echo $precio;?>
 								</figcaption>
 							</figure>
-							<h4 class="card-title text-center mt-0">
-								<a class="link-success link-underline link-underline-opacity-0" href="<?php the_permalink();?>">
+							<h4 class="card-title text-center mt-0 h5">
+								<a class="link-success link-underline text-uppercase link-underline-opacity-0" href="<?php the_permalink();?>">
 									<?php the_title();?>
 								</a>
 							</h4>
 							<hr class="border border-secondary border-1 opacity-25">
 							<div class="card-text">
-								<?php the_excerpt(10);?>
+								<?php //the_excerpt(10);?>
+								<?php get_template_part('template-part/content', 'product-type');?>
 							</div>
 							<div class="text-center mt-4">
 								<a class="btn btn-outline-secondary text-uppercase" href="<?php the_permalink();?>">

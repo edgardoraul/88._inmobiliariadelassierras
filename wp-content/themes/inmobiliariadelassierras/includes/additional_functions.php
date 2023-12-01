@@ -156,7 +156,7 @@ function et_elegantestate_options($callback_args) {
 		<input class="form-control" name="et_square_footage" id="et_square_footage" type="text" value="<?php echo esc_attr($et_square_footage); ?>" />
 		<small>(Por ejemplo: 234mts<sup>2</sup>)</small>
 	</p>
-
+<!--
 	<p style="margin-bottom: 22px;">
 		<label class="selectit" for="et_show_googlemaps">
 			<input class="form-control" type="checkbox" name="et_show_googlemaps" id="et_show_googlemaps" value=""<?php checked( $integrate_gmaps ); ?> /> Integrar con Google Maps
@@ -176,7 +176,7 @@ function et_elegantestate_options($callback_args) {
 		<label for="et_address">Coordenadas Cartográficas:</label>
 		<input class="form-control" name="et_address" id="et_address" type="text" value="<?php #echo esc_attr($et_address); ?>" size="100" />
 		<small>(ex. 270 Park Ave. New York)</small>
-	</p>
+	</p> -->
 	<?php
 }
 

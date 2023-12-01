@@ -39,6 +39,12 @@
 							<div class="col-12">
 								<?php the_content();?>
 							</div>
+							<?php $inmobiliariadelassierras_googlemaps = rwmb_meta('inmobiliariadelassierras_googlemaps', '');
+							if($inmobiliariadelassierras_googlemaps) {?>
+								<div class="col-12 my-3">
+									<?php echo $inmobiliariadelassierras_googlemaps;?>
+								</div>
+							<?php };?>
 						</div><!-- /contenido -->
 
 

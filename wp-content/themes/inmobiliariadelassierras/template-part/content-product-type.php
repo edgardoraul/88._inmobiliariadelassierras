@@ -7,7 +7,7 @@ $cats = get_the_category();
 // Se elige la primera
 // $propiedad_tipo = $cats[0]->name;
 
-$et_square_footage = of_get_option('et_square_footage', '');
+
 
 $ambiente = rwmb_meta('ambiente', '');
 $toilette = rwmb_meta('toilette', '');
@@ -16,16 +16,19 @@ $superficie = rwmb_meta('superficie', '');
 
 $inmobiliariadelassierras_meta_keywords = rwmb_meta('inmobiliariadelassierras_meta_keywords', '');
 $inmobiliariadelassierras_descripcion = rwmb_meta('inmobiliariadelassierras_descripcion', '');
-$inmobiliariadelassierras_googlemaps = rwmb_meta('inmobiliariadelassierras_googlemaps', '');
+
 ?>
 
 
 <ul class="list-group list-group-flush">
 	<?php if($propiedad_tipo) { ?>
 		<li class="list-group-item">
-			<i class="bi bi-building-fill"></i>
-			<?php echo '<span class="badge bg-success">' . __('Tipo de propiedad', 'inmobiliariadelassierras') . '</span>';
-			echo '<strong class="float-end">'. $propiedad_tipo . '</strong>';?>
+			<!-- <i class="bi bi-building-fill"></i> -->
+			<?php // echo '<span class="badge bg-success">' . __('Tipo de propiedad', 'inmobiliariadelassierras') . '</span>';?>
+			<!-- <h4>Tipo de propiedad</h4> -->
+			<h5>
+			<?php echo '<strong class="text-uppercase">'. $propiedad_tipo . '</strong>';?>
+			</h5>
 		</li>
 	<?php }?>
 
