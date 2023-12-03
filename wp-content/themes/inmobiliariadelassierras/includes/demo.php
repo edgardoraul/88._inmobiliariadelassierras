@@ -68,36 +68,40 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 			array(
 				'name' => __( 'Cantidad de ambientes', 'inmobiliariadelassierras' ),
 				'id'   => "ambiente",
-				'type' => 'number',
-				'min'  => 0,
-				'step' => 1,
+				'type' => 'text',
+				// 'min'  => 0,
+				// 'step' => 1,
+				'clone'	=> false
 			),
 
 			// Baños
 			array(
 				'name' => __( 'Baños', 'inmobiliariadelassierras' ),
 				'id'   => "toilette",
-				'type' => 'number',
-				'min'  => 0,
-				'step' => 1,
+				'type' => 'text',
+				// 'min'  => 0,
+				// 'step' => 1,
+				'clone'	=> false
 			),
 
 			// Cocheras
 			array(
 				'name' => __( 'Cocheras', 'inmobiliariadelassierras' ),
 				'id'   => "cochera",
-				'type' => 'number',
-				'min'  => 0,
-				'step' => 1,
+				'type' => 'text',
+				// 'min'  => 0,
+				// 'step' => 1,
+				'clone'	=> false
 			),
 
 			// Superficie
 			array(
 				'name' => __( 'Superficie en metros cuadrados', 'inmobiliariadelassierras' ),
 				'id'   => "superficie",
-				'type' => 'number',
-				'min'  => 0,
-				'step' => 1,
+				'type' => 'text',
+				// 'min'  => 0,
+				// 'step' => 1,
+				'clone'	=> false
 			),
 			/*
 			// TEXT: Código de la propiedad
