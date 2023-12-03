@@ -33,7 +33,16 @@
 
 						</div>
 
-
+					<?php $inmobiliariadelassierras_descripcion = rwmb_meta('inmobiliariadelassierras_descripcion', '');
+						if($inmobiliariadelassierras_descripcion) { ?>
+						<div class="row">
+							<div class="col-12">
+								<div class="alert alert-warning" role="alert">
+									<?php echo $inmobiliariadelassierras_descripcion;?>
+								</div>
+							</div>
+						</div>
+					<?php }?>
 
 						<div class="row"><!-- contenido -->
 							<div class="col-12">
