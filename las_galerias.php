@@ -11,6 +11,9 @@ log_message("Inicio del script");
 // Carga el archivo media.php para que se pueda usar media_sideload_image()
 require_once ABSPATH . 'wp-admin/includes/media.php';
 
+// Configura un límite de tiempo de ejecución más alto
+set_time_limit(600); // 10 minutos
+
 // Obtén todas las publicaciones de tipo 'post'
 $args = array(
     'post_type'      => 'post',
@@ -24,8 +27,12 @@ if ($posts_query->have_posts()) {
     while ($posts_query->have_posts()) {
         $posts_query->the_post();
 
+        echo "Procesando la publicación: " . get_the_title() . " (ID: " . get_the_ID() . ")" . PHP_EOL;
+
         // Obtén los valores de los campos personalizados 'thumbs'
         $thumbs = get_post_meta(get_the_ID(), 'thumbs', true);
+        echo "Valores de 'thumbs': " . PHP_EOL;
+        var_dump($thumbs);
 
         // Filtra elementos vacíos
         $thumbs = array_filter($thumbs);
@@ -37,6 +44,7 @@ if ($posts_query->have_posts()) {
 
             // Procesa cada imagen
             foreach ($thumbs as $thumb) {
+                echo "Procesando imagen desde URL: $thumb" . PHP_EOL;
                 $image_id = upload_image_from_url($thumb, get_the_ID());
 
                 // Verifica si la carga de la imagen fue exitosa
@@ -47,6 +55,19 @@ if ($posts_query->have_posts()) {
 
             // Actualiza el campo personalizado 'galeria'
             update_post_meta(get_the_ID(), 'galeria', $gallery_images);
+            echo "Campo 'galeria' actualizado con las nuevas ID de medios." . PHP_EOL;
+
+            // Muestra las imágenes en el front y en el backoffice
+            echo "Mostrando las imágenes en el front y el backoffice..." . PHP_EOL;
+            foreach ($gallery_images as $image_id) {
+                echo "ID de la imagen: $image_id" . PHP_EOL;
+                // Muestra la imagen en el front
+                echo wp_get_attachment_image($image_id, 'full') . PHP_EOL;
+                // Muestra la imagen en el backoffice
+                echo wp_get_attachment_image($image_id, 'thumbnail') . PHP_EOL;
+            }
+        } else {
+            echo "No hay valores en 'thumbs' para esta publicación." . PHP_EOL;
         }
     }
 
@@ -63,12 +84,7 @@ function upload_image_from_url($image_url, $post_id) {
     $image_data = file_get_contents($image_url);
     $filename   = basename($image_url);
 
-    if (wp_mkdir_p($upload_dir['path'])) {
-        $file = $upload_dir['path'] . '/' . $filename;
-    } else {
-        $file = $upload_dir['basedir'] . '/' . $filename;
-    }
-
+    $file = $upload_dir['path'] . '/' . $filename;
     file_put_contents($file, $image_data);
 
     $wp_filetype = wp_check_filetype($filename, null);
