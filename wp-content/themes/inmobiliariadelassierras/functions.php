@@ -21,7 +21,7 @@ require_once "includes/menu.php";
 require_once "includes/breadcrumb.php";
 
 // Urls relativas
-require_once "includes/url-relativas.php";
+// require_once "includes/url-relativas.php";
 
 // Paginación
 require_once "includes/paginacion.php";
@@ -121,8 +121,11 @@ add_action('wp_enqueue_scripts', 'assets');
 require_once "includes/meta-box/meta-box.php";
 require_once "includes/demo.php";
 
+// Metabox de galería de imágenes
+require_once "includes/mostrar_miniaturas_galeria_metabox.php";
+
 // Metaboxes viejos
-require_once "includes/additional_functions.php";
+// require_once "includes/additional_functions.php";
 
 // Cargar Panel de Opciones
 if ( !function_exists( 'optionsframework_init' ) ) {

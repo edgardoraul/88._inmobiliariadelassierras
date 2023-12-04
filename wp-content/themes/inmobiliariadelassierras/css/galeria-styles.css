@@ -1,0 +1,83 @@
+#post-body-content .miniaturas-galeria {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#post-body-content .miniaturas-galeria li {
+    margin: 0 10px 10px 0;
+    position: relative;
+}
+
+#post-body-content .miniaturas-galeria img {
+    max-width: 100px;
+    height: auto;
+    display: inline-block;
+}
+
+#post-body-content .miniaturas-galeria .eliminar-imagen {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    padding: 3px;
+    font-size: 12px;
+    line-height: 1;
+    z-index: 1;
+}
+
+#subir-imagenes {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #0073aa;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
+#subir-imagenes:hover {
+    background-color: #005d82;
+}
+
+
+/* Agrega estilos para los íconos */
+.miniatura-item {
+	display: inline-block;
+	position: relative;
+	margin-right: 0.5em;
+}
+.miniatura-item img {
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+}
+
+.miniatura-item img:hover {
+	cursor: move;
+	opacity: 0.8;
+}
+
+.miniatura-item span.dashicons {
+	background-color: #fff;
+	box-shadow: 0px 0px 5px #000;
+	border-radius: 50%;
+	cursor: pointer;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	font-size: 20px;
+	color: #333;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+}
