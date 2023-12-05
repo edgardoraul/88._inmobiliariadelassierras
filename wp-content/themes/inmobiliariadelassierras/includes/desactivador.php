@@ -93,14 +93,14 @@ add_filter( 'sanitize_title', 'remove_short_words' );
 
 
 // Acortar títulos en todos los posts en el momento de la carga
-function titulolargo( $title )
+/* function titulolargo( $title )
 {
 	global $post;
 	$title = $post->post_title;
 	if ( str_word_count( $title ) >= 12 ) //aqui definimos el máximo de palabras permitidas
 	wp_die( __( 'Error: tu título sobrepasa el máximo de palabras razonable, vuelve atrás y mejóralo, tus lectores te lo agradecerán.', 'inmobiliariadelassierras' ) );
 }
-add_action( 'publish_post', 'titulolargo' );
+add_action( 'publish_post', 'titulolargo' ); */
 
 
 // REMOVE GUTENBERG BLOCK LIBRARY CSS FROM LOADING ON FRONTEND
