@@ -11,24 +11,33 @@ function mostrar_miniaturas_galeria_metabox() {
 
     // Encolar jQuery UI Sortable usando el núcleo de WordPress
     wp_enqueue_script('jquery-ui-sortable');
-	wp_enqueue_script('mi-script', get_stylesheet_directory_uri() . '/galeria-scripts.js', array('jquery', 'jquery-ui-sortable'), '1.0', true);
+    wp_enqueue_media();
 }
 add_action('admin_enqueue_scripts', 'mostrar_miniaturas_galeria_metabox');
 
 function mostrar_miniaturas_galeria_callback($post) {
-    // ... Código anterior ...
+    // Obtenemos las imágenes asociadas a la entrada
+    $imagenes = get_post_meta($post->ID, 'clave_metabox', true);
+
+    // Si no hay imágenes, inicializamos un array vacío
+    $imagenes = $imagenes ? json_decode($imagenes, true) : [];
+
+    // Campo de texto enriquecido para almacenar la información en el formulario
+    echo '<label for="galeria_imagenes">' . __('Galería de Imágenes:', 'inmobiliariadelassierras') . '</label>';
+    echo '<textarea id="galeria_imagenes" name="galeria_imagenes" style="width:100%;" rows="5">' . esc_textarea(json_encode($imagenes)) . '</textarea>';
+    echo '<p><button class="button" id="upload_imagen">' . __('Subir Imágenes', 'inmobiliariadelassierras') . '</button></p>';
 
     // Mostrar miniaturas de las imágenes con ordenamiento
     if (!empty($imagenes)) {
         echo '<ul id="sortable">';
         foreach ($imagenes as $imagen_id) {
-            echo '<li id="' . $imagen_id . '"><img src="' . wp_get_attachment_image_src($imagen_id, 'thumbnail')[0] . '" alt="'.$post->title.' - '.$imagen_id.'"></li>';
+            echo '<li id="' . $imagen_id . '"><img src="' . wp_get_attachment_image_src($imagen_id, 'thumbnail')[0] . '" alt=""></li>';
         }
         echo '</ul>';
     }
 
     // Registra en el log
-    error_log("Metabox mostrado para la entrada con ID {$post->ID}");
+    error_log(sprintf(__('Metabox mostrado para la entrada con ID %d', 'inmobiliariadelassierras'), $post->ID));
 }
 
 function guardar_miniaturas_galeria_metabox($post_id) {

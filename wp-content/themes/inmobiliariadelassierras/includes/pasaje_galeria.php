@@ -12,10 +12,10 @@ if ( class_exists( 'RWMB_Core' ) && class_exists( 'RWMB_File_Advanced_Field' ) )
         if ( isset( $meta_box['id'] ) && $meta_box['id'] === 'thumbs' ) {
 
             // Obtiene el ID del campo de archivo antiguo
-            $old_field_id = 'thumbs_field';
+            $old_field_id = 'thumbs';
 
             // Obtiene el ID del nuevo campo de archivo
-            $new_field_id = 'new_thumbs_field';
+            $new_field_id = 'galeria';
 
             // Obtén todas las entradas (posts) donde se ha utilizado la antigua caja meta "thumbs"
             $posts = get_posts( array(

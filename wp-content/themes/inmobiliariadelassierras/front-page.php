@@ -11,6 +11,7 @@
 					<?php if(have_posts()) {
 						while(have_posts()) {
 							the_post();
+
 							// Variables necesarias
 							$precio = rwmb_meta('precio', '');
 							$propiedad_tipo = rwmb_meta('propiedad_tipo', '');
@@ -18,14 +19,11 @@
 							$toilette = rwmb_meta('toilette', '');
 							$cochera = rwmb_meta('cochera', '');
 							$superficie = rwmb_meta('superficie', '');
-
-
-
 							?>
 
 					<!-- Cada Producto Publicado -->
-					<div class="col-sm-6 col-lg-4 mb-2">
-						<div class="card card-body">
+					<div class="col-sm-6 col-lg-4 mb-2 d-flex align-items-stretch">
+						<div class="card card-body align-self-stretch">
 							<figure class="card-img-top text-center mb-0">
 								<a href="<?php the_permalink();?>">
 									<?php if( has_post_thumbnail() ) {
