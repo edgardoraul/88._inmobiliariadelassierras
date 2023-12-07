@@ -12,25 +12,39 @@ function mostrar_miniaturas_galeria_metabox() {
     // Encolar jQuery UI Sortable usando el núcleo de WordPress
     wp_enqueue_script('jquery-ui-sortable');
     wp_enqueue_media();
+    wp_enqueue_script('galeria-scripts', get_template_directory_uri() . '/js/galeria-scripts.js', array('jquery'), '1.0', true);
 }
 add_action('admin_enqueue_scripts', 'mostrar_miniaturas_galeria_metabox');
 
 function mostrar_miniaturas_galeria_callback($post) {
-    // Obtenemos las imágenes asociadas a la entrada
+    // Obtenemos las imágenes adjuntas al post desde el antiguo metabox 'thumbs'
+    $imagenes_adjuntas = get_post_meta($post->ID, 'thumbs', true);
+
+    // Si hay imágenes adjuntas, las convertimos en un array
+    $imagenes_adjuntas = $imagenes_adjuntas ? json_decode($imagenes_adjuntas, true) : [];
+
+    // Obtenemos las imágenes asociadas a la entrada desde el nuevo metabox 'clave_metabox'
     $imagenes = get_post_meta($post->ID, 'clave_metabox', true);
 
-    // Si no hay imágenes, inicializamos un array vacío
+    // Si no hay imágenes en el nuevo metabox, inicializamos un array vacío
     $imagenes = $imagenes ? json_decode($imagenes, true) : [];
 
-    // Campo de texto enriquecido para almacenar la información en el formulario
-    echo '<label for="galeria_imagenes">' . __('Galería de Imágenes:', 'inmobiliariadelassierras') . '</label>';
-    echo '<textarea id="galeria_imagenes" name="galeria_imagenes" style="width:100%;" rows="5">' . esc_textarea(json_encode($imagenes)) . '</textarea>';
-    echo '<p><button class="button" id="upload_imagen">' . __('Subir Imágenes', 'inmobiliariadelassierras') . '</button></p>';
+    // Combinamos las imágenes del metabox actual y las imágenes adjuntas
+    $todas_las_imagenes = array_merge($imagenes, $imagenes_adjuntas);
+
+    // Campo de texto para almacenar el listado de imágenes en el formulario
+    echo '<label for="galeria_imagenes">' . __('Galería de Imágenes (ID de las imágenes):', 'inmobiliariadelassierras') . '</label>';
+
+    // Verificamos si $todas_las_imagenes es un array antes de usar json_encode
+    $value_to_display = is_array($todas_las_imagenes) ? json_encode($todas_las_imagenes) : '';
+
+    echo '<input type="text" id="galeria_imagenes" name="galeria_imagenes" style="width:100%;" value="' . esc_attr($value_to_display) . '">';
+    echo '<p><button class="button" id="upload_imagen">' . __('Subir/Seleccionar Imágenes', 'inmobiliariadelassierras') . '</button></p>';
 
     // Mostrar miniaturas de las imágenes con ordenamiento
-    if (!empty($imagenes)) {
+    if (!empty($todas_las_imagenes)) {
         echo '<ul id="sortable">';
-        foreach ($imagenes as $imagen_id) {
+        foreach ($todas_las_imagenes as $imagen_id) {
             echo '<li id="' . $imagen_id . '"><img src="' . wp_get_attachment_image_src($imagen_id, 'thumbnail')[0] . '" alt=""></li>';
         }
         echo '</ul>';
@@ -39,6 +53,8 @@ function mostrar_miniaturas_galeria_callback($post) {
     // Registra en el log
     error_log(sprintf(__('Metabox mostrado para la entrada con ID %d', 'inmobiliariadelassierras'), $post->ID));
 }
+
+
 
 function guardar_miniaturas_galeria_metabox($post_id) {
     // Verificar si es un guardado automático y si el usuario tiene permisos

@@ -162,7 +162,7 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 				// Field name - Will be used as label
 				'name'  => __( 'Meta: Palabras claves.', 'inmobiliariadelassierras' ),
 				// Field ID, i.e. the meta key
-				'id'    => "inmobiliariadelassierras_meta_keywords",
+				'id'    => $prefix . 'meta_keywords',
 				// Field description (optional)
 				'desc'  => __( 'Palabras claves separadas por comas. Son útiles para posicionamiento web en algunos buscadores. Máximo 160 caracteres.', 'inmobiliariadelassierras' ),
 				'type'  => 'text',
@@ -177,7 +177,7 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 				// Field name - Will be used as label
 				'name'  => __( 'Descripción o resumen.', 'inmobiliariadelassierras' ),
 				// Field ID, i.e. the meta key
-				'id'    => "inmobiliariadelassierras_descripcion",
+				'id'    => $prefix . 'descripcion',
 				// Field description (optional)
 				'desc'  => __( 'Resumen. Son útiles para posicionamiento web. Máximo 60 palabras.', 'inmobiliariadelassierras' ),
 				'type' => 'textarea',
@@ -246,7 +246,7 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 			array(
 				'name' => __( 'Código de Google Maps', 'inmobiliariadelassierras' ),
 				'desc' => __( 'Insertar el código embebido de proviene de ', 'inmobiliariadelassierras' ) . '<a href="//www.google.com/maps" target="_blank" title="Google Maps">Google Maps</a>',
-				'id'   => "inmobiliariadelassierras_googlemaps",
+				'id'   => $prefix . 'googlemaps',
 				'type' => 'textarea',
 				'cols' => 10,
 				'rows' => 3,
@@ -649,7 +649,7 @@ function meta_paginas_register_meta_boxes( $meta_boxes )
 				// Field name - Will be used as label
 				'name'  => __( 'Palabras claves.', 'inmobiliariadelassierras' ),
 				// Field ID, i.e. the meta key
-				'id'    => "meta_paginas_meta_keywords",
+				'id'    => $prefix . 'meta_keywords',
 				// Field description (optional)
 				'desc'  => __( 'Palabras claves separadas por comas. Útiles para posicionamiento web en algunos buscadores. Máximo 160 caracteres.', 'inmobiliariadelassierras' ),
 				'type'  => 'text',
@@ -662,7 +662,7 @@ function meta_paginas_register_meta_boxes( $meta_boxes )
 			array(
 				'name' => __( 'Descripción', 'inmobiliariadelassierras' ),
 				'desc' => __( 'Es un breve resumen muy recomendable para posicionamiento web. Máximo 160 caracteres.', 'inmobiliariadelassierras' ),
-				'id'   => "meta_paginas_meta_descripcion",
+				'id'   => $prefix . 'meta_descripcion',
 				'type' => 'textarea',
 				'cols' => 20,
 				'rows' => 2,
