@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal fade" id="modal_img_full" tabindex="-1" aria-labelledby="modal_img_fullLabel" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered modal-xl">
+	<div class="modal-dialog modal-dialog-centered modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

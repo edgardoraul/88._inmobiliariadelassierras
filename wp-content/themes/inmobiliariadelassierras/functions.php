@@ -122,11 +122,11 @@ require_once "includes/meta-box/meta-box.php";
 require_once "includes/demo.php";
 
 // Metaboxes viejos
-// require_once "includes/additional_functions.php";
+require_once "includes/additional_functions.php";
 
 // Metabox de galería de imágenes
 require_once "includes/mostrar_miniaturas_galeria_metabox.php";
-require_once "includes/pasaje_galeria.php";
+// require_once "includes/pasaje_galeria.php";
 
 // Cargar Panel de Opciones
 if ( !function_exists( 'optionsframework_init' ) ) {

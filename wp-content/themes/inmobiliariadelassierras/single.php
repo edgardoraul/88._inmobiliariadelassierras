@@ -17,19 +17,20 @@
 					while(have_posts()) {
 						the_post();?>
 					<section class="container">
-						<div class="row flex-sm">
+						<div class="row flex-row-reverse">
+
+							<!-- El encabezado y los atributos del producto -->
 							<div class="col-12 col-sm-6 my-3">
 								<header class="h2 mb-3">
 									<h2><?php the_title();?></h2>
 								</header>
 
-								<!-- Listado de atributos del producto -->
+								<!-- Atributos -->
 								<?php get_template_part('template-part/content', 'product-type');?>
 							</div>
 
 							<!-- Slider/Galería -->
 							<?php get_template_part('template-part/content', 'product-slider');?>
-
 
 						</div>
 

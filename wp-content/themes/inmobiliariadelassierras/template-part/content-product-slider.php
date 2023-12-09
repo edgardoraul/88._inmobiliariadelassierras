@@ -2,7 +2,7 @@
 if( wp_is_mobile() ) {
 	$galeria = rwmb_meta('galeria', 'size=custom-thumb-1200-x');
 } else {
-	$galeria = rwmb_meta('galeria', 'size=custom-thumb-900-600');
+	$galeria = rwmb_meta('galeria', 'size=custom-thumb-400-300');
 }
 $contador = 0;
 $contador2 = 0;
@@ -34,7 +34,7 @@ $precio = rwmb_meta('precio', '');
 				<div class="carousel-inner">
 					<?php foreach ( $galeria as $image ) {
 						$img_srcset = wp_get_attachment_image_srcset($image['ID'], 'full');
-						$img_sizes = wp_get_attachment_image_sizes($image['ID'], 'full');
+						$img_sizes = wp_get_attachment_image_sizes($image['ID'], 'custom-thumb-600-400');
 
 						if( $contador == 0 ) {
 							echo "<div class='carousel-item active figure-img img-thumbnail rounded'><a data-bs-toggle='modal' data-bs-target='#modal_img_full' href=''><img class='d-block w-100' src='{$image['url']}' srcset='{$img_srcset}' sizes='{$img_sizes}' alt='" . get_the_title() . "' /></a></div>";
@@ -64,7 +64,7 @@ $precio = rwmb_meta('precio', '');
 			<!-- Botón del Precio -->
 			<!-- <div class="position-absolute top-100 start-50 translate-middle"> -->
 			<div class="text-center">
-				<button class="btn btn-dark btn-lg" disabled id="modal-product">
+				<button class="btn btn-dark btn-lg" disabled="disabled">
 					<?php if($precio) {
 						echo '<span class="text-uppercase">' . $precio . '</span>';
 					} else {

@@ -52,6 +52,8 @@ add_image_size('custom-thumb-1500-x', 1500, false);
 add_image_size('custom-thumb-1800-x', 1800, false);
 add_image_size('custom-thumb-2100-x', 2100, false);
 
+
+/*
 // Añadiendo al listado del gestor de multimedia
 add_filter('image_size_names_choose', 'hmuda_image_sizes');
 function hmuda_image_sizes($sizes)
@@ -258,5 +260,5 @@ function simone_the_responsive_thumbnail( $post_id, $custom_classs )
 	echo '</picture>';
 }
 
-
+*/
 ?>

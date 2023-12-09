@@ -6,7 +6,7 @@ $argumentos = array(
 	'orderby'			=>	'date'
 );
 $slider = new WP_Query($argumentos);
-$cantidad_paginas = $slider->post_count;
+
 $contador = 0;
 
 ?>
@@ -36,7 +36,7 @@ $contador = 0;
 	<?php }
 	// Reseteamos la consulta, por las dudas.
 	wp_reset_postdata();
-	$contador = 0;
+	$contador2 = 0;
 	?>
 			<div class="carousel-inner">
 
@@ -44,7 +44,7 @@ $contador = 0;
 	while( $slider->have_posts() ) {
 		$slider->the_post();
 		if( has_post_thumbnail() ) {
-			if( $contador == 0 ) {
+			if( $contador2 == 0 ) {
 				echo '<div class="carousel-item active">';
 			} else {
 				echo '<div class="carousel-item">';
@@ -64,7 +64,6 @@ $contador = 0;
 			} else {
 				// Nada, carajo!
 				sin_imagen2();
-				sin_imagen2();
 			}
 			?>
 				<div class="carousel-caption d-none d-md-block">
@@ -76,7 +75,7 @@ $contador = 0;
 				</div>
 			</div>
 		<?php }
-		$contador = $contador + 1;
+		$contador2 = $contador2 + 1;
 	}
 }?>
 				</div>

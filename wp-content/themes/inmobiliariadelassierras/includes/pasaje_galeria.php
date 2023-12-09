@@ -2,6 +2,14 @@
 // Asegúrate de que las clases RWMB necesarias estén disponibles
 if ( class_exists( 'RWMB_Core' ) && class_exists( 'RWMB_File_Advanced_Field' ) ) {
 
+    // Función para registrar mensajes detallados en un archivo de log
+    function custom_log( $message ) {
+        $log_file = WP_CONTENT_DIR . '/migration_log.txt';
+        error_log( date( 'Y-m-d H:i:s' ) . ' - ' . $message . PHP_EOL, 3, $log_file );
+    }
+
+    custom_log( 'Inicio del proceso de migración.' );
+
     // Obtén todas las cajas meta registradas
     $meta_boxes = RWMB_Core::get_meta_boxes();
 
@@ -11,10 +19,10 @@ if ( class_exists( 'RWMB_Core' ) && class_exists( 'RWMB_File_Advanced_Field' ) )
         // Comprueba si es la antigua caja meta "thumbs"
         if ( isset( $meta_box['id'] ) && $meta_box['id'] === 'thumbs' ) {
 
-            // Obtiene el ID del campo de archivo antiguo
+            // Obtiene el ID del campo de galería antiguo
             $old_field_id = 'thumbs';
 
-            // Obtiene el ID del nuevo campo de archivo
+            // Obtiene el ID del nuevo campo de galería
             $new_field_id = 'galeria';
 
             // Obtén todas las entradas (posts) donde se ha utilizado la antigua caja meta "thumbs"
@@ -30,9 +38,14 @@ if ( class_exists( 'RWMB_Core' ) && class_exists( 'RWMB_File_Advanced_Field' ) )
 
                 // Guarda el valor en el nuevo campo
                 if ( ! empty( $old_value ) ) {
-                    update_post_meta( $post->ID, $new_field_id, $old_value );
+                    // Aquí usamos wp_get_attachment_image para obtener la etiqueta de imagen
+                    $new_value = wp_get_attachment_image( $old_value, 'full' );
+                    update_post_meta( $post->ID, $new_field_id, $new_value );
+                    custom_log( "Migrado de post {$post->ID}: $old_field_id -> $new_field_id" );
                 }
             }
+
+            custom_log( 'Migración completa.' );
 
             // Opcional: elimina el antiguo campo meta "thumbs" si ya no lo necesitas
             // foreach ( $posts as $post ) {

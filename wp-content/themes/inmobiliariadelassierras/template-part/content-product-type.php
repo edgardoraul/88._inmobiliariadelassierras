@@ -26,7 +26,7 @@ $inmobiliariadelassierras_descripcion = rwmb_meta('inmobiliariadelassierras_desc
 			<!-- <i class="bi bi-building-fill"></i> -->
 			<?php // echo '<span class="badge bg-success">' . __('Tipo de propiedad', 'inmobiliariadelassierras') . '</span>';?>
 			<!-- <h4>Tipo de propiedad</h4> -->
-			<h5>
+			<h5 class="alert alert-success text-center">
 			<?php echo '<strong class="text-uppercase">'. $propiedad_tipo . '</strong>';?>
 			</h5>
 		</li>
