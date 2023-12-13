@@ -7,7 +7,7 @@
 		$contador4 = 0;
 		if( $galeria2 ) { ?>
 
-		<div id="slider_carrousel" class="carousel slide">
+		<div id="slider_carrousel" class="carousel slide" data-bs-ride="carousel">
 			<div class="carousel-indicators">
 				<?php foreach($galeria2 as $image) {
 					if($contador4 == 0) { ?>

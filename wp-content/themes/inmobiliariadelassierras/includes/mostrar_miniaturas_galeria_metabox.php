@@ -24,7 +24,7 @@ function mostrar_miniaturas_galeria_callback($post) {
     $imagenes_adjuntas = $imagenes_adjuntas ? (array)$imagenes_adjuntas : [];
 
     // Obtenemos las imágenes asociadas a la entrada desde el nuevo metabox 'clave_metabox'
-    $imagenes = get_post_meta($post->ID, 'clave_metabox', true);
+    $imagenes = get_post_meta($post->ID, 'galeria', true);
 
     // Si no hay imágenes en el nuevo metabox, inicializamos un array vacío
     $imagenes = $imagenes ? (array)$imagenes : [];
@@ -35,21 +35,35 @@ function mostrar_miniaturas_galeria_callback($post) {
     // Campo de texto para almacenar el listado de imágenes en el formulario
     echo '<label for="galeria_imagenes">' . __('Galería de Imágenes (ID de las imágenes):', 'inmobiliariadelassierras') . '</label>';
     echo '<input type="text" id="galeria_imagenes" name="galeria_imagenes" style="width:100%;" value="' . esc_attr(implode(',', $todas_las_imagenes)) . '">';
-    echo '<p><button class="button" id="upload_imagen">' . __('Subir/Seleccionar Imágenes', 'inmobiliariadelassierras') . '</button></p>';
+    echo '<p><button class="button" id="upload_imagen">' . __('Subir y Seleccionar Imágenes', 'inmobiliariadelassierras') . '</button></p>';
 
 	// Mostrar miniaturas de las imágenes con ordenamiento
-
 	if (!empty($todas_las_imagenes)) {
 		echo '<ul id="sortable">';
 		foreach ($todas_las_imagenes as $imagen_id) {
-			// Verificar si $imagen_id es un número antes de usarlo
 
-			echo '<li id="' . $imagen_id . '"><img src="' . $imagen_id . '" alt=""></li>';
+			echo '<li id="' . $imagen_id . '">';
+			echo '<img src="' . $imagen_id . '" alt="" whith="100" height="100" />';
+			echo '<span class="delete-icon dashicons dashicons-no-alt" data-image-id="' . $imagen_id . '"></span>';
 
-			var_dump($imagen_id);
+			echo '</li>';
+
 		}
+
 		echo '</ul>';
+		echo "<style>
+		#sortable li {
+			display: inline-block;
+			position: relative;
+
+		#sortable li .delete-icon {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		</style>";
 	}
+
 
 
     // Registra en el log

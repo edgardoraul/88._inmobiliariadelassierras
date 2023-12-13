@@ -63,12 +63,24 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 				'clone' => false,
 			),
 
+			// Precio
+			array(
+				'name' => __( 'Precio', 'inmobiliariadelassierras' ),
+				'desc' => __('En $, u$s, con separador de miles, comas o la leyenda "Vendido" o lo que desees.','inmobiliariadelassierras'),
+				'id'   => "precio",
+				'type' => 'text',
+				// 'min'  => 0,
+				// 'step' => 1,
+				'clone'	=> false
+			),
+
 
 			// Ambientes
 			array(
-				'name' => __( 'Cantidad de ambientes', 'inmobiliariadelassierras' ),
+				'name' => __( 'Ambientes', 'inmobiliariadelassierras' ),
 				'id'   => "ambiente",
 				'type' => 'text',
+				'desc' => __('Dormitorios, cocinas, livings, etc...', 'inmobiliariadelassierras'),
 				// 'min'  => 0,
 				// 'step' => 1,
 				'clone'	=> false
@@ -89,6 +101,7 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 				'name' => __( 'Cocheras', 'inmobiliariadelassierras' ),
 				'id'   => "cochera",
 				'type' => 'text',
+				'desc' => __('Garages, toldos, media sombra, compartido, etc...', 'inmobiliariadelassierras'),
 				// 'min'  => 0,
 				// 'step' => 1,
 				'clone'	=> false
@@ -96,8 +109,20 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 
 			// Superficie
 			array(
-				'name' => __( 'Superficie en metros cuadrados', 'inmobiliariadelassierras' ),
+				'name' => __( 'Superficie en M<sup>2</sup>', 'inmobiliariadelassierras' ),
 				'id'   => "superficie",
+				'desc' => __('En metros cuadrados.', 'inmobiliariadelassierras'),
+				'type' => 'text',
+				// 'min'  => 0,
+				// 'step' => 1,
+				'clone'	=> false
+			),
+
+			// Superficie en hectáreas
+			array(
+				'name' => __( 'Superficie en HA', 'inmobiliariadelassierras' ),
+				'id'   => "superficie_ha",
+				'desc' => __('En hectáreas.', 'inmobiliariadelassierras'),
 				'type' => 'text',
 				// 'min'  => 0,
 				// 'step' => 1,
@@ -130,17 +155,6 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 			),
 			*/
 
-
-			// Precio u$s
-			array(
-				'name' => __( 'Precio', 'inmobiliariadelassierras' ),
-				'desc' => __('En $, u$s, con separador de miles, comas o la leyenda "Vendido" o lo que desees.','inmobiliariadelassierras'),
-				'id'   => "precio",
-				'type' => 'text',
-				// 'min'  => 0,
-				// 'step' => 1,
-				'clone'	=> false
-			),
 
 			// DIVIDER
 			array(
@@ -526,7 +540,7 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 				'type' => 'heading',
 				'name' => __( 'Imágenes y Fotos', 'inmobiliariadelassierras' ),
 				'id'   => 'galeria_descripcion', // Not used but needed for plugin
-				'desc' => __( 'Las fotos deben ser mínimo de 2000px de ancho. Pesan aproximadamente 1 a 2 Megabytes', 'inmobiliariadelassierras' ),
+				'desc' => __( 'Las fotos deben ser mínimo de 2000px de ancho. Pesan aproximadamente 2 a 4 Mega.', 'inmobiliariadelassierras' ),
 			),
 
 			// PLUPLOAD IMAGE UPLOAD (WP 3.3+)
@@ -536,11 +550,7 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 				'type'             => 'image_advanced',
 				'max_file_uploads' => false,
 			),
-			// DIVIDER
-			array(
-				'type' => 'divider',
-				'id'   => 'inmobiliariadelassierras_separador', // Not used, but needed
-			),
+
 
 			/*
 

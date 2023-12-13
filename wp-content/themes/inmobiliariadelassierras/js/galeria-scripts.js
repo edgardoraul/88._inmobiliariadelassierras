@@ -38,4 +38,28 @@ jQuery(document).ready(function($){
         // Abre la caja de diálogo de medios
         custom_uploader.open();
     });
+
+
+
+    $('#sortable').sortable({
+        update: function (event, ui) {
+            // Obtener el nuevo orden después de reordenar
+            var newOrder = $('#sortable').sortable('toArray', { attribute: 'id' });
+            // Actualizar el campo de texto con el nuevo orden
+            $('#galeria_imagenes').val(newOrder.join(','));
+        }
+    });
+
+    // Manejar clics en el ícono de borrar
+    $('#sortable').on('click', '.delete-icon', function () {
+        var imageId = $(this).data('image-id');
+        // Eliminar la imagen del DOM
+        $(this).closest('li').remove();
+        // Actualizar el campo de texto sin la imagen eliminada
+        var currentOrder = $('#galeria_imagenes').val().split(',');
+        var newOrder = currentOrder.filter(function (id) {
+            return id !== imageId;
+        });
+        $('#galeria_imagenes').val(newOrder.join(','));
+    });
 });

@@ -13,6 +13,7 @@ $ambiente = rwmb_meta('ambiente', '');
 $toilette = rwmb_meta('toilette', '');
 $cochera = rwmb_meta('cochera', '');
 $superficie = rwmb_meta('superficie', '');
+$superficie_ha = rwmb_meta('superficie_ha', '');
 
 $inmobiliariadelassierras_meta_keywords = rwmb_meta('inmobiliariadelassierras_meta_keywords', '');
 $inmobiliariadelassierras_descripcion = rwmb_meta('inmobiliariadelassierras_descripcion', '');
@@ -26,7 +27,7 @@ $inmobiliariadelassierras_descripcion = rwmb_meta('inmobiliariadelassierras_desc
 			<!-- <i class="bi bi-building-fill"></i> -->
 			<?php // echo '<span class="badge bg-success">' . __('Tipo de propiedad', 'inmobiliariadelassierras') . '</span>';?>
 			<!-- <h4>Tipo de propiedad</h4> -->
-			<h5 class="alert alert-success text-center">
+			<h5 class="alert alert-secondary text-center">
 			<?php echo '<strong class="text-uppercase">'. $propiedad_tipo . '</strong>';?>
 			</h5>
 		</li>
@@ -53,6 +54,14 @@ $inmobiliariadelassierras_descripcion = rwmb_meta('inmobiliariadelassierras_desc
 			<i class="bi bi-rulers"></i>
 			<?php echo '<span class="badge bg-success">' . __('	Superficie', 'inmobiliariadelassierras') . '</span>';
 			echo '<strong class="float-end">'. $superficie .' M<sup>2</sup></strong>';?>
+		</li>
+	<?php }?>
+
+	<?php if($superficie_ha) { ?>
+		<li class="list-group-item">
+			<i class="bi bi-rulers"></i>
+			<?php echo '<span class="badge bg-success">' . __('	Superficie', 'inmobiliariadelassierras') . '</span>';
+			echo '<strong class="float-end">'. $superficie_ha . __('Hectáreas', 'inmobiliariadelassierras') . '</strong>';?>
 		</li>
 	<?php }?>
 

@@ -16,7 +16,7 @@ $precio = rwmb_meta('precio', '');
 			<!-- El slider de las fotos -->
 			<?php if( $galeria ) { ?>
 
-			<div id="carouselExampleIndicators" class="carousel slide">
+			<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 				<div class="carousel-indicators">
 					<?php foreach($galeria as $image) {
 						if($contador2 == 0) { ?>
