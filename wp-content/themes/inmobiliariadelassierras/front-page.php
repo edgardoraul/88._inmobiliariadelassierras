@@ -22,7 +22,7 @@
 							?>
 
 					<!-- Cada Producto Publicado -->
-					<div class="col-sm-6 col-lg-4 mb-2 d-flex align-items-stretch">
+					<div class="col-sm-6 col-lg-4 mb-4 d-flex align-items-stretch">
 						<div class="card card-body align-self-stretch">
 							<figure class="card-img-top text-center mb-0">
 								<a href="<?php the_permalink();?>">
