@@ -14,35 +14,41 @@ $precio = rwmb_meta('precio', '');
 	<div class="container">
 		<div class="figure position-relative mb-5">
 			<!-- El slider de las fotos -->
-			<?php if( $galeria ) { ?>
+			<?php if( has_post_thumbnail() ) { ?>
 
 			<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?php echo $contador2; ?>" class="active" aria-current="true" aria-label="<?php echo 'Fotograma ' . $contador2; ?>"></button>
+
 					<?php foreach($galeria as $image) {
-						if($contador2 == 0) { ?>
-							<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?php echo $contador2; ?>" class="active" aria-current="true" aria-label="<?php echo 'Fotograma ' . $contador2; ?>"></button>
+						$contador2 = $contador2 + 1; ?>
+						<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?php echo $contador2; ?>" aria-label="<?php echo 'Fotograma ' . $contador2; ?>"></button>
 
-						<?php } else { ?>
-
-							<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?php echo $contador2; ?>" aria-label="<?php echo 'Fotograma ' . $contador2; ?>"></button>
-
-						<?php }
-						$contador2 = $contador2 + 1;
-					}?>
+					<?php }?>
 				</div>
 
 				<div class="carousel-inner">
-					<?php foreach ( $galeria as $image ) {
-						$img_srcset = wp_get_attachment_image_srcset($image['ID'], 'full');
-						$img_sizes = wp_get_attachment_image_sizes($image['ID'], 'custom-thumb-600-400');
+					<?php // La imagen post thumbnail principal
+					echo "<div class='carousel-item active figure-img img-thumbnail rounded'>";
+					echo "<a data-bs-toggle='modal' data-bs-target='#modal_img_full' href=''>";
+					the_post_thumbnail('custom-thumb-600-400', array('class' => 'd-block w-100'));
+					echo "</a></div>";
 
-						if( $contador == 0 ) {
-							echo "<div class='carousel-item active figure-img img-thumbnail rounded'><a data-bs-toggle='modal' data-bs-target='#modal_img_full' href=''><img class='d-block w-100' src='{$image['url']}' srcset='{$img_srcset}' sizes='{$img_sizes}' alt='" . get_the_title() . "' /></a></div>";
 
-						} else {
-							echo "<div class='carousel-item figure-img img-thumbnail rounded'><a data-bs-toggle='modal' data-bs-target='#modal_img_full' href=''><img class='d-block w-100' src='{$image['url']}' srcset='{$img_srcset}' sizes='{$img_sizes}' alt='" . get_the_title() . "' /></a></div>";
+					// El bucle que recorre el resto de las imágenes
+					if($galeria) {
+						foreach ( $galeria as $image ) {
+							$img_srcset = wp_get_attachment_image_srcset($image['ID'], 'full');
+							$img_sizes = wp_get_attachment_image_sizes($image['ID'], 'custom-thumb-600-400');
+
+							/* if( $contador == 0 ) {
+								echo "<div class='carousel-item active figure-img img-thumbnail rounded'><a data-bs-toggle='modal' data-bs-target='#modal_img_full' href=''><img class='d-block w-100' src='{$image['url']}' srcset='{$img_srcset}' sizes='{$img_sizes}' alt='" . get_the_title() . "' /></a></div>";
+
+							} else { */
+								echo "<div class='carousel-item figure-img img-thumbnail rounded'><a data-bs-toggle='modal' data-bs-target='#modal_img_full' href=''><img class='d-block w-100' src='{$image['url']}' srcset='{$img_srcset}' sizes='{$img_sizes}' alt='" . get_the_title() . "' /></a></div>";
+							/* }
+							echo $contador = $contador + 1; */
 						}
-						echo $contador = $contador + 1;
 					}?>
 				</div>
 

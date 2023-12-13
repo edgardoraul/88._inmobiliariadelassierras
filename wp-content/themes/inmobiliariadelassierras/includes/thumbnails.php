@@ -32,8 +32,8 @@ add_image_size('custom-thumb-300-300', 300, 300, true);
 add_image_size('custom-thumb-400-300', 400, 300, true);
 add_image_size('custom-thumb-600-400', 600, 400, true);
 add_image_size('custom-thumb-600-600', 600, 600, true);
-add_image_size('custom-thumb-900-600', 900, 600, true);
-add_image_size('custom-thumb-900-900', 900, 900, true);
+add_image_size('custom-thumb-800-600', 1600, 1200, true);
+add_image_size('custom-thumb-1360-780', 2720, 1560, true);
 
 // Sliders
 add_image_size('custom-thumb-600-250', 600, 200, true);
@@ -53,7 +53,7 @@ add_image_size('custom-thumb-1800-x', 1800, false);
 add_image_size('custom-thumb-2100-x', 2100, false);
 
 
-/*
+
 // Añadiendo al listado del gestor de multimedia
 add_filter('image_size_names_choose', 'hmuda_image_sizes');
 function hmuda_image_sizes($sizes)
@@ -111,7 +111,7 @@ function optimizadorImagen()
 }
 add_filter( 'jpeg_quality', 'optimizadorImagen');
 
-
+/*
 function simone_set_image_transient( $post_id )
 {
 	// 1°. Creando la variables con los ID's y el atributo alt=""

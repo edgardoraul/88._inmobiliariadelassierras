@@ -2,37 +2,40 @@
 	<div class="figure">
 		<!-- El slider de las fotos -->
 		<?php
-		$galeria2 = rwmb_meta('galeria', 'size=full');
+		$galeria2 = rwmb_meta('galeria', 'size=custom-thumb-1360-780');
 		$contador3 = 0;
 		$contador4 = 0;
 		if( $galeria2 ) { ?>
 
 		<div id="slider_carrousel" class="carousel slide" data-bs-ride="carousel">
 			<div class="carousel-indicators">
+				<!-- El botón activo para la thumbnail principal -->
+				<button type="button" data-bs-target="#slider_carrousel" data-bs-slide-to="<?php echo $contador4; ?>" class="active" aria-current="true" aria-label="<?php echo 'Fotograma ' . $contador4; ?>"></button>
+
+				<!-- El loop para el resto de la galería -->
 				<?php foreach($galeria2 as $image) {
-					if($contador4 == 0) { ?>
-						<button type="button" data-bs-target="#slider_carrousel" data-bs-slide-to="<?php echo $contador4; ?>" class="active" aria-current="true" aria-label="<?php echo 'Fotograma ' . $contador4; ?>"></button>
+					$contador4 = $contador4 + 1;?>
 
-					<?php } else { ?>
+					<button type="button" data-bs-target="#slider_carrousel" data-bs-slide-to="<?php echo $contador4; ?>" aria-label="<?php echo 'Fotograma ' . $contador4; ?>"></button>
 
-						<button type="button" data-bs-target="#slider_carrousel" data-bs-slide-to="<?php echo $contador4; ?>" aria-label="<?php echo 'Fotograma ' . $contador4; ?>"></button>
-
-					<?php }
-					$contador4 = $contador4 + 1;
-				}?>
+				<?php }?>
 			</div>
 
 			<div class="carousel-inner">
-				<?php foreach ( $galeria2 as $image ) {
-					$img_srcset = wp_get_attachment_image_srcset($image['ID'], 'full');
-					$img_sizes = wp_get_attachment_image_sizes($image['ID'], 'full');
+				<?php
+				// La imagen principal grande
+				echo "<div class='carousel-item active'>";
+				the_post_thumbnail('custom-thumb-1360-780', array('class' => 'd-block w-100'));;
+				echo "</div>";
 
-					if( $contador3 == 0 ) {
-						echo "<div class='carousel-item active'><img class='d-block w-100' src='{$image['url']}' srcset='{$img_srcset}' sizes='{$img_sizes}' alt='" . get_the_title() . "' /></div>";
-					} else {
-						echo "<div class='carousel-item'><img class='d-block w-100' src='{$image['url']}' srcset='{$img_srcset}' sizes='{$img_sizes}' alt='" . get_the_title() . "' /></div>";
-					}
+
+				foreach ( $galeria2 as $image ) {
+					$img_srcset = wp_get_attachment_image_srcset($image['ID'], 'custom-thumb-1360-780');
+					$img_sizes = wp_get_attachment_image_sizes($image['ID'], 'custom-thumb-1360-780');
+
 					echo $contador3 = $contador3 + 1;
+					echo "<div class='carousel-item'><img class='d-block w-100' src='{$image['url']}' srcset='{$img_srcset}' sizes='{$img_sizes}' alt='" . get_the_title() . "' /></div>";
+
 				}?>
 			</div>
 

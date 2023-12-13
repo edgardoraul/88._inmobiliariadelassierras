@@ -49,9 +49,9 @@ add_action( 'wp_enqueue_scripts', 'contactform_dequeue_scripts', 99 );
 
 
 // Para hacer posible que esta plantilla pueda cambiar de idioma
-load_theme_textdomain( 'inmobiliariadelassierras', TEMPLATEPATH . '/language' );
+load_theme_textdomain( 'inmobiliariadelassierras', get_template_directory() . '/language' );
 $locale = get_locale();
-$locale_file = TEMPLATEPATH . "/language/$locale.php";
+$locale_file = get_template_directory() . "/language/$locale.php";
 if( is_readable( $locale_file ) ) require_once( $locale_file );
 
 
@@ -120,4 +120,14 @@ add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1);
 function my_css_attributes_filter($var) {
 	return is_array( $var ) ? array_intersect( $var, array( 'current-menu-item', 'current_page_item', 'nav-item', 'dropdown-menu', 'navbar-nav me-auto mb-2 mb-lg-0' ) ) : '';
 };
+
+// Remover alto y ancho de las imágenes thumbnails
+//Eliminar tags inútiles de ancho/alto a imágenes subidas
+add_filter( 'post_thumbnail_html', 'remove_width_attribute', 10 );
+add_filter( 'image_send_to_editor', 'remove_width_attribute', 10 );
+
+function remove_width_attribute( $html ) {
+	$html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
+	return $html;
+}
 ?>
