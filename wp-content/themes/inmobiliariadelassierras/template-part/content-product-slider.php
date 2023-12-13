@@ -18,7 +18,13 @@ $precio = rwmb_meta('precio', '');
 
 			<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 				<div class="carousel-indicators">
+
+					<?php // Botón activo de la primera imagen. Sólo tiene sentido si hay más una imagen
+					if($galeria) { ?>
+
 					<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?php echo $contador2; ?>" class="active" aria-current="true" aria-label="<?php echo 'Fotograma ' . $contador2; ?>"></button>
+
+					<?php }?>
 
 					<?php foreach($galeria as $image) {
 						$contador2 = $contador2 + 1; ?>
@@ -52,6 +58,9 @@ $precio = rwmb_meta('precio', '');
 					}?>
 				</div>
 
+				<?php // Botones de navegación. Sólo tiene sentido si hay más una imagen
+				if($galeria) { ?>
+
 				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					<span class="visually-hidden"><?php _e('Atrás', 'inmobiliariadelassierras');?></span>
@@ -61,6 +70,7 @@ $precio = rwmb_meta('precio', '');
 					<span class="visually-hidden"><?php _e('Adelante', 'inmobiliariadelassierras');?></span>
 				</button>
 
+				<?php }?>
 			</div>
 
 			<?php } else {

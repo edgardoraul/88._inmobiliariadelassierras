@@ -5,12 +5,16 @@
 		$galeria2 = rwmb_meta('galeria', 'size=custom-thumb-1360-780');
 		$contador3 = 0;
 		$contador4 = 0;
-		if( $galeria2 ) { ?>
+		if( has_post_thumbnail() ) { ?>
 
 		<div id="slider_carrousel" class="carousel slide" data-bs-ride="carousel">
 			<div class="carousel-indicators">
-				<!-- El botón activo para la thumbnail principal -->
+				<?php  // El botón activo para la thumbnail principal. Sólo tiene sentido si hay más una imagen
+				if($galeria2) { ?>
+
 				<button type="button" data-bs-target="#slider_carrousel" data-bs-slide-to="<?php echo $contador4; ?>" class="active" aria-current="true" aria-label="<?php echo 'Fotograma ' . $contador4; ?>"></button>
+
+				<?php }?>
 
 				<!-- El loop para el resto de la galería -->
 				<?php foreach($galeria2 as $image) {
@@ -39,6 +43,9 @@
 				}?>
 			</div>
 
+			<?php  // El botón activo para la thumbnail principal. Sólo tiene sentido si hay más una imagen
+			if($galeria2) { ?>
+
 			<button class="carousel-control-prev" type="button" data-bs-target="#slider_carrousel" data-bs-slide="prev">
 				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 				<span class="visually-hidden"><?php _e('Atrás', 'inmobiliariadelassierras');?></span>
@@ -48,6 +55,7 @@
 				<span class="visually-hidden"><?php _e('Adelante', 'inmobiliariadelassierras');?></span>
 			</button>
 
+			<?php }?>
 		</div>
 
 		<?php } else {
