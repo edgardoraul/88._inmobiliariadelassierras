@@ -61,7 +61,7 @@ $inmobiliariadelassierras_descripcion = rwmb_meta('inmobiliariadelassierras_desc
 		<li class="list-group-item">
 			<i class="bi bi-rulers"></i>
 			<?php echo '<span class="badge bg-success">' . __('	Superficie', 'inmobiliariadelassierras') . '</span>';
-			echo '<strong class="float-end">'. $superficie_ha . __('Hectáreas', 'inmobiliariadelassierras') . '</strong>';?>
+			echo '<strong class="float-end">'. $superficie_ha . __(' Hectáreas', 'inmobiliariadelassierras') . '</strong>';?>
 		</li>
 	<?php }?>
 

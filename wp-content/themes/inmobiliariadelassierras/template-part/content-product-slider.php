@@ -47,13 +47,7 @@ $precio = rwmb_meta('precio', '');
 							$img_srcset = wp_get_attachment_image_srcset($image['ID'], 'full');
 							$img_sizes = wp_get_attachment_image_sizes($image['ID'], 'custom-thumb-600-400');
 
-							/* if( $contador == 0 ) {
-								echo "<div class='carousel-item active figure-img img-thumbnail rounded'><a data-bs-toggle='modal' data-bs-target='#modal_img_full' href=''><img class='d-block w-100' src='{$image['url']}' srcset='{$img_srcset}' sizes='{$img_sizes}' alt='" . get_the_title() . "' /></a></div>";
-
-							} else { */
-								echo "<div class='carousel-item figure-img img-thumbnail rounded'><a data-bs-toggle='modal' data-bs-target='#modal_img_full' href=''><img class='d-block w-100' src='{$image['url']}' srcset='{$img_srcset}' sizes='{$img_sizes}' alt='" . get_the_title() . "' /></a></div>";
-							/* }
-							echo $contador = $contador + 1; */
+							echo "<div class='carousel-item figure-img img-thumbnail rounded'><a data-bs-toggle='modal' data-bs-target='#modal_img_full' href=''><img class='d-block w-100' src='{$image['url']}' srcset='{$img_srcset}' sizes='{$img_sizes}' alt=' get_the_title() ' /></a></div>";
 						}
 					}?>
 				</div>

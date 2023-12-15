@@ -21,11 +21,11 @@ function migas_de_pan() { ?>
 		echo '">';
 		echo 'Inicio';
 		echo "</a></li>";
-		if (is_category() || is_single()) {
+		if ( is_category() || is_single() ) {
 			echo '<li class="breadcrumb-item">';
 			the_category(' </li><li class="breadcrumb-item"> ');
 
-			if (is_single()) {
+			if ( is_single() ) {
 				echo '</li><li class="breadcrumb-item">';
 				the_title();
 				echo '</li>';

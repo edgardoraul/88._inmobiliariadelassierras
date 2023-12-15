@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<link rel="pingback" href="<?php bloginfo("pingback_url");?>" />
-	<title><?php bloginfo("title");?></title>
+	<title><?php bloginfo("title");?> - <?php bloginfo("description");?></title>
 
 	<?php get_template_part( 'template-part/content', 'header' );?>
 
@@ -82,7 +82,18 @@
 		<div class="row">
 			<nav>
 				<div class="col-12">
-
+					<?php $argumentos = array(
+						'menu'			=> 'Menú Secundario',
+						'depth'			=>	4,
+						'post_type'		=>	'page',
+						'item_spacing'	=>	'discard',
+						'sort_column'	=>	'menu_order',
+						'menu_id'		=>	'Secciones',
+						'menu_class'	=>	'navbar-nav me-auto mb-2 mb-lg-0',
+						// 'container_class'	=>	'ms-auto',
+						'add_li_class'	=>	'nav-item'
+					);
+					wp_nav_menu($argumentos);?>
 				</div>
 			</nav>
 		</div>
