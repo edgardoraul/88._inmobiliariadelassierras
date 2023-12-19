@@ -104,7 +104,7 @@
 
 
 						$argumentos = array(
-							'menu'			=> 'Menú Secundario',
+							'menu'			=> 'Secciones',
 							'depth'			=>	4,
 							// 'item_spacing'	=>	'discard',
 							// 'container'       => 'div',
