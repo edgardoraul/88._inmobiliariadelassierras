@@ -104,7 +104,6 @@ function set_max_srcset_image_width( $max_width, $size_array )
 add_filter( 'max_srcset_image_width', 'set_max_srcset_image_width', 10, 2 );
 
 // Habilitar la compresión de imágenes
-// add_filter( 'jpeg_quality', create_function( '', 'return 75;' ) ); desahabilitado
 function optimizadorImagen()
 {
 	return 75;

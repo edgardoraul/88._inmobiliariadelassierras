@@ -14,6 +14,9 @@ require_once "includes/soporte-backoffice.php";
 // Soporte a menús
 require_once "includes/menu.php";
 
+// Walker para los menús de bootstrap
+require_once "includes/walker.php";
+
 // Minificación
 // require_once "includes/minificacion.php";
 

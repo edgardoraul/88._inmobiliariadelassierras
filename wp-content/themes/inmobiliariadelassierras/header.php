@@ -32,12 +32,43 @@
 			</div><!-- /logo -->
 
 			<!-- Logotipo 2 -->
-			<div class="col-4 d-none d-md-block col-lg-3">
-				<?php $header_logo = of_get_option('header_logo', '');
-					echo '<img class="float-end" alt="Inmobiliaria de las Sierras" src="' . $header_logo . '" />';
-					?>
+			<div class="col-12 d-md-block col-lg-6">
+
+				<!-- boton del menú -->
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#header_nav" aria-controls="header_nav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="navbar-expand-lg navbar-collapse collapse text-uppercase" id="header_nav">
+
+				<?php
+					/* $header_logo = of_get_option('header_logo', '');
+					echo '<img class="float-end" alt="Inmobiliaria de las Sierras" src="' . $header_logo . '" />'; */
+				?>
+				<?php // get_template_part('template-part/content', 'menu');
+				$argumentos = array(
+					'menu'			=> 'Menú Principal',
+					'depth'			=>	3,
+					// 'post_type'		=>	'page',
+					'item_spacing'	=>	'discard',
+					// 'sort_column'	=>	'menu_order',
+					'menu_id'		=>	'header_nav',
+					//'container'       => 'nav',
+					'container_class' => 'navbar navbar-expand-lg bg-body-light navbar-light bg-light',
+					'menu_class'	=>	'navbar-nav me-auto mb-2 mb-lg-0',
+					// 'menu_class'	=>	'navbar-nav',
+					// 'container_class'	=>	'ms-auto',
+					'fallback_cb'     => false,
+					'walker'          => new Bootstrap_Walker_Nav_Menu(),
+				);
+				wp_nav_menu($argumentos);
+				?>
+				</div>
 			</div><!-- /Logotipo 2 -->
 
+		</div>
+
+		<div class="row">
 		</div>
 
 		<div class="row my-3">
@@ -58,7 +89,7 @@
 					</button>
 
 					<div class="collapse navbar-collapse text-uppercase justify-content-end" id="navbarTogglerDemo02">
-					<?php $argumentos = array(
+					<?php /* $argumentos = array(
 							'menu'			=> 'Menú Principal',
 							'depth'			=>	3,
 							'post_type'		=>	'page',
@@ -69,7 +100,21 @@
 							// 'container_class'	=>	'ms-auto',
 							'add_li_class'	=>	'nav-item'
 						);
-						wp_nav_menu($argumentos);?>
+						wp_nav_menu($argumentos); */
+
+
+						$argumentos = array(
+							'menu'			=> 'Menú Secundario',
+							'depth'			=>	4,
+							// 'item_spacing'	=>	'discard',
+							// 'container'       => 'div',
+							// 'container_class' => 'navbar navbar-expand-lg navbar-dark bg-dark',
+							'menu_class'      => 'navbar-nav me-auto mb-2 mb-lg-0',
+							'fallback_cb'     => false,
+							'walker'          => new Bootstrap_Walker_Nav_Menu(),
+						);
+						wp_nav_menu($argumentos);
+						?>
 					</div>
 				</div>
 			</nav>
@@ -82,18 +127,9 @@
 		<div class="row">
 			<nav>
 				<div class="col-12">
-					<?php $argumentos = array(
-						'menu'			=> 'Menú Secundario',
-						'depth'			=>	4,
-						'post_type'		=>	'page',
-						'item_spacing'	=>	'discard',
-						'sort_column'	=>	'menu_order',
-						'menu_id'		=>	'Secciones',
-						'menu_class'	=>	'navbar-nav me-auto mb-2 mb-lg-0',
-						// 'container_class'	=>	'ms-auto',
-						'add_li_class'	=>	'nav-item'
-					);
-					wp_nav_menu($argumentos);?>
+					<?php
+
+					?>
 				</div>
 			</nav>
 		</div>

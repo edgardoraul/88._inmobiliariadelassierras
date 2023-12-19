@@ -113,16 +113,8 @@ function remove_wp_block_library_css() {
 add_action( 'wp_enqueue_scripts', 'remove_wp_block_library_css', 100 );
 
 
-// Remover clases e ids automáticos de los menúes
-//add_filter('nav_menu_css_class', 'my_css_attributes_filter', 100, 1);
-add_filter('nav_menu_item_id', 'my_css_attributes_filter', 100, 1);
-// add_filter('page_css_class', 'my_css_attributes_filter', 100, 1);
-function my_css_attributes_filter($var) {
-	return is_array( $var ) ? array_intersect( $var, array( 'current-menu-item', 'current_page_item', 'nav-item', 'dropdown-menu', 'navbar-nav me-auto mb-2 mb-lg-0' ) ) : '';
-};
 
 // Remover alto y ancho de las imágenes thumbnails
-//Eliminar tags inútiles de ancho/alto a imágenes subidas
 add_filter( 'post_thumbnail_html', 'remove_width_attribute', 10 );
 add_filter( 'image_send_to_editor', 'remove_width_attribute', 10 );
 

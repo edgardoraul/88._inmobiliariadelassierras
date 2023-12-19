@@ -25,12 +25,40 @@ $provincia_web			=	of_get_option( 'provincia_web', '');
 			<!-- Redes sociales -->
 			<div class="col-md-4 p-3">
 				<h3 class="h3 text-uppercase mb-4"><?php _e('Contacto', 'inmobiliariadelasierras');?></h3>
-				<p><i class="bi bi-phone-fill fs-1"></i> <a class="link-success text-decoration-none text-wrap" href="//wa.me/<?php echo $celular_contact;?>" title="WhatsApp"><?php echo "+" . $celular_contact;?></a></p>
-				<p><i class="bi bi-telephone-fill fs-1"></i> <a class="link-success text-decoration-none" href="tel:<?php echo $telefono_fijo;?>"><?php echo $telefono_fijo;?></a></p>
-				<p><i class="bi bi-envelope-fill fs-1"></i> <a class="link-warning text-decoration-none text-wrap" href="mailto:<?php echo $email_web;?>" title="<?php echo $email_web;?>"><?php echo $email_web;?></a></p>
-				<p><i class="bi bi-instagram fs-1"></i> <a class="link-success text-decoration-none text-wrap" href="//<?php echo $instagram_contact;?>" title="Instagram" target="_blank"><?php echo $instagram_contact;?></a></p>
-				<p><i class="bi bi-linkedin fs-1"></i> <a class="link-primary text-primary-emphasis text-decoration-none text-wrap" href="//<?php echo $linkedin_contact;?>" title="LinkedIn" target="_blank"><?php echo $linkedin_contact;?></a></p>
-				<p><i class="bi bi-youtube fs-1"></i> <a class="link-danger text-decoration-none text-wrap" href="//<?php echo $youtube_contact;?>" title="Youtube" target="_blank"><?php echo $youtube_contact;?></a></p>
+				<?php if($celular_contact) {
+					echo "<p><i class='bi bi-phone-fill fs-1'></i> <a class='link-success text-decoration-none text-wrap' target='_blank' href='//wa.me/$celular_contact' title='WhatsApp'>+$celular_contact</a></p>";
+				}
+
+				if($telefono_fijo) {
+					echo "<p><i class='bi bi-telephone-fill fs-1'></i> <a class='link-success text-decoration-none' href='tel:$telefono_fijo'>$telefono_fijo</a></p>";
+
+				}
+
+				// echo "<div class='d-flex justify-content-evenly'>";
+
+				if($email_web) {
+					echo "<a class='link-warning text-decoration-none text-wrap me-3' href='mailto:$email_web' title='$email_web' target='_blank'><i class='bi bi-envelope-fill fs-1'></i></a>";
+
+				}
+
+				if($facebook_contact) {
+					echo "<a class='link-primary text-decoration-none text-wrap me-3' href='//$facebook_contact' title='Facebook' target='_blank'><i class='bi bi-facebook fs-1'></i></a>";
+				}
+
+				if($instagram_contact) {
+					echo "<a class='link-danger text-decoration-none text-wrap me-3' href='//$instagram_contact' title='Instagram' target='_blank'><i class='bi bi-instagram fs-1'></i></a>";
+				}
+
+				if($linkedin_contact) {
+					echo "<a class='link-primary text-primary-emphasis text-decoration-none text-wrap me-3' href='//$linkedin_contact' title='LinkedIn' target='_blank'><i class='bi bi-linkedin fs-1'></i></a>";
+				}
+
+				if($youtube_contact) {
+					echo "<a class='link-danger text-decoration-none text-wrap' href='//$youtube_contact' title='Youtube' target='_blank'><i class='bi bi-youtube fs-1'></i></a>";
+				}
+
+				// echo "</div>";
+				?>
 			</div>
 
 			<!-- Dirección -->
@@ -109,10 +137,10 @@ $provincia_web			=	of_get_option( 'provincia_web', '');
 		<!-- Botones de Redes sociales -->
 		<div class="row position-fixed bottom-0 end-0">
 			<div class="col">
-				<div class="btn-group me-2 mb-3" role="group">
+				<div class="btn-group me-3 mb-3" role="group">
 					<a type="button" class="btn btn-success  opacity-75" href="//wa.me/<?php echo $celular_contact;?>" target="_blank" title="WhastApp"><i class="bi bi-whatsapp"></i></a>
 				</div>
-				<div class="btn-group me-2 mb-3" role="group">
+				<div class="btn-group me-3 mb-3" role="group">
 					<a type="button" class="btn btn-secondary  opacity-75" href="#" title="<?php _e('Arriba', 'inmobiliariadelassierras');?>"><i class="bi bi-arrow-up"></i></a>
 				</div>
 			</div>
