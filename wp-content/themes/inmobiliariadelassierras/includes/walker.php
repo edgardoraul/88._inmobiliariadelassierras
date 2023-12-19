@@ -34,13 +34,22 @@ class Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu {
         $attributes .= ! empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
         $attributes .= ! empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
 
-        $attributes .= ($args->walker->has_children) ? ' class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"' : ' class="nav-link"';
-
-        $item_output = $args->before;
-        $item_output .= '<a' . $attributes . '>';
-        $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
-        $item_output .= ($depth == 0 && $args->walker->has_children) ? ' <span class="caret"></span></a>' : '</a>';
-        $item_output .= $args->after;
+        if ($args->walker->has_children) {
+            $attributes .= ' class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"';
+            $item_output = $args->before;
+            $item_output .= '<a' . $attributes . '>';
+            $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
+            $item_output .= '<span class="visually-hidden">Toggle Dropdown</span></a>';
+            $item_output .= '</a>';
+            $item_output .= $args->after;
+        } else {
+            $attributes .= ' class="nav-link"';
+            $item_output = $args->before;
+            $item_output .= '<a' . $attributes . '>';
+            $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
+            $item_output .= '</a>';
+            $item_output .= $args->after;
+        }
 
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
     }
