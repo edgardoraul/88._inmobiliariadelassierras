@@ -15,8 +15,8 @@
 						the_post();?>
 
 					<!-- Listado de las búsquedas -->
-					<div class="row mb-5">
-						<div class="d-flex position-relative">
+					<div class="row mb-5 clearfix">
+						<div class="d-flex">
 
 							<?php if(has_post_thumbnail()) {
 								the_post_thumbnail('custom-thumb-200-200', array('class' => 'flex-shrink-0 me-3 rounded'));
@@ -24,13 +24,25 @@
 								echo '<img src="' . get_stylesheet_directory_uri() . '/img/no-img.png" alt="img" class="flex-shrink-0 me-3 rounded" width="200" height="200" />';
 							}
 							?>
-							<div>
+							<div class="">
 								<h3 class="h5 mt-0 text-uppercase">
-									<a href="<?php the_permalink();?>"><?php the_title();?></a>
+									<a class="link-offset-2 link-underline link-underline-opacity-0" href="<?php the_permalink();?>"><?php the_title();?></a>
 								</h3>
-								<?php migas_de_pan();?>
+
+								 <!-- Listado de categorías con formato de lista horizontal de Bootstrap -->
+								 <?php
+									$categories = get_the_category();
+									if (!empty($categories)) {
+										echo '<div class="col-12">';
+										foreach ($categories as $category) {
+											echo '<a class="badge text-bg-primary fs-6 link-offset-2 link-underline link-underline-opacity-0 me-2 mb-2" href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a>';
+										}
+										echo '</div>';
+									}
+									?>
+
 								<?php the_excerpt();?>
-								<a href="<?php the_permalink();?>" class="btn btn-outline-primary btn-sm"><?php _e('Leer más', 'inmobiliariadelassierras');?></a>
+								<a href="<?php the_permalink();?>" class="btn btn-outline-primary btn-sm mt-4"><?php _e('Leer más', 'inmobiliariadelassierras');?></a>
 							</div>
 						</div>
 					</div><!-- /row -->
