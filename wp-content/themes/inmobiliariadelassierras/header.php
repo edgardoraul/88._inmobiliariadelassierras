@@ -22,7 +22,7 @@
 
 <header class="bg-white">
 	<div class="container-xxl">
-		<div class="row d-flex justify-content-between d-flex align-items-stretch">
+		<div class="row d-flex justify-content-between d-flex align-items-center">
 
 			<!-- logo -->
 			<div class="col-12 col-md-4 col-lg-3">
