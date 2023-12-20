@@ -30,8 +30,14 @@ get_header();?>
 
                             // Mostramos el título de la categoría con el número de propiedades
                             ?>
-						<h2 class="h2 text-uppercase">
-							<?php echo esc_html($current_category); ?> (<?php echo esc_html($property_count->post_count); _e(' propiedades', 'inmobiliariadelassierras');?>)
+						<h2 class="display-5 text-uppercase">
+							<?php echo esc_html($current_category); ?> (<?php
+							if($property_count->post_count == 1) {
+								echo esc_html($property_count->post_count); _e(' propiedad', 'inmobiliariadelassierras');
+							} else {
+								echo esc_html($property_count->post_count); _e(' propiedades', 'inmobiliariadelassierras');
+							}
+							?>)
 						</h2>
 					</div>
 				</div>

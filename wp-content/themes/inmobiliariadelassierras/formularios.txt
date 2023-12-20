@@ -1,12 +1,12 @@
 [contact-form-7 id="aa2ed63" title="Consúltenos por esta Propiedad"]
 Consúltenos por esta Propiedad
 
-[text* your-name 60/60 class:form-control class:form-control-lg placeholder "Apellido y Nombre:"]
-[email* your-email 50/50 class:form-control class:form-control-lg placeholder "Email:"]
-[text* telefono 15/15 class:form-control class:form-control-lg placeholder "Teléfono:"]
+[text* your-name 60/60 class:form-control class:form-control-lg class:font-monospace placeholder "Apellido y Nombre:"]
+[email* your-email 50/50 class:form-control class:form-control-lg class:font-monospace placeholder "Email:"]
+[text* telefono 15/15 class:form-control class:form-control-lg class:font-monospace placeholder "Teléfono:"]
 [hidden hidden-7 "post_title"]
 [hidden hidden-980 "post_url"]
-[textarea your-message class:form-control class:form-control-lg placeholder "Consulta:"]
+[textarea your-message class:form-control class:form-control-lg class:font-monospace placeholder "Consulta:"]
 <button type="submit" class="btn btn-outline-success btn-lg">Enviar</button>
 
 inmobiliariaspecchiale@gmail.com
@@ -65,14 +65,14 @@ Powered by <a  href="http://www.webmoderna.com.ar" title="...:: WebModerna | el 
 [contact-form-7 id="854e458" title="Quiere saber el precio de su propiedad, SIN CARGO?"]
 Quiere saber el precio de su propiedad, SIN CARGO?
 
-[text* your-name 60/60 class:form-control class:form-control-lg placeholder "Apellido y Nombre:"]
-[email* your-email 50/50 class:form-control class:form-control-lg placeholder "Email:"]
-[text* telefono 15/15 class:form-control class:form-control-lg placeholder "Teléfono:"]
+[text* your-name 60/60 class:form-control class:form-control-lg class:font-monospace placeholder "Apellido y Nombre:"]
+[email* your-email 50/50 class:form-control class:form-control-lg class:font-monospace placeholder "Email:"]
+[text* telefono 15/15 class:form-control class:form-control-lg class:font-monospace placeholder "Teléfono:"]
 <label for="menu-693" class="form-label">Tipo de Propiedad:</label>
-[select* menu-693 class:form-control class:form-control-lg include_blank "Casa" "Cabaña" "Complejo" "Campo" "Departamento" "Hotel/Hostería" "Loteo" "Terreno" "Otro..."]
-[textarea your-message class:form-control class:form-control-lg placeholder "Mensaje:"]
+[select* menu-693 class:form-control class:form-control-lg class:font-monospace include_blank "Casa" "Cabaña" "Complejo" "Campo" "Departamento" "Hotel/Hostería" "Loteo" "Terreno" "Otro..."]
+[textarea your-message class:form-control class:form-control-lg class:font-monospace placeholder "Mensaje:"]
 <label for="file-636" class="form-label">Subir imagen de propiedad</label>
-[file file-636 limit:10mb class:form-control class:form-control-lg]
+[file file-636 limit:10mb class:form-control class:form-control-lg class:font-monospace]
 <button type="submit" class="btn btn-outline-success btn-lg">Enviar</button>
 
 inmobiliariaspecchiale@gmail.com
@@ -89,12 +89,12 @@ Reply-to: [your-name] <[your-email]>
 [contact-form-7 id="54922b8" title="Quieres formar parte de nuestro equipo?"]
 Quieres formar parte de nuestro equipo?
 
-[text* your-name 60/60 class:form-control class:form-control-lg placeholder "Apellido y Nombre:"]
-[email* your-email 50/50 class:form-control class:form-control-lg placeholder "Email:"]
-[text* telefono 15/15 class:form-control class:form-control-lg placeholder "Teléfono:"]
-[textarea your-message class:form-control class:form-control-lg placeholder "Mensaje:"]
+[text* your-name 60/60 class:form-control class:form-control-lg class:font-monospace placeholder "Apellido y Nombre:"]
+[email* your-email 50/50 class:form-control class:form-control-lg class:font-monospace placeholder "Email:"]
+[text* telefono 15/15 class:form-control class:form-control-lg class:font-monospace placeholder "Teléfono:"]
+[textarea your-message class:form-control class:form-control-lg class:font-monospace placeholder "Mensaje:"]
 <label for="file-625" class="form-label">Adjuntar CV</label>
-[file file-625 limit:10mb class:form-control class:form-control-lg]
+[file file-625 limit:10mb class:form-control class:form-control-lg class:font-monospace]
 <button type="submit" class="btn btn-outline-success btn-lg">Enviar</button>
 
 inmobiliariaspecchiale@gmail.com

@@ -13,7 +13,7 @@
 					while(have_posts()) {
 						the_post();?>
 					<header>
-						<h2 class="h2"><?php the_title();?></h2>
+						<h2 class="display-4"><?php the_title();?></h2>
 					</header>
 					<section>
 						<figure class="figure">

@@ -21,8 +21,8 @@
 
 							<!-- El encabezado y los atributos del producto -->
 							<div class="col-12 col-sm-6 my-3">
-								<header class="h2 mb-3">
-									<h2><?php the_title();?></h2>
+								<header class="mb-3">
+									<h2 class="display-5"><?php the_title();?></h2>
 								</header>
 
 								<!-- Atributos -->
