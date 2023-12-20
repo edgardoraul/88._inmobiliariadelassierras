@@ -17,8 +17,8 @@ get_header();?>
 				<?php if(have_posts()) {
 					while(have_posts()) {
 						the_post();?>
-					<header>
-						<h2 class="h2"><?php the_title();?></h2>
+					<header class="mb-4">
+						<h2 class="display-5"><?php the_title();?></h2>
 					</header>
 					<section class="text-uppercase">
 						<?php the_content();?>

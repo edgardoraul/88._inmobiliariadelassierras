@@ -20,8 +20,8 @@ $enlace_boton_3			=	of_get_option('enlace_boton_3', '');
 		<div class="container">
 			<div class="row d-flex justify-content-center">
 				<div class="col-9 col-md-6 col-lg-12 mb-3">
-					<div class="card text-bg-light">
-						<h5 class="card-header text-center">
+					<div class="card text-bg-light bg-transparent">
+						<h5 class="card-header text-center text-uppercase">
 							<?php if( $mensaje_1__titulo ) {
 								echo $mensaje_1__titulo;
 							} else {
@@ -41,8 +41,8 @@ $enlace_boton_3			=	of_get_option('enlace_boton_3', '');
 				</div>
 
 				<div class="col-9 col-md-6 col-lg-12 mb-3">
-					<div class="card text-bg-light">
-						<h5 class="card-header text-center">
+					<div class="card text-bg-light bg-transparent">
+						<h5 class="card-header text-center text-uppercase">
 							<?php if( $mensaje_2__titulo ) {
 								echo $mensaje_2__titulo;
 							} else  {
@@ -62,8 +62,8 @@ $enlace_boton_3			=	of_get_option('enlace_boton_3', '');
 				</div>
 
 				<div class="col-9 col-md-6 col-lg-12 mb-3">
-					<div class="card text-bg-light">
-						<h5 class="card-header text-center">
+					<div class="card text-bg-light bg-transparent">
+						<h5 class="card-header text-center text-uppercase">
 							<?php if( $mensaje_3__titulo ) {
 								echo $mensaje_3__titulo;
 							} else  {
