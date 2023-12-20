@@ -15,7 +15,7 @@ class Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu {
         $class_names = $value = '';
 
         $classes = empty($item->classes) ? array() : (array) $item->classes;
-        $classes[] = ($args->walker->has_children) ? 'nav-item dropdown' : 'nav-item';
+        $classes[] = ($args->walker->has_children) ? 'nav-item dropdown d-flex' : 'nav-item d-flex-column';
         $classes[] = 'nav-item-' . $item->ID;
         if ($depth && $args->walker->has_children) {
             $classes[] = 'dropdown-submenu';
@@ -42,7 +42,7 @@ class Bootstrap_Walker_Nav_Menu extends Walker_Nav_Menu {
             $item_output .= '</a>';
 
             // Agregar span como "Split button"
-            $item_output .= '<span class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></span>';
+            $item_output .= '<span class="nav-link dropdown-toggle ms-2" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></span>';
         } else {
             $attributes .= ' class="nav-link"';
             $item_output = $args->before;

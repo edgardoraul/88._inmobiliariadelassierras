@@ -22,33 +22,37 @@
 
 <header class="bg-white">
 	<div class="container-xxl">
-		<div class="row d-flex justify-content-between">
+		<div class="row d-flex justify-content-between d-flex align-items-stretch">
 
 			<!-- logo -->
 			<div class="col-12 col-md-4 col-lg-3">
-				<h1 class="text-center">
+				<h1 class="text-center text-md-left">
 					<?php the_custom_logo();?>
 				</h1>
 			</div><!-- /logo -->
 
 			<!-- Logotipo 2 -->
-			<div class="col-12 col-lg-5">
+			<div class="col-12 col-md-6 col-lg-8">
 
-				<div class="navbar navbar-expand-lg bg-body-tertiary">
+				<div class="navbar navbar-expand-lg bg-transparent align-self-end">
+					<?php $portfolio_home = of_get_option('portfolio_home', '');
+					if($portfolio_home) {
+						echo "<span class='navbar-brand text-body-secondary text-capitalize lead'> $portfolio_home </span>";
+					}?>
 
 					<!-- boton del menú -->
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#header_nav" aria-controls="header_nav" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
 
-					<div class="navbar-expand-md navbar-collapse collapse text-uppercase" id="header_nav">
+					<div class="navbar-expand-lg navbar-collapse collapse text-uppercase flex-row-reverse" id="header_nav">
 						<?php /* El menú principal */
 						$argumentos = array(
 							'menu'			=> 'Menú Principal',
 							'depth'			=>	3,
-							'item_spacing'	=>	'discard',
+							// 'item_spacing'	=>	'discard',
 							'menu_id'		=>	'header_nav',
-							'container_class' => 'navbar navbar-expand-lg bg-body-light navbar-light bg-light',
+							// 'container_class' => 'navbar navbar-expand-lg bg-body-light navbar-light bg-light',
 							'menu_class'	=>	'navbar-nav me-auto mb-2 mb-lg-0',
 							'fallback_cb'     => false,
 							'walker'          => new Bootstrap_Walker_Nav_Menu(),
@@ -57,10 +61,6 @@
 					</div>
 				</div>
 			</div><!-- /Menú principal -->
-
-		</div>
-
-		<div class="row">
 		</div>
 
 		<div class="row my-3">

@@ -71,7 +71,11 @@ get_header();?>
 									};?>
 								</a>
 								<figcaption class="btn btn-secondary disabled bg-gradient opacity-100" style="position: relative; bottom:28px;">
-									<?php echo $precio;?>
+									<?php if($precio) {
+										echo $precio;
+									} else {
+										echo _e('Consultar', 'inmobiliariadelassierras');
+									}?>
 								</figcaption>
 							</figure>
 							<h4 class="card-title text-center mt-0 h5">
