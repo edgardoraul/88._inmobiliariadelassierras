@@ -19,8 +19,8 @@ Text Domain: inmobiliariadelassierras
 	padding-left: 1em !important;
 	padding-right: 1em !important;
 }
-@media all and (min-width:960px) {
-	.menu-item > .nav-link + .nav-link {
+@media all and (min-width:1200px) {
+	.menu-item > a.nav-link + span.nav-link {
 		margin-left: -0.5em !important;
 	}
 }

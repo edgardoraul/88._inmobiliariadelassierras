@@ -80,7 +80,7 @@
 					<span class="navbar-toggler-icon"></span>
 					</button>
 
-					<div class="collapse navbar-collapse text-uppercase justify-content-end" id="navbarTogglerDemo02">
+					<div class="collapse navbar-collapse text-capitalize lead justify-content-end" id="navbarTogglerDemo02">
 
 					<?php // El Menú secundario
 						$argumentos = array(
