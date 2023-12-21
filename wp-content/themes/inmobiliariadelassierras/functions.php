@@ -131,6 +131,12 @@ require_once "includes/demo.php";
 // require_once "includes/mostrar_miniaturas_galeria_metabox.php";
 // require_once "includes/pasaje_galeria.php";
 
+// Soporte de mapas
+// require_once "includes/mapas.php";
+
+// Funciones de SEO
+require_once "includes/seo.php";
+
 // Cargar Panel de Opciones
 if ( !function_exists( 'optionsframework_init' ) ) {
 	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/includes/' );

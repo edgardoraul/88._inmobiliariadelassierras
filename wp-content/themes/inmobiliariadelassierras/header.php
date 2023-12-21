@@ -8,15 +8,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<link rel="pingback" href="<?php bloginfo("pingback_url");?>" />
-	<title><?php bloginfo("title");?> - <?php bloginfo("description");?></title>
+	
+	<!-- Site fevicon icons -->
+	<link rel="icon" href="<?php echo get_stylesheet_directory_uri() ;?>/img/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" href="<?php echo get_stylesheet_directory_uri() ;?>/img/favicon-196x196.png" sizes="196x196" />
+	<link rel="apple-touch-icon-precomposed" href="<?php echo get_stylesheet_directory_uri() ;?>/img/favicon-196x196.png" />
+	<meta name="msapplication-TileImage" content="<?php echo get_stylesheet_directory_uri() ;?>/img/favicon-196x196.png" />
+	<!--complete list of meta tags at - https://gist.github.com/lancejpollard/1978404 -->
 
-	<?php get_template_part( 'template-part/content', 'header' );?>
+	<?php // get_template_part( 'template-part/content', 'header' );?>
 
 	<?php wp_head();?>
 </head>
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
-	<!--[if lt IE 7]>
+	<!--[if lt IE 9]>
 	<p class="browsehappy"><?php _e('Estás usando un navegador ', '');?><strong><?php _e('más viejo que la mierda</strong>. Haceme el favor de ', '');?><a href="https://www.mozilla.org/es-AR/firefox/download/thanks/"><?php _e('bajarte uno nuevo</a> y ponete las pilas, boludo.', 'inmobiliariadelassierras');?></p>
 	<![endif]-->
 
