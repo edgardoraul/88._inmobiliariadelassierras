@@ -27,7 +27,6 @@ function custom_seo_meta_tags() {
  */
 function custom_get_page_type() {
     if (is_home() || is_front_page()) {
-        echo "<h1>alksjdñflkajdñflaksjdfasñlkjf</h1>";
         return 'home';
     } elseif (is_page() || is_single()) {
         return 'post';
@@ -53,6 +52,10 @@ function custom_get_page_type() {
  */
 function custom_get_title($page_type) {
     if ($page_type === 'post') {
+        return get_the_title() . " - " . get_bloginfo('name');
+    }
+
+    if ($page_type === 'archive') {
         return get_the_title() . " - " . get_bloginfo('name');
     }
     

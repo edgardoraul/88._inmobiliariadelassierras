@@ -1,8 +1,3 @@
-<title><?php bloginfo("title");?> - <?php bloginfo("description");?></title>
-
-<!--meta properties -->
-<meta name="description" content=" Your site description." />
-
 <!--detailed robots meta https://developers.google.com/search/reference/robots_meta_tag -->
 <meta name="robots" content="index, follow, max-snippet: -1, max-image-preview:large, max-video-preview: -1" />
 
