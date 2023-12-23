@@ -16,7 +16,7 @@
 	<meta name="msapplication-TileImage" content="<?php echo get_stylesheet_directory_uri() ;?>/img/favicon-196x196.png" />
 	<!--complete list of meta tags at - https://gist.github.com/lancejpollard/1978404 -->
 
-	<?php get_template_part( 'template-part/content', 'header' );?>
+	<?php // get_template_part( 'template-part/content', 'header' );?>
 
 	<?php wp_head();?>
 </head>

@@ -4,22 +4,24 @@
 <!--open graph meta tags for social sites and search engines-->
 <meta property="og:locale" content="<?php bloginfo( 'charset' );?>" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Opengraph content 25 char are best" />
-<meta property="og:description" content="  #description." />
-<meta property="og:url" content="" />
+<meta property="og:url" content="<?php echo esc_url(get_permalink()); ?>" />
 <meta property="og:site_name" content="<?php bloginfo( 'name' );?>" />
-<meta property="og:image" content="images//hom-banner-compressed.jpg" />
-<meta property="og:image:secure_url" content="images//hom-banner-compressed.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="660" />
 
+<meta property="og:title" content="" />
+<meta property="og:description" content="" />
+<meta property="og:image:secure_url" content="" />
+<meta property="og:image" content="" />
+
 <!--twitter description-->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:description" content="MAX 440 CARACTERES" />
-<meta name="twitter:title" content="" />
 <meta name="twitter:site" content="<?php echo of_get_option('twitter_contact', '');?>" />
-<meta name="twitter:image" content="images/hom-banner-compressed.jpg CUADRADA" />
 <meta name="twitter:creator" content="<?php echo of_get_option('twitter_contact', '');?>" />
+
+<meta name="twitter:image" content="CUADRADA" />
+<meta name="twitter:card" content="" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:title" content="" />
 
 <!--opengraph tags for location or address for information panel in google-->
 <meta name="og:latitude" content="" />

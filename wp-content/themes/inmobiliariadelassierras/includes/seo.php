@@ -11,10 +11,12 @@ function custom_seo_meta_tags()
 	// Configurar el título
 	$title = custom_get_title($page_type);
 	echo "<title>{$title}</title>\n";
+	echo "<meta name='twitter:title' content='{$title}' />\n";
 
 	// Configurar la descripción
 	$description = custom_get_description($page_type);
 	echo "<meta name='description' content='{$description}' />\n";
+	echo "<meta name='twitter:description' content='{$description}' />\n";
 
 	// Configurar las keywords
 	$keywords = custom_get_keywords($page_type);
@@ -104,8 +106,6 @@ function custom_get_keywords($page_type)
  */
 function custom_setup_opengraph($page_type)
 {
-	echo "<meta property='og:type' content='{$page_type}' />\n";
-
 	// Para los casos
 	if ($page_type === 'post') {
 		$image_url = get_the_post_thumbnail_url(null, 'large');
@@ -119,6 +119,9 @@ function custom_setup_opengraph($page_type)
 
 	if ($image_url) {
 		echo "<meta property='og:image' content='{$image_url}' />\n";
+		echo "<meta name='twitter:image' content='{$image_url}' />\n";
+		echo "<meta property='og:image:secure_url' content='{$image_url}' />\n";
+		echo "<meta name='twitter:card' content='{$image_url}' />\n";
 	}
 }
 
