@@ -24,3 +24,9 @@ Text Domain: inmobiliariadelassierras
 		margin-left: -0.5em !important;
 	}
 }
+
+@media all and (max-width:1100px) {
+	.nav-link.dropdown-toggle ~ .dropdown-menu {
+		position: absolute !important;
+	}
+}

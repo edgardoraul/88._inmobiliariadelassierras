@@ -106,50 +106,50 @@ function optionsframework_options()
 		'name'			=>	__('Facebook', 'options_framework_theme'),
 		'desc'			=>	__('Introduzca el enlace a Facebook.', 'options_framework_theme'),
 		'id'			=>	'facebook_contact',
-		'class'			=>	'',
 		'placeholder'	=>	'www.facebook.com/usuario',
+		'class'			=>	'',
 		'type'			=>	'text'
 	);
 
 
 	// Twitter
 	$options[] = array(
-		'name' => __('Twitter X', 'options_framework_theme'),
-		'desc' => __('Introduzca usuario de Twitter.', 'options_framework_theme'),
-		'id' => 'twitter_contact',
-		'placeholder' => '@twitter_usuario_x',
-		'class' => '',
-		'type' => 'text'
+		'name' 			=> __('Twitter X', 'options_framework_theme'),
+		'desc' 			=> __('Introduzca usuario de Twitter.', 'options_framework_theme'),
+		'id' 			=> 'twitter_contact',
+		'placeholder' 	=> '@twitter_usuario_x',
+		'class' 		=> '',
+		'type' 			=> 'text'
 	);
 
 	// Instagram
 	$options[] = array(
-		'name' => __('Instagram', 'options_framework_theme'),
-		'desc' => __('Introduzca su usuario de Instagram.', 'options_framework_theme'),
-		'id' => 'instagram_contact',
-		'placeholder' => '@usuario_instagram',
-		'class' => '',
-		'type' => 'text'
+		'name' 			=> __('Instagram', 'options_framework_theme'),
+		'desc' 			=> __('Introduzca su usuario de Instagram.', 'options_framework_theme'),
+		'id' 			=> 'instagram_contact',
+		'placeholder' 	=> '@usuario_instagram',
+		'class' 		=> '',
+		'type' 			=> 'text'
 	);
 
 	// LinkedIn
 	$options[] = array(
-		'name' => __('LinkedIn', 'options_framework_theme'),
-		'desc' => __('Introduzca su enlace al perfil de LinkedIn.', 'options_framework_theme'),
-		'id' => 'linkedin_contact',
-		'placeholder' => 'www.linkedin.com/usuario',
-		'class' => '',
-		'type' => 'text'
+		'name'			=> __('LinkedIn', 'options_framework_theme'),
+		'desc'			=> __('Introduzca su enlace al perfil de LinkedIn.', 'options_framework_theme'),
+		'id'			=> 'linkedin_contact',
+		'placeholder'	=> 'www.linkedin.com/usuario',
+		'class'			=> '',
+		'type'			=> 'text'
 	);
 
 	// Youtube
 	$options[] = array(
-		'name' => __('Youtube', 'options_framework_theme'),
-		'desc' => __('Introduzca su enlace al canal de Youtube.', 'options_framework_theme'),
-		'id' => 'youtube_contact',
-		'placeholder' => 'https://www.youtube.com/canal',
-		'class' => '',
-		'type' => 'text'
+		'name'			=> __('Youtube', 'options_framework_theme'),
+		'desc'			=> __('Introduzca su enlace al canal de Youtube.', 'options_framework_theme'),
+		'id'			=> 'youtube_contact',
+		'placeholder'	=> 'https://www.youtube.com/canal',
+		'class'			=> '',
+		'type'			=> 'text'
 	);
 
 

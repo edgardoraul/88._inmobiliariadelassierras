@@ -7,6 +7,7 @@ $google_analitycs		=	of_get_option( 'google_analitycs', '');
 $direccion_web			=	of_get_option( 'direccion_web', '');
 $email_web				=	of_get_option( 'email_web', '');
 $instagram_contact		=	of_get_option( 'instagram_contact', '');
+$twitter_contact		=	of_get_option( 'twitter_contact', '');
 $linkedin_contact		=	of_get_option( 'linkedin_contact', '');
 $youtube_contact		=	of_get_option( 'youtube_contact', '');
 $matricula_contact		=	of_get_option( 'matricula_contact', '');
@@ -53,8 +54,12 @@ $provincia_web			=	of_get_option( 'provincia_web', '');
 					echo "<a class='link-primary text-primary-emphasis text-decoration-none text-wrap me-3' href='//$linkedin_contact' title='LinkedIn' target='_blank'><i class='bi bi-linkedin fs-1'></i></a>";
 				}
 
+				if($twitter_contact) {
+					echo "<a class='link-primary text-decoration-none text-wrap me-3' href='//$twitter_contact' title='Twitter - X' target='_blank'><i class='bi bi-twitter-x fs-1'></i></a>";
+				}
+
 				if($youtube_contact) {
-					echo "<a class='link-danger text-decoration-none text-wrap' href='//$youtube_contact' title='Youtube' target='_blank'><i class='bi bi-youtube fs-1'></i></a>";
+					echo "<a class='link-danger text-decoration-none text-wrap' href='$youtube_contact' title='Youtube' target='_blank'><i class='bi bi-youtube fs-1'></i></a>";
 				}
 
 				// echo "</div>";

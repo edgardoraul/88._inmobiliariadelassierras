@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<link rel="pingback" href="<?php bloginfo("pingback_url");?>" />
-	
+
 	<!-- Site fevicon icons -->
 	<link rel="icon" href="<?php echo get_stylesheet_directory_uri() ;?>/img/favicon-32x32.png" sizes="32x32" />
 	<link rel="icon" href="<?php echo get_stylesheet_directory_uri() ;?>/img/favicon-196x196.png" sizes="196x196" />
@@ -16,7 +16,7 @@
 	<meta name="msapplication-TileImage" content="<?php echo get_stylesheet_directory_uri() ;?>/img/favicon-196x196.png" />
 	<!--complete list of meta tags at - https://gist.github.com/lancejpollard/1978404 -->
 
-	<?php // get_template_part( 'template-part/content', 'header' );?>
+	<?php get_template_part( 'template-part/content', 'header' );?>
 
 	<?php wp_head();?>
 </head>
@@ -40,7 +40,7 @@
 			<!-- Logotipo 2 -->
 			<div class="col-12 col-md-6 col-lg-8">
 
-				<div class="navbar navbar-expand-lg bg-transparent align-self-end">
+				<div class="navbar navbar-expand-lg bg-transparent">
 					<?php $portfolio_home = of_get_option('portfolio_home', '');
 					if($portfolio_home) {
 						echo "<span class='navbar-brand text-body-secondary text-capitalize lead'> $portfolio_home </span>";
@@ -83,7 +83,7 @@
 
 					<!-- boton del menú -->
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
+						<span class="navbar-toggler-icon"></span>
 					</button>
 
 					<div class="collapse navbar-collapse text-capitalize lead justify-content-end" id="navbarTogglerDemo02">
@@ -107,15 +107,5 @@
 
 
 		</div><!-- /row -->
-
-		<div class="row">
-			<nav>
-				<div class="col-12">
-					<?php
-
-					?>
-				</div>
-			</nav>
-		</div>
 	</div>
 </header>
