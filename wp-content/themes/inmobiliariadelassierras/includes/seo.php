@@ -7,6 +7,7 @@ function custom_seo_meta_tags()
 {
 	// Obtener el tipo de página actual
 	$page_type = custom_get_page_type();
+	error_log("Página actual: $page_type");
 
 	// Configurar el título
 	$title = custom_get_title($page_type);
@@ -21,6 +22,7 @@ function custom_seo_meta_tags()
 	// Configurar las keywords
 	$keywords = custom_get_keywords($page_type);
 	echo "<meta name='keywords' content='{$keywords}' />\n";
+	error_log("Palabras clave: $keywords");
 
 	// Configurar opengraph
 	custom_setup_opengraph($page_type);
@@ -31,9 +33,7 @@ function custom_seo_meta_tags()
  */
 function custom_get_page_type()
 {
-	if (is_home() || is_front_page()) {
-		return 'home';
-	} elseif (is_page() || is_single()) {
+	if (is_page() || is_single()) {
 		return 'post';
 	} elseif (is_search()) {
 		return 'search';
@@ -57,21 +57,25 @@ function custom_get_page_type()
  */
 function custom_get_title($page_type)
 {
+	$blog_name = get_bloginfo('name');
+	$separator = ' - ';
+
 	if ($page_type === 'post') {
-		return get_the_title() . " - " . get_bloginfo('name');
+		$title = get_the_title() . $separator . $blog_name;
+	} elseif ($page_type === 'archive') {
+		$title = get_the_title() . $separator . $blog_name;
+	} elseif ($page_type === 'category') {
+		$title = single_cat_title('', false) . $separator . $blog_name;
+	} elseif ($page_type === 'tag') {
+		$title = single_tag_title() . $separator . $blog_name;
+	} elseif ($page_type === 'tax') {
+		$title = single_term_title('', false) . $separator . $blog_name;
+	} else {
+		$title = $blog_name . $separator . get_bloginfo('description');
 	}
 
-	if ($page_type === 'archive') {
-		return get_the_title() . " - " . get_bloginfo('name');
-	} elseif ($page_type === 'category') {
-		return single_cat_title() . " - " . get_bloginfo('name');
-	} elseif ($page_type === 'tag') {
-		return single_tag_title() . " - " . get_bloginfo('name');
-	} elseif ($page_type === 'tax') {
-		return single_term_title('', false) . " - " . get_bloginfo('name');
-	} else {
-		return get_bloginfo('name') . " - " . get_bloginfo('description');
-	}
+	error_log("Título: $title");
+	return $title;
 }
 
 /**
@@ -80,10 +84,13 @@ function custom_get_title($page_type)
 function custom_get_description($page_type)
 {
 	if ($page_type === 'post') {
-		return rwmb_meta('meta_paginas_meta_descripcion', '');
+		$description = rwmb_meta('meta_paginas_meta_descripcion', '');
 	} else {
-		return of_get_option('meta_description', '');
+		$description = of_get_option('meta_description', '');
 	}
+
+	error_log("Descripción: $description");
+	return $description;
 }
 
 /**
@@ -92,24 +99,24 @@ function custom_get_description($page_type)
 function custom_get_keywords($page_type)
 {
 	if ($page_type === 'post') {
-		return rwmb_meta('meta_paginas_meta_keywords', '');
+		$keywords = rwmb_meta('meta_paginas_meta_keywords', '');
 	} else {
-		return of_get_option('meta_keywords2', '');
+		$keywords = of_get_option('meta_keywords2', '');
 	}
+
+	error_log("Palabras clave: $keywords");
+	return $keywords;
 }
 
 /**
  * Configurar opengraph de acuerdo al tipo de página.
- * A- Casos de una página o una entrada. Se muestra su título, su descripción/resumen y su imagen destacada o una por defecto.
- * B- Casos en los que se listan las categorías, tags, búsquedas. Se muestran como título el tag/categoría etc.. + el nombre del blog. La imagen será la primera de lo que encuentre en la primera entrada.
- * C- Caso por defecto, del home 404. Será el título del blog más la imagen que se elija ya sea como logo, screenshot por defecto.
  */
 function custom_setup_opengraph($page_type)
 {
 	// Para los casos
 	if ($page_type === 'post') {
 		$image_url = get_the_post_thumbnail_url(null, 'large');
-	} elseif ($page_type === 'archive') {
+	} elseif ($page_type === 'archive' || $page_type === 'category' || $page_type === 'tag' || $page_type === 'tax') {
 		$first_post = new WP_Query('posts_per_page=1');
 		$image_url = get_the_post_thumbnail_url($first_post->post->ID, 'large');
 		wp_reset_postdata();
@@ -123,6 +130,8 @@ function custom_setup_opengraph($page_type)
 		echo "<meta property='og:image:secure_url' content='{$image_url}' />\n";
 		echo "<meta name='twitter:card' content='{$image_url}' />\n";
 	}
+
+	error_log("Imagen URL: $image_url");
 }
 
 // Añadir las funciones al hook wp_head

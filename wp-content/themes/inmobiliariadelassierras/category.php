@@ -13,25 +13,24 @@ get_header();?>
 				<!-- El titular que muestra la categoría actual -->
 				<div class="row">
 					<div class="col-12">
-						<?php
-                            // Obtenemos la categoría actual
-                            $current_category = single_cat_title('', false);
-
-                            // Obtenemos el ID de la categoría actual
-                            $current_category_id = get_cat_ID($current_category);
-
-                            // Contamos el número de propiedades en la categoría actual
-                            $property_count = new WP_Query(array(
-                                'post_type' => 'post', // Reemplaza 'tu_tipo_de_post' con el nombre real de tu tipo de post
-                                'cat' => $current_category_id,
-                                'post_status' => 'publish',
-                                'posts_per_page' => -1,
-                            ));
-
-                            // Mostramos el título de la categoría con el número de propiedades
-                            ?>
 						<h2 class="display-5 text-uppercase">
-							<?php echo esc_html($current_category); ?> (<?php
+							<?php
+							 // Obtenemos la categoría actual
+							 $current_category = single_cat_title('', false);
+
+							 // Obtenemos el ID de la categoría actual
+							 $current_category_id = get_cat_ID($current_category);
+
+							 // Contamos el número de propiedades en la categoría actual
+							 $property_count = new WP_Query(array(
+								 'post_type' => 'post', // Reemplaza 'tu_tipo_de_post' con el nombre real de tu tipo de post
+								 'cat' => $current_category_id,
+								 'post_status' => 'publish',
+								 'posts_per_page' => -1,
+							 ));
+
+							 // Mostramos el título de la categoría con el número de propiedades
+							echo esc_html($current_category); ?> (<?php
 							if($property_count->post_count == 1) {
 								echo esc_html($property_count->post_count); _e(' propiedad', 'inmobiliariadelassierras');
 							} else {

@@ -28,9 +28,9 @@ $enlace_boton_3			=	of_get_option('enlace_boton_3', '');
 
 						<div>
 							<?php if( $mensaje_1__imagen ) { ?>
-								<a href="<?php echo get_permalink($enlace_boton_1, false);?>" target="_blank" title="<?php echo $mensaje_1__titulo;?>">
-									<img src="<?php echo $mensaje_1__imagen;?>" class="card-img-bottom w-100" alt="<?php echo $mensaje_1__titulo;?>" />
-								</a>
+							<a href="<?php echo get_permalink($enlace_boton_1, false);?>" target="_blank" title="<?php echo $mensaje_1__titulo;?>">
+								<img src="<?php echo $mensaje_1__imagen;?>" class="card-img-bottom w-100" alt="<?php echo $mensaje_1__titulo;?>" />
+							</a>
 							<?php } else {
 								sin_imagen();
 							}?>
@@ -47,9 +47,9 @@ $enlace_boton_3			=	of_get_option('enlace_boton_3', '');
 
 						<div>
 							<?php if($mensaje_2__imagen) { ?>
-								<a href="<?php echo get_permalink($enlace_boton_2, false);?>" target="_blank" title="<?php echo $mensaje_2__titulo;?>">
-									<img src="<?php echo $mensaje_2__imagen;?>" class="card-img-bottom w-100" alt="<?php echo $mensaje_2__titulo;?>" />
-								</a>
+							<a href="<?php echo get_permalink($enlace_boton_2, false);?>" target="_blank" title="<?php echo $mensaje_2__titulo;?>">
+								<img src="<?php echo $mensaje_2__imagen;?>" class="card-img-bottom w-100" alt="<?php echo $mensaje_2__titulo;?>" />
+							</a>
 							<?php } else {
 								sin_imagen();
 							}?>
@@ -66,9 +66,9 @@ $enlace_boton_3			=	of_get_option('enlace_boton_3', '');
 
 						<div>
 							<?php if( $mensaje_3__imagen ) { ?>
-								<a href="<?php echo $enlace_boton_3;?>" target="_blank" title="<?php echo $mensaje_3__titulo;?>">
-									<img src="<?php echo $mensaje_3__imagen;?>" class="card-img-bottom w-100" alt="<?php echo $mensaje_3__titulo;?>" />
-								</a>
+							<a href="<?php echo $enlace_boton_3;?>" target="_blank" title="<?php echo $mensaje_3__titulo;?>">
+								<img src="<?php echo $mensaje_3__imagen;?>" class="card-img-bottom w-100" alt="<?php echo $mensaje_3__titulo;?>" />
+							</a>
 							<?php } else {
 								sin_imagen();
 							};?>

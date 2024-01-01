@@ -1,14 +1,14 @@
 <?php
 
 function enqueue_leaflet_script() {
-    global $post;
+	global $post;
     if (is_admin() && current_user_can('edit_post', $post->ID)) {
         // Utilizamos la versión 1.9.4 de Leaflet
         wp_enqueue_script('leaflet', get_template_directory_uri() . '/leaflet/dist/leaflet.js', array(), '1.9.4', true);
         wp_enqueue_style('leaflet-css', get_template_directory_uri() . '/leaflet/dist/leaflet.css', array(), '1.9.4');
     }
 }
-
+add_action('wp_enqueue_scripts', 'enqueue_leaflet_script');
 
 
 // Agrega el mapa al editor de entradas
@@ -22,7 +22,7 @@ function add_map_to_post_editor() {
         <input type="hidden" id="map_location" name="map_location" value="<?php echo esc_attr(get_post_meta($post->ID, '_map_location', true)); ?>">
 
         <script>
-            document.addEventListener('DOMContentLoaded', function () {
+            document.addEventListener('load', function () {
                 var map = L.map('map').setView([0, 0], 13);
                 var marker;
 
@@ -70,6 +70,7 @@ function add_map_to_post_editor() {
 
 add_action('edit_form_after_title', 'add_map_to_post_editor');
 
+
 // Guarda la ubicación del mapa al guardar una entrada
 function save_map_location($post_id) {
     // Verifica si es una entrada y no una guardado automático
@@ -95,7 +96,7 @@ function display_map_on_frontend() {
         <div id="map" style="width: 100%; height: 450px;"></div>
 
         <script>
-            document.addEventListener('DOMContentLoaded', function () {
+            document.addEventListener('load', function () {
                 // Asegúrate de que Leaflet esté cargado antes de intentar usarlo
                 if (typeof L !== 'undefined') {
                     var map = L.map('map').setView(<?php echo $map_location; ?>, 13);
