@@ -61,7 +61,7 @@
 							// 'container_class' => 'navbar navbar-expand-lg bg-body-light navbar-light bg-light',
 							'menu_class'	=>	'navbar-nav me-auto mb-2 mb-lg-0',
 							'fallback_cb'     => false,
-							'walker'          => new Bootstrap_Walker_Nav_Menu(),
+							//'walker'          => new Bootstrap_Walker_Nav_Menu(),
 						);
 						wp_nav_menu($argumentos);?>
 					</div>
@@ -94,7 +94,7 @@
 							'depth'			=>	4,
 							'menu_class'      => 'navbar-nav me-auto mb-2 mb-lg-0',
 							'fallback_cb'     => false,
-							'walker'          => new Bootstrap_Walker_Nav_Menu(),
+							//'walker'          => new Bootstrap_Walker_Nav_Menu(),
 						);
 						wp_nav_menu($argumentos);
 						?>
