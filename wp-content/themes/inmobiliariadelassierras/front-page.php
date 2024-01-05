@@ -49,9 +49,9 @@
 
 							<?php // Para las entradas destacadas
 							if( is_sticky() ) { ?>
-								<div class="alert alert-danger mb-0" role="alert">
+								<div class="alert alert-danger mb-0 text-uppercase" role="alert">
 									<?php _e('Destacado', 'inmobiliariadelassierras');?>
-									<i class="bi bi-info-circle-fill float-end"></i>
+									<i class="bi bi-bookmark-check-fill fs-5 float-end"></i>
 								</div>
 								<hr class="border border-secondary border-1 opacity-25">
 							<?php }?>
