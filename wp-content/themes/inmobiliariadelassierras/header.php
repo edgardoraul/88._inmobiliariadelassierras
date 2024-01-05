@@ -33,7 +33,9 @@
 			<!-- logo -->
 			<div class="col-12 col-md-4 col-lg-3">
 				<h1 class="text-center text-md-left">
-					<?php the_custom_logo();?>
+					<a href="<?php bloginfo("url");?>">
+						<?php the_custom_logo();?>
+					</a>
 				</h1>
 			</div><!-- /logo -->
 
