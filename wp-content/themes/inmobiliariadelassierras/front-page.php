@@ -45,6 +45,17 @@
 									<?php the_title();?>
 								</a>
 							</h4>
+
+						<?php // Para las entradas destacadas
+						if( is_sticky() ) { ?>
+
+							<hr class="border border-secondary border-1 opacity-25">
+							<div class="alert alert-info mb-0" role="alert">
+								<?php _e('Destacado', 'inmobiliariadelassierras');?>
+								<i class="bi bi-info-circle-fill float-end"></i>
+							</div>
+						<?php }?>
+
 							<hr class="border border-secondary border-1 opacity-25">
 							<div class="card-text">
 								<?php //the_excerpt(10);?>
