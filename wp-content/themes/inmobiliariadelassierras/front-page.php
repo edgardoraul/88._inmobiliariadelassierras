@@ -32,7 +32,13 @@
 										sin_imagen();
 									};?>
 								</a>
+
+							<?php // Para las entradas destacadas
+							if( is_sticky() ) { ?>
+								<figcaption class="btn btn-danger disabled bg-gradient opacity-100" style="position: relative; bottom:28px;">
+							<?php } else { ?>
 								<figcaption class="btn btn-secondary disabled bg-gradient opacity-100" style="position: relative; bottom:28px;">
+							<?php }?>
 									<?php if($precio) {
 										echo $precio;
 									} else {
@@ -40,21 +46,22 @@
 									}?>
 								</figcaption>
 							</figure>
+
+							<?php // Para las entradas destacadas
+							if( is_sticky() ) { ?>
+								<div class="alert alert-danger mb-0" role="alert">
+									<?php _e('Destacado', 'inmobiliariadelassierras');?>
+									<i class="bi bi-info-circle-fill float-end"></i>
+								</div>
+								<hr class="border border-secondary border-1 opacity-25">
+							<?php }?>
+
 							<h4 class="card-title text-center mt-0 h5">
 								<a class="link-success link-underline text-uppercase link-underline-opacity-0" href="<?php the_permalink();?>">
 									<?php the_title();?>
 								</a>
 							</h4>
 
-						<?php // Para las entradas destacadas
-						if( is_sticky() ) { ?>
-
-							<hr class="border border-secondary border-1 opacity-25">
-							<div class="alert alert-info mb-0" role="alert">
-								<?php _e('Destacado', 'inmobiliariadelassierras');?>
-								<i class="bi bi-info-circle-fill float-end"></i>
-							</div>
-						<?php }?>
 
 							<hr class="border border-secondary border-1 opacity-25">
 							<div class="card-text">
