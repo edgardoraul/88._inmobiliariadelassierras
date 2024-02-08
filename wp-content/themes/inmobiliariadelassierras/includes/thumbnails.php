@@ -26,31 +26,31 @@ the_post_thumbnail( 'full' );
 
 // Tamaños fijos recortados
 add_image_size('custom-thumb-100-100', 100, 100, true);
-add_image_size('custom-thumb-200-200', 200, 200, true);
+// add_image_size('custom-thumb-200-200', 200, 200, true);
 add_image_size('custom-thumb-300-200', 300, 200, true);
-add_image_size('custom-thumb-300-300', 300, 300, true);
+// add_image_size('custom-thumb-300-300', 300, 300, true);
 add_image_size('custom-thumb-400-300', 400, 300, true);
 add_image_size('custom-thumb-600-400', 600, 400, true);
-add_image_size('custom-thumb-600-600', 600, 600, true);
-add_image_size('custom-thumb-800-600', 1600, 1200, true);
-add_image_size('custom-thumb-1360-780', 2720, 1560, true);
+// add_image_size('custom-thumb-600-600', 600, 600, true);
+add_image_size('custom-thumb-800-600', 800, 600, true);
+add_image_size('custom-thumb-1360-780', 1360, 780, true);
 
 // Sliders
-add_image_size('custom-thumb-600-250', 600, 200, true);
-add_image_size('custom-thumb-900-333', 600, 333, true);
-add_image_size('custom-thumb-1200-500', 1200, 400, true);
-add_image_size('custom-thumb-2400-1000', 2400, 500, true);
-add_image_size('custom-thumb-3600-1200', 3600, 1000, true);
+// add_image_size('custom-thumb-600-250', 600, 250, true);
+// add_image_size('custom-thumb-900-333', 900, 333, true);
+add_image_size('custom-thumb-1200-500', 1200, 500, true);
+add_image_size('custom-thumb-2400-1000', 2400, 1000, true);
+// add_image_size('custom-thumb-3600-1200', 3600, 1200, true);
 
 // Fotos redimensionables según el tamaño de pantalla
-add_image_size('custom-thumb-200-x', 200, false);
-add_image_size('custom-thumb-300-x', 300, false);
-add_image_size('custom-thumb-600-x', 600, false);
-add_image_size('custom-thumb-900-x', 900, false);
-add_image_size('custom-thumb-1200-x', 1200, false);
-add_image_size('custom-thumb-1500-x', 1500, false);
-add_image_size('custom-thumb-1800-x', 1800, false);
-add_image_size('custom-thumb-2100-x', 2100, false);
+// add_image_size('custom-thumb-200-x', 200, false);
+// add_image_size('custom-thumb-300-x', 300, false);
+// add_image_size('custom-thumb-600-x', 600, false);
+// add_image_size('custom-thumb-900-x', 900, false);
+// add_image_size('custom-thumb-1200-x', 1200, false);
+// add_image_size('custom-thumb-1500-x', 1500, false);
+// add_image_size('custom-thumb-1800-x', 1800, false);
+// add_image_size('custom-thumb-2100-x', 2100, false);
 
 
 

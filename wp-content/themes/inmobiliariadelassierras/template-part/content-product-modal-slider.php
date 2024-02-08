@@ -2,7 +2,7 @@
 	<div class="figure">
 		<!-- El slider de las fotos -->
 		<?php
-		$galeria2 = rwmb_meta('galeria', 'size=custom-thumb-1360-780');
+		$galeria2 = rwmb_meta('galeria', 'size=custom-thumb-800-600');
 		$contador3 = 0;
 		$contador4 = 0;
 		if( has_post_thumbnail() ) { ?>
@@ -29,13 +29,13 @@
 				<?php
 				// La imagen principal grande
 				echo "<div class='carousel-item active'>";
-				the_post_thumbnail('custom-thumb-1360-780', array('class' => 'd-block w-100'));;
+				the_post_thumbnail('custom-thumb-800-600', array('class' => 'd-block w-100'));;
 				echo "</div>";
 
 
 				foreach ( $galeria2 as $image ) {
-					$img_srcset = wp_get_attachment_image_srcset($image['ID'], 'custom-thumb-1360-780');
-					$img_sizes = wp_get_attachment_image_sizes($image['ID'], 'custom-thumb-1360-780');
+					$img_srcset = wp_get_attachment_image_srcset($image['ID'], 'custom-thumb-800-600');
+					$img_sizes = wp_get_attachment_image_sizes($image['ID'], 'custom-thumb-800-600');
 
 					echo $contador3 = $contador3 + 1;
 					echo "<div class='carousel-item'><img class='d-block w-100' src='{$image['url']}' srcset='{$img_srcset}' sizes='{$img_sizes}' alt='" . get_the_title() . "' /></div>";

@@ -1,9 +1,9 @@
 <?php
-if( wp_is_mobile() ) {
+/* if( wp_is_mobile() ) {
 	$galeria = rwmb_meta('galeria', 'size=custom-thumb-1200-x');
 } else {
-	$galeria = rwmb_meta('galeria', 'size=custom-thumb-400-300');
-}
+} */
+$galeria = rwmb_meta('galeria', 'size=custom-thumb-600-400');
 $contador = 0;
 $contador2 = 0;
 
@@ -44,7 +44,7 @@ $precio = rwmb_meta('precio', '');
 					// El bucle que recorre el resto de las imágenes
 					if($galeria) {
 						foreach ( $galeria as $image ) {
-							$img_srcset = wp_get_attachment_image_srcset($image['ID'], 'full');
+							$img_srcset = wp_get_attachment_image_srcset($image['ID'], 'custom-thumb-800-600');
 							$img_sizes = wp_get_attachment_image_sizes($image['ID'], 'custom-thumb-600-400');
 
 							echo "<div class='carousel-item figure-img img-thumbnail rounded'><a data-bs-toggle='modal' data-bs-target='#modal_img_full' href=''><img class='d-block w-100' src='{$image['url']}' srcset='{$img_srcset}' sizes='{$img_sizes}' alt=' get_the_title() ' /></a></div>";
