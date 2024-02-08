@@ -547,7 +547,8 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 			array(
 				'name'             => __( 'Subir varias fotos desde aquí.', 'inmobiliariadelassierras' ),
 				'id'               => 'galeria',
-				'type'             => 'image_advanced',
+				// 'type'             => 'image_advanced',
+				'type'             => 'thickbox_image',
 				'max_file_uploads' => false,
 			),
 
@@ -588,6 +589,7 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 				'max_file_uploads' => 4,
 				'mime_type'        => 'application,audio,video', // Leave blank for all file types
 			),
+
 			// IMAGE UPLOAD
 			array(
 				'name' => __( 'Image Upload', 'inmobiliariadelassierras' ),
@@ -600,7 +602,6 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 					'type' => 'thickbox_image',
 				),
 			),
-
 			// IMAGE ADVANCED (WP 3.5+) - Video
 			array(
 				'name'             => __( 'Subir Video', 'inmobiliariadelassierras' ),
