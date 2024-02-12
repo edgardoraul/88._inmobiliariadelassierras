@@ -154,6 +154,6 @@ $provincia_web			=	of_get_option( 'provincia_web', '');
 </footer>
 
 	<?php wp_footer();?>
-	<?php echo "<script>" . $google_analitycs . "</script>";?>
+	<?php if ($google_analitycs) echo '<script type="text/javascript">' . $google_analitycs . '</script>';?>
 	</body>
 </html>

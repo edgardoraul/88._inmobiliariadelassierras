@@ -26,6 +26,11 @@
 	<p class="browsehappy"><?php _e('Estás usando un navegador ', '');?><strong><?php _e('más viejo que la mierda</strong>. Haceme el favor de ', '');?><a href="https://www.mozilla.org/es-AR/firefox/download/thanks/"><?php _e('bajarte uno nuevo</a> y ponete las pilas, boludo.', 'inmobiliariadelassierras');?></p>
 	<![endif]-->
 
+
+	<!-- Fuciones especiales para los sliders OWL -->
+	<link rel=stylesheet href="<?php echo get_stylesheet_directory_uri();?>/css/OWL.sliders.css" />
+
+
 <header class="bg-white">
 	<div class="container-xxl">
 		<div class="row d-flex justify-content-between d-flex align-items-center">
@@ -33,9 +38,9 @@
 			<!-- logo -->
 			<div class="col-12 col-md-4 col-lg-3">
 				<h1 class="text-center text-md-left">
-					<a href="<?php bloginfo("url");?>">
-						<?php the_custom_logo();?>
-					</a>
+
+					<?php the_custom_logo();?>
+
 				</h1>
 			</div><!-- /logo -->
 
