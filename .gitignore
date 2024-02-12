@@ -29,6 +29,7 @@ wp-config.php
 
 # Uploads
 /wp-content/uploads/
+/wp-content/uploads-resguardo/
 
 # Log files
 *.log

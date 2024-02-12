@@ -25,11 +25,11 @@ the_post_thumbnail( 'large' );
 the_post_thumbnail( 'full' );
 
 // Tamaños fijos recortados
-add_image_size('custom-thumb-100-100', 100, 100, true);
+// add_image_size('custom-thumb-100-100', 100, 100, true);
 // add_image_size('custom-thumb-200-200', 200, 200, true);
-add_image_size('custom-thumb-300-200', 300, 200, true);
+// add_image_size('custom-thumb-300-200', 300, 200, true);
 // add_image_size('custom-thumb-300-300', 300, 300, true);
-add_image_size('custom-thumb-400-300', 400, 300, true);
+// add_image_size('custom-thumb-400-300', 400, 300, true);
 add_image_size('custom-thumb-600-400', 600, 400, true);
 // add_image_size('custom-thumb-600-600', 600, 600, true);
 add_image_size('custom-thumb-800-600', 800, 600, true);
@@ -55,7 +55,7 @@ add_image_size('custom-thumb-2400-1000', 2400, 1000, true);
 
 
 // Añadiendo al listado del gestor de multimedia
-add_filter('image_size_names_choose', 'hmuda_image_sizes');
+// add_filter('image_size_names_choose', 'hmuda_image_sizes');
 function hmuda_image_sizes($sizes)
 {
 	$addsizes = array(
@@ -101,7 +101,7 @@ function set_max_srcset_image_width( $max_width, $size_array )
 	}
 	return $max_width;
 }
-add_filter( 'max_srcset_image_width', 'set_max_srcset_image_width', 10, 2 );
+// add_filter( 'max_srcset_image_width', 'set_max_srcset_image_width', 10, 2 );
 
 // Habilitar la compresión de imágenes
 function optimizadorImagen()

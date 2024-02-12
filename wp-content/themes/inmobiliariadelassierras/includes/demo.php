@@ -547,8 +547,8 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 			array(
 				'name'             => __( 'Subir varias fotos desde aquí.', 'inmobiliariadelassierras' ),
 				'id'               => 'galeria',
-				// 'type'             => 'image_advanced',
-				'type'             => 'thickbox_image',
+				'type'             => 'image_advanced',
+				// 'type'             => 'thickbox_image',
 				'max_file_uploads' => false,
 			),
 
