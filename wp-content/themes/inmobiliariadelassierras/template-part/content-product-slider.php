@@ -3,7 +3,7 @@
 	$galeria = rwmb_meta('galeria', 'size=custom-thumb-1200-x');
 } else {
 } */
-$galeria = rwmb_meta('galeria', 'size=custom-thumb-600-400');
+$galeria = rwmb_meta('galeria', 'size=large');
 $contador = 0;
 $contador2 = 0;
 
@@ -36,18 +36,24 @@ $precio = rwmb_meta('precio', '');
 				<div class="carousel-inner">
 					<?php // La imagen post thumbnail principal
 					echo "<div class='carousel-item active figure-img img-thumbnail rounded'>";
-					echo "<a data-bs-toggle='modal' data-bs-target='#modal_img_full' href=''>";
+					// echo "<a data-bs-toggle='modal' data-bs-target='#modal_img_full' href=''>";
+					echo "<a class='swipebox' href='".get_the_post_thumbnail_url()."'>";
 					the_post_thumbnail('custom-thumb-600-400', array('class' => 'd-block w-100'));
 					echo "</a></div>";
 
 
 					// El bucle que recorre el resto de las imágenes
-					if($galeria) {
+					if( $galeria ) {
 						foreach ( $galeria as $image ) {
-							$img_srcset = wp_get_attachment_image_srcset($image['ID'], 'custom-thumb-800-600');
-							$img_sizes = wp_get_attachment_image_sizes($image['ID'], 'custom-thumb-600-400');
 
-							echo "<div class='carousel-item figure-img img-thumbnail rounded'><a data-bs-toggle='modal' data-bs-target='#modal_img_full' href=''><img class='d-block w-100' src='{$image['url']}' srcset='{$img_srcset}' sizes='{$img_sizes}' alt=' get_the_title() ' /></a></div>";
+							// $img_srcset = wp_get_attachment_image_srcset($image['ID'], 'custom-thumb-800-600');
+							// $img_sizes = wp_get_attachment_image_sizes($image['ID'], 'custom-thumb-600-400');
+
+							echo "<div class='carousel-item figure-img img-thumbnail rounded'>
+								<a class='swipebox' href='{$image['url']}'>
+									<img class='d-block w-100' src='{$image['url']}' alt='{$image['name']}' />
+								</a>
+							</div>";
 						}
 					}?>
 				</div>
