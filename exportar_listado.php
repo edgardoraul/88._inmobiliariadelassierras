@@ -1,5 +1,6 @@
 <?php
 define('ABSPATH', dirname(__FILE__) . '/');
+
 // Función para obtener los datos y generar el archivo CSV
 function exportar_enlaces_imagenes() {
     // Incluir WordPress
@@ -22,18 +23,19 @@ function exportar_enlaces_imagenes() {
     $archivo_csv = fopen('enlaces_imagenes.csv', 'w');
 
     // Escribir encabezados en el archivo CSV
-    fputcsv($archivo_csv, array('ID de la Entrada', 'Nombre del Campo', 'Enlace de la Imagen'));
+    fputs($archivo_csv, "ID de la Entrada;Nombre de la Entrada;Nombre del Campo;Enlace de la Imagen\n");
 
     // Loop a través de las entradas y escribir los datos en el archivo CSV
     if ($query->have_posts()) {
         while ($query->have_posts()) {
             $query->the_post();
             $id_entrada = get_the_ID();
+            $nombre_entrada = get_the_title();
             $enlaces_imagenes = get_post_meta($id_entrada, 'thumbs', true);
 
             if (!empty($enlaces_imagenes) && is_array($enlaces_imagenes)) {
                 foreach ($enlaces_imagenes as $indice => $enlace) {
-                    fputcsv($archivo_csv, array($id_entrada, 'thumbs['.$indice.']', $enlace));
+                    fputs($archivo_csv, "$id_entrada;$nombre_entrada;thumbs[$indice];$enlace\n");
                 }
             }
         }
@@ -52,3 +54,4 @@ function exportar_enlaces_imagenes() {
 
 // Llamar a la función para exportar los enlaces a imágenes
 exportar_enlaces_imagenes();
+?>

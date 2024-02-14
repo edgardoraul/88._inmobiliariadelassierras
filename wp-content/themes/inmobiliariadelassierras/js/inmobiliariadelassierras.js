@@ -964,15 +964,8 @@
 
 
 // El Slider
-jQuery(document).ready(function($){
-	(function () {
-		$('.swipebox').swipebox({
-			// useCSS : false,
-			// useSVG : false
-			// removeBarsOnMobile : false,
-			// hideBarsDelay : false,
-			// transitionStyle : "goDown"
-		});
-	})(jQuery);
-});
+( function( $ ) {
 
+	$( '.swipebox' ).swipebox();
+
+} )( jQuery );
