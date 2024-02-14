@@ -29,7 +29,7 @@ the_post_thumbnail( 'full' );
 // add_image_size('custom-thumb-200-200', 200, 200, true);
 // add_image_size('custom-thumb-300-200', 300, 200, true);
 // add_image_size('custom-thumb-300-300', 300, 300, true);
-// add_image_size('custom-thumb-400-300', 400, 300, true);
+//add_image_size('custom-thumb-400-400', 400, 400, true);
 add_image_size('custom-thumb-600-400', 600, 400, true);
 // add_image_size('custom-thumb-600-600', 600, 600, true);
 add_image_size('custom-thumb-800-600', 800, 600, true);
