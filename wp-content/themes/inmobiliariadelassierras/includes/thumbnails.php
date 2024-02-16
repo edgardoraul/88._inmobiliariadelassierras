@@ -50,7 +50,7 @@ add_image_size('custom-thumb-2400-1000', 2400, 1000, true);
 // add_image_size('custom-thumb-1200-x', 1200, false);
 // add_image_size('custom-thumb-1500-x', 1500, false);
 // add_image_size('custom-thumb-1800-x', 1800, false);
-// add_image_size('custom-thumb-2100-x', 2100, false);
+add_image_size('custom-thumb-2400-x', 2400, false);
 
 
 
