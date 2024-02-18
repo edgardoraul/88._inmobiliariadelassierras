@@ -68,7 +68,7 @@ $contador = 0;
 			?>
 				<div class="carousel-caption d-none d-md-block">
 					<div class="bg-light p-3 text-dark bg-opacity-75">
-						<h4 class="text-success h4"><?php the_title();?></h4>
+						<h4 class="text-secondary h4"><?php the_title();?></h4>
 						<!-- <hr class="hr" />
 						<div><?php // the_excerpt()?></div> -->
 					</div>
