@@ -475,7 +475,7 @@ function inmobiliariadelassierras_register_meta_boxes( $meta_boxes )
 					// Taxonomy name
 					'taxonomy' => 'category',
 					// How to show taxonomy: 'checkbox_list' (default) or 'checkbox_tree', 'select_tree', select_advanced or 'select'. Optional
-					'type'     => 'checkbox_list',
+					'type'     => 'select_advanced',
 					// Additional arguments for get_terms() function. Optional
 					'args'     => array()
 				),

@@ -52,12 +52,12 @@ $contador = 0;
 			if ( has_post_thumbnail() ) {
 				if(wp_is_mobile()) {
 					the_post_thumbnail(
-						"custom-thumb-900-600",
+						"custom-thumb-900-333",
 						array( "class" => "d-block img-thumbnail" )
 					);
 				} else {
 					the_post_thumbnail(
-						"custom-thumb-2400-1000",
+						"custom-thumb-2400-450",
 						array( "class" => "d-block img-thumbnail" )
 					);
 				}
