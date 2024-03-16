@@ -78,7 +78,7 @@
 
 		<div class="row my-3">
 			<!-- navbar-ejemplo -->
-			<nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom border-body mb-2" data-bs-theme="dark">
+			<nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom border-body mb-2" data-bs-theme="light">
 				<div class="container-xxl">
 					<!-- Search -->
 					<form class="d-flex" role="search"  method="get" id="searchform" action="<?php bloginfo('url');?>">
