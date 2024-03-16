@@ -127,7 +127,7 @@ function optionsframework_options()
 		'name' 			=> __('Instagram', 'options_framework_theme'),
 		'desc' 			=> __('Introduzca su usuario de Instagram.', 'options_framework_theme'),
 		'id' 			=> 'instagram_contact',
-		'placeholder' 	=> '@usuario_instagram',
+		'placeholder' 	=> 'usuario_instagram',
 		'class' 		=> '',
 		'type' 			=> 'text'
 	);

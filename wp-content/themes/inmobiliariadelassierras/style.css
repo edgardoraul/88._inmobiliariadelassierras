@@ -30,3 +30,9 @@ Text Domain: inmobiliariadelassierras
 		position: absolute !important;
 	}
 }
+
+@media all and (min-width: 768px) {
+	#slider_home .carousel-caption {
+		bottom: -1em !important;
+	}
+}

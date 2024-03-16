@@ -88,7 +88,7 @@ get_header();?>
 									<?php the_title();?>
 								</a>
 							</h4>
-							<hr class="border border-secondary border-1 opacity-25">
+							<!-- <hr class="border border-secondary border-1 opacity-25"> -->
 							<div class="card-text">
 								<?php //the_excerpt(10);?>
 								<?php get_template_part('template-part/content', 'product-type');?>

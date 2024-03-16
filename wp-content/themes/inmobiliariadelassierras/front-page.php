@@ -53,7 +53,7 @@
 									<?php _e('Destacado', 'inmobiliariadelassierras');?>
 									<i class="bi bi-bookmark-check-fill fs-5 float-end"></i>
 								</div>
-								<hr class="border border-secondary border-1 opacity-25">
+								<!-- <hr class="border border-secondary border-1 opacity-25"> -->
 							<?php }?>
 
 							<h4 class="card-title text-center mt-0 h5">
@@ -63,7 +63,7 @@
 							</h4>
 
 
-							<hr class="border border-secondary border-1 opacity-25">
+							<!-- <hr class="border border-secondary border-1 opacity-25"> -->
 							<div class="card-text">
 								<?php //the_excerpt(10);?>
 								<?php get_template_part('template-part/content', 'product-type');?>

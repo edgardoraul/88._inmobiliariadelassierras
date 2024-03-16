@@ -47,7 +47,7 @@ $provincia_web			=	of_get_option( 'provincia_web', '');
 				}
 
 				if($instagram_contact) {
-					echo "<a class='link-danger text-decoration-none text-wrap me-3' href='//$instagram_contact' title='Instagram' target='_blank'><i class='bi bi-instagram fs-1'></i></a>";
+					echo "<a class='link-danger text-decoration-none text-wrap me-3' href='//www.instagram.com/$instagram_contact' title='Instagram' target='_blank'><i class='bi bi-instagram fs-1'></i></a>";
 				}
 
 				if($linkedin_contact) {

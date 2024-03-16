@@ -37,6 +37,9 @@ wp-config.php
 # htaccess
 .htaccess
 
+# Consultas a bases de datos
+*.sql
+
 # All plugins
 #
 # Note: If you wish to whitelist plugins,

@@ -22,14 +22,12 @@ $inmobiliariadelassierras_descripcion = rwmb_meta('inmobiliariadelassierras_desc
 
 
 <ul class="list-group list-group-flush">
-	<?php if($propiedad_tipo) { ?>
+	<?php if( $propiedad_tipo ) { ?>
 		<li class="list-group-item">
-			<!-- <i class="bi bi-building-fill"></i> -->
-			<?php // echo '<span class="badge bg-success">' . __('Tipo de propiedad', 'inmobiliariadelassierras') . '</span>';?>
-			<!-- <h4>Tipo de propiedad</h4> -->
-			<h5 class="alert alert-secondary text-center">
-			<?php echo '<strong class="text-uppercase">'. $propiedad_tipo . '</strong>';?>
-			</h5>
+			<li class="list-group-item">
+			<i class="bi bi-tags"></i>
+			<?php echo '<span class="badge bg-success">' . __('  Categoría', 'inmobiliariadelassierras') . '</span>';
+			echo '<strong class="float-end">'. $propiedad_tipo . '</strong>';?>
 		</li>
 	<?php }?>
 
